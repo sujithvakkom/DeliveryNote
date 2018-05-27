@@ -1,0 +1,2273 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="DelevaryNoteModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityType Name="CUSTOMERADDRESS">
+          <Key>
+            <PropertyRef Name="ACCOUNTNUM" />
+            <PropertyRef Name="DATAAREAID" />
+            <PropertyRef Name="ADDRESSTYPE" />
+          </Key>
+          <Property Name="ACCOUNTNUM" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="DATAAREAID" Type="nvarchar" MaxLength="4" Nullable="false" />
+          <Property Name="ADDRESSTYPE" Type="int" Nullable="false" />
+          <Property Name="STREET" Type="nvarchar" MaxLength="250" />
+          <Property Name="ADDRESS" Type="nvarchar" MaxLength="250" />
+          <Property Name="ZIPCODE" Type="nvarchar" MaxLength="10" />
+          <Property Name="CITY" Type="nvarchar" MaxLength="60" />
+          <Property Name="STATE" Type="nvarchar" MaxLength="30" />
+          <Property Name="COUNTY" Type="nvarchar" MaxLength="10" />
+          <Property Name="COUNTRY" Type="nvarchar" MaxLength="20" />
+          <Property Name="ADDRESSFORMAT" Type="int" />
+          <Property Name="TAXGROUP" Type="nvarchar" MaxLength="20" />
+          <Property Name="PHONE" Type="nvarchar" MaxLength="20" />
+          <Property Name="CELLULARPHONE" Type="nvarchar" MaxLength="20" />
+          <Property Name="EMAIL" Type="nvarchar" MaxLength="80" />
+          <Property Name="CONTACTNAME" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="CUSTTABLE">
+          <Key>
+            <PropertyRef Name="ACCOUNTNUM" />
+            <PropertyRef Name="DATAAREAID" />
+          </Key>
+          <Property Name="ACCOUNTNUM" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="NAME" Type="nvarchar" MaxLength="60" />
+          <Property Name="ADDRESS" Type="nvarchar" MaxLength="250" />
+          <Property Name="PHONE" Type="nvarchar" MaxLength="20" />
+          <Property Name="TELEFAX" Type="nvarchar" MaxLength="20" />
+          <Property Name="INVOICEACCOUNT" Type="nvarchar" MaxLength="20" />
+          <Property Name="CUSTGROUP" Type="nvarchar" MaxLength="20" />
+          <Property Name="PAYMTERMID" Type="nvarchar" MaxLength="20" />
+          <Property Name="CASHDISC" Type="nvarchar" MaxLength="20" />
+          <Property Name="CURRENCY" Type="nvarchar" MaxLength="3" />
+          <Property Name="BLOCKED" Type="int" />
+          <Property Name="ONETIMECUSTOMER" Type="tinyint" />
+          <Property Name="ACCOUNTSTATEMENT" Type="int" />
+          <Property Name="CREDITMAX" Type="numeric" Precision="28" Scale="12" />
+          <Property Name="MANDATORYCREDITLIMIT" Type="tinyint" />
+          <Property Name="DIMENSION" Type="nvarchar" MaxLength="20" />
+          <Property Name="DIMENSION2_" Type="nvarchar" MaxLength="20" />
+          <Property Name="DIMENSION3_" Type="nvarchar" MaxLength="20" />
+          <Property Name="VENDACCOUNT" Type="nvarchar" MaxLength="20" />
+          <Property Name="TELEX" Type="nvarchar" MaxLength="20" />
+          <Property Name="COUNTRY" Type="nvarchar" MaxLength="20" />
+          <Property Name="INVENTLOCATION" Type="nvarchar" MaxLength="20" />
+          <Property Name="DLVTERM" Type="nvarchar" MaxLength="20" />
+          <Property Name="DLVMODE" Type="nvarchar" MaxLength="20" />
+          <Property Name="CLEARINGPERIOD" Type="nvarchar" MaxLength="20" />
+          <Property Name="ZIPCODE" Type="nvarchar" MaxLength="10" />
+          <Property Name="STATE" Type="nvarchar" MaxLength="30" />
+          <Property Name="COUNTY" Type="nvarchar" MaxLength="10" />
+          <Property Name="URL" Type="nvarchar" MaxLength="255" />
+          <Property Name="EMAIL" Type="nvarchar" MaxLength="80" />
+          <Property Name="CELLULARPHONE" Type="nvarchar" MaxLength="20" />
+          <Property Name="PHONELOCAL" Type="nvarchar" MaxLength="10" />
+          <Property Name="FREIGHTZONE" Type="nvarchar" MaxLength="10" />
+          <Property Name="CREDITRATING" Type="nvarchar" MaxLength="20" />
+          <Property Name="STATISTICSGROUP" Type="nvarchar" MaxLength="20" />
+          <Property Name="PAYMMODE" Type="nvarchar" MaxLength="20" />
+          <Property Name="BANKACCOUNT" Type="nvarchar" MaxLength="20" />
+          <Property Name="NAMEALIAS" Type="nvarchar" MaxLength="20" />
+          <Property Name="CONTACTPERSONID" Type="nvarchar" MaxLength="20" />
+          <Property Name="INVOICEADDRESS" Type="int" />
+          <Property Name="OURACCOUNTNUM" Type="nvarchar" MaxLength="20" />
+          <Property Name="SALESPOOLID" Type="nvarchar" MaxLength="20" />
+          <Property Name="INCLTAX" Type="tinyint" />
+          <Property Name="CUSTITEMGROUPID" Type="nvarchar" MaxLength="20" />
+          <Property Name="NUMBERSEQUENCEGROUP" Type="nvarchar" MaxLength="20" />
+          <Property Name="LANGUAGEID" Type="nvarchar" MaxLength="5" />
+          <Property Name="PAYMDAYID" Type="nvarchar" MaxLength="20" />
+          <Property Name="LINEOFBUSINESSID" Type="nvarchar" MaxLength="20" />
+          <Property Name="DESTINATIONCODEID" Type="nvarchar" MaxLength="20" />
+          <Property Name="WEBSALESORDERDISPLAY" Type="int" />
+          <Property Name="PAYMSPEC" Type="nvarchar" MaxLength="20" />
+          <Property Name="BANKCENTRALBANKPURPOSETEXT" Type="nvarchar" MaxLength="140" />
+          <Property Name="BANKCENTRALBANKPURPOSECODE" Type="nvarchar" MaxLength="10" />
+          <Property Name="PRINTMODULETYPE" Type="int" />
+          <Property Name="CITY" Type="nvarchar" MaxLength="60" />
+          <Property Name="STREET" Type="nvarchar" MaxLength="250" />
+          <Property Name="PAGER" Type="nvarchar" MaxLength="20" />
+          <Property Name="SMS" Type="nvarchar" MaxLength="80" />
+          <Property Name="REFZIPCODE" Type="int" />
+          <Property Name="PBACUSTGROUPID" Type="nvarchar" MaxLength="10" />
+          <Property Name="DATAAREAID" Type="nvarchar" MaxLength="4" Nullable="false" />
+          <Property Name="VATNUM" Type="nvarchar" MaxLength="20" />
+          <Property Name="TAXGROUP" Type="nvarchar" MaxLength="20" />
+          <Property Name="TAXLICENSENUM" Type="nvarchar" MaxLength="20" />
+          <Property Name="FORECASTDMPINCLUDE" Type="tinyint" />
+          <Property Name="LINEDISC" Type="nvarchar" MaxLength="20" />
+          <Property Name="SALESGROUP" Type="nvarchar" MaxLength="20" />
+          <Property Name="PRICEGROUP" Type="nvarchar" MaxLength="20" />
+          <Property Name="MULTILINEDISC" Type="nvarchar" MaxLength="20" />
+          <Property Name="ENDDISC" Type="nvarchar" MaxLength="20" />
+          <Property Name="MARKUPGROUP" Type="nvarchar" MaxLength="20" />
+          <Property Name="COMMISSIONGROUP" Type="nvarchar" MaxLength="20" />
+          <Property Name="DEL_QUOTATIONCOPIES" Type="int" />
+          <Property Name="DEL_QUOTATIONORIGINALS" Type="int" />
+          <Property Name="DEL_CONFIRMATIONORIGINALS" Type="int" />
+          <Property Name="DEL_INVOICECOPIES" Type="int" />
+          <Property Name="DEL_INVOICEORIGINALS" Type="int" />
+          <Property Name="DEL_PACKINGSLIPCOPIES" Type="int" />
+          <Property Name="DEL_PACKINGSLIPORIGINALS" Type="int" />
+          <Property Name="DEL_CONFIRMATIONCOPIES" Type="int" />
+          <Property Name="SUPPITEMGROUPID" Type="nvarchar" MaxLength="10" />
+          <Property Name="PACKMATERIALFEELICENSENUM" Type="nvarchar" MaxLength="20" />
+          <Property Name="ORGID" Type="nvarchar" MaxLength="10" />
+          <Property Name="USEPURCHREQUEST" Type="tinyint" />
+          <Property Name="TAXOFFICE" Type="nvarchar" MaxLength="20" />
+          <Property Name="NONCHARGABLEACCOUNT" Type="tinyint" />
+          <Property Name="ADDRESSFORMAT" Type="int" />
+          <Property Name="FIRSTNAME" Type="nvarchar" MaxLength="31" />
+          <Property Name="MIDDLENAME" Type="nvarchar" MaxLength="15" />
+          <Property Name="LASTNAME" Type="nvarchar" MaxLength="20" />
+          <Property Name="NAMEPREFIX" Type="nvarchar" MaxLength="8" />
+          <Property Name="NAMESUFFIX" Type="nvarchar" MaxLength="8" />
+          <Property Name="LOCALLYSAVED" Type="tinyint" Nullable="false" />
+          <Property Name="LOYALTYCUSTOMER" Type="tinyint" />
+          <Property Name="GENDER" Type="int" />
+          <Property Name="DATEOFBIRTH" Type="datetime" />
+        </EntityType>
+        <EntityType Name="RBOCUSTTABLE">
+          <Key>
+            <PropertyRef Name="ACCOUNTNUM" />
+            <PropertyRef Name="DATAAREAID" />
+          </Key>
+          <Property Name="ACCOUNTNUM" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="OTHERTENDERINFINALIZING" Type="tinyint" />
+          <Property Name="POSTASSHIPMENT" Type="tinyint" />
+          <Property Name="DATAAREAID" Type="nvarchar" MaxLength="4" Nullable="false" />
+          <Property Name="USEORDERNUMBERREFERENCE" Type="tinyint" />
+          <Property Name="RECEIPTOPTION" Type="int" />
+          <Property Name="RECEIPTEMAIL" Type="nvarchar" MaxLength="80" />
+          <Property Name="NONCHARGABLEACCOUNT" Type="tinyint" />
+          <Property Name="REQUIRESAPPROVAL" Type="tinyint" />
+        </EntityType>
+        <EntityType Name="RBOINFOCODETABLE">
+          <Key>
+            <PropertyRef Name="INFOCODEID" />
+            <PropertyRef Name="DATAAREAID" />
+          </Key>
+          <Property Name="INFOCODEID" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="DESCRIPTION" Type="nvarchar" MaxLength="60" />
+          <Property Name="PROMPT" Type="nvarchar" MaxLength="30" />
+          <Property Name="ONCEPERTRANSACTION" Type="tinyint" />
+          <Property Name="VALUEISAMOUNTORQUANTITY" Type="tinyint" />
+          <Property Name="PRINTPROMPTONRECEIPT" Type="tinyint" />
+          <Property Name="PRINTINPUTONRECEIPT" Type="tinyint" />
+          <Property Name="PRINTINPUTNAMEONRECEIPT" Type="tinyint" />
+          <Property Name="INPUTTYPE" Type="int" />
+          <Property Name="MINIMUMVALUE" Type="numeric" Precision="28" Scale="12" />
+          <Property Name="MAXIMUMVALUE" Type="numeric" Precision="28" Scale="12" />
+          <Property Name="MINIMUMLENGTH" Type="int" />
+          <Property Name="MAXIMUMLENGTH" Type="int" />
+          <Property Name="INPUTREQUIRED" Type="tinyint" />
+          <Property Name="STD1INVALUE" Type="tinyint" />
+          <Property Name="LINKEDINFOCODEID" Type="nvarchar" MaxLength="20" />
+          <Property Name="RANDOMFACTOR" Type="numeric" Precision="28" Scale="12" />
+          <Property Name="RANDOMCOUNTER" Type="numeric" Precision="28" Scale="12" />
+          <Property Name="DATATYPEID" Type="nvarchar" MaxLength="20" />
+          <Property Name="MODIFIEDDATE" Type="datetime" />
+          <Property Name="MODIFIEDTIME" Type="int" />
+          <Property Name="MODIFIEDBY" Type="nvarchar" MaxLength="5" />
+          <Property Name="DATAAREAID" Type="nvarchar" MaxLength="4" Nullable="false" />
+          <Property Name="ADDITIONALCHECK" Type="int" />
+          <Property Name="USAGECATEGORY" Type="int" />
+          <Property Name="DISPLAYOPTION" Type="int" />
+          <Property Name="LINKITEMLINESTOTRIGGERLINE" Type="tinyint" />
+          <Property Name="MULTIPLESELECTION" Type="tinyint" />
+          <Property Name="TRIGGERING" Type="tinyint" />
+          <Property Name="MINSELECTION" Type="int" />
+          <Property Name="MAXSELECTION" Type="int" />
+          <Property Name="CREATEINFOCODETRANSENTRIES" Type="tinyint" />
+          <Property Name="EXPLANATORYHEADERTEXT" Type="nvarchar" MaxLength="30" />
+          <Property Name="OKPRESSEDACTION" Type="int" />
+        </EntityType>
+        <EntityType Name="RBOINFOCODETABLESPECIFIC">
+          <Key>
+            <PropertyRef Name="REFRELATION" />
+            <PropertyRef Name="INFOCODEID" />
+            <PropertyRef Name="REFRELATION2" />
+            <PropertyRef Name="REFRELATION3" />
+            <PropertyRef Name="REFTABLEID" />
+            <PropertyRef Name="DATAAREAID" />
+          </Key>
+          <Property Name="REFRELATION" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="SEQUENCE" Type="int" />
+          <Property Name="INFOCODEID" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="INPUTREQUIRED" Type="tinyint" />
+          <Property Name="WHENREQUIRED" Type="int" />
+          <Property Name="REFRELATION2" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="REFRELATION3" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="REFTABLEID" Type="int" Nullable="false" />
+          <Property Name="DATAAREAID" Type="nvarchar" MaxLength="4" Nullable="false" />
+          <Property Name="TRIGGERING" Type="tinyint" />
+          <Property Name="UNITOFMEASURE" Type="nvarchar" MaxLength="20" />
+          <Property Name="SALESTYPEFILTER" Type="nvarchar" MaxLength="250" />
+          <Property Name="USAGECATEGORY" Type="int" />
+        </EntityType>
+        <EntityType Name="RBOINFORMATIONSUBCODETABLE">
+          <Key>
+            <PropertyRef Name="INFOCODEID" />
+            <PropertyRef Name="SUBCODEID" />
+            <PropertyRef Name="DATAAREAID" />
+          </Key>
+          <Property Name="INFOCODEID" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="SUBCODEID" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="DESCRIPTION" Type="nvarchar" MaxLength="60" />
+          <Property Name="TRIGGERFUNCTION" Type="int" />
+          <Property Name="TRIGGERCODE" Type="nvarchar" MaxLength="20" />
+          <Property Name="NEWSALESLINE" Type="tinyint" />
+          <Property Name="PRICETYPE" Type="int" />
+          <Property Name="AMOUNTPERCENT" Type="numeric" Precision="28" Scale="12" />
+          <Property Name="DATAAREAID" Type="nvarchar" MaxLength="4" Nullable="false" />
+          <Property Name="USAGECATEGORY" Type="int" />
+          <Property Name="VARIANTCODE" Type="nvarchar" MaxLength="20" />
+          <Property Name="VARIANTNEEDED" Type="tinyint" />
+          <Property Name="QTYLINKEDTOTRIGGERLINE" Type="tinyint" />
+          <Property Name="PRICEHANDLING" Type="int" />
+          <Property Name="LINKEDINFOCODE" Type="nvarchar" MaxLength="20" />
+          <Property Name="UNITOFMEASURE" Type="nvarchar" MaxLength="20" />
+          <Property Name="QTYPERUNITOFMEASURE" Type="numeric" Precision="28" Scale="12" />
+          <Property Name="INFOCODEPROMPT" Type="nvarchar" MaxLength="30" />
+          <Property Name="MAXSELECTION" Type="int" />
+          <Property Name="SERIALLOTNEEDED" Type="tinyint" />
+        </EntityType>
+        <EntityType Name="RBOSTAFFTABLE">
+          <Key>
+            <PropertyRef Name="STAFFID" />
+            <PropertyRef Name="DATAAREAID" />
+          </Key>
+          <Property Name="STAFFID" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="NAME" Type="nvarchar" MaxLength="60" />
+          <Property Name="STOREID" Type="nvarchar" MaxLength="20" />
+          <Property Name="PASSWORD" Type="nvarchar" MaxLength="20" />
+          <Property Name="CHANGEPASSWORD" Type="tinyint" />
+          <Property Name="ALLOWTRANSACTIONVOIDING" Type="tinyint" />
+          <Property Name="MANAGERPRIVILEGES" Type="tinyint" />
+          <Property Name="ALLOWXREPORTPRINTING" Type="tinyint" />
+          <Property Name="ALLOWTENDERDECLARATION" Type="tinyint" />
+          <Property Name="ALLOWFLOATINGDECLARATION" Type="tinyint" />
+          <Property Name="PRICEOVERRIDE" Type="int" />
+          <Property Name="MAXDISCOUNTPCT" Type="numeric" Precision="28" Scale="12" />
+          <Property Name="ALLOWCHANGENOVOID" Type="tinyint" />
+          <Property Name="ALLOWTRANSACTIONSUSPENSION" Type="tinyint" />
+          <Property Name="ALLOWOPENDRAWERONLY" Type="tinyint" />
+          <Property Name="FIRSTNAME" Type="nvarchar" MaxLength="30" />
+          <Property Name="LASTNAME" Type="nvarchar" MaxLength="30" />
+          <Property Name="EMPLOYMENTTYPE" Type="int" />
+          <Property Name="ADDRESS" Type="nvarchar" MaxLength="250" />
+          <Property Name="STREET" Type="nvarchar" MaxLength="250" />
+          <Property Name="ZIPCODE" Type="nvarchar" MaxLength="10" />
+          <Property Name="CITY" Type="nvarchar" MaxLength="30" />
+          <Property Name="COUNTY" Type="nvarchar" MaxLength="10" />
+          <Property Name="STATE" Type="nvarchar" MaxLength="30" />
+          <Property Name="COUNTRY" Type="nvarchar" MaxLength="10" />
+          <Property Name="DEL_PHONELOCAL" Type="nvarchar" MaxLength="10" />
+          <Property Name="PHONEWORK" Type="nvarchar" MaxLength="20" />
+          <Property Name="BLOCKED" Type="tinyint" />
+          <Property Name="BLOCKINGDATE" Type="datetime" />
+          <Property Name="LEFTHANDED" Type="tinyint" />
+          <Property Name="PERMISSIONGROUPID" Type="nvarchar" MaxLength="20" />
+          <Property Name="ZREPORTID" Type="nvarchar" MaxLength="20" />
+          <Property Name="NAMEONRECEIPT" Type="nvarchar" MaxLength="15" />
+          <Property Name="PAYROLLNUMBER" Type="nvarchar" MaxLength="20" />
+          <Property Name="CONTINUEONTSERRORS" Type="tinyint" />
+          <Property Name="PHONEHOME" Type="nvarchar" MaxLength="20" />
+          <Property Name="MAXTOTALDISCOUNTPCT" Type="numeric" Precision="28" Scale="12" />
+          <Property Name="LAYOUTID" Type="nvarchar" MaxLength="20" />
+          <Property Name="MODIFIEDDATE" Type="datetime" />
+          <Property Name="MODIFIEDTIME" Type="int" />
+          <Property Name="MODIFIEDBY" Type="nvarchar" MaxLength="5" />
+          <Property Name="DATAAREAID" Type="nvarchar" MaxLength="4" Nullable="false" />
+          <Property Name="VISUALPROFILE" Type="nvarchar" MaxLength="50" />
+          <Property Name="OPERATORCULTURE" Type="nvarchar" MaxLength="20" />
+          <Property Name="MAXLINEDISCOUNTAMOUNT" Type="numeric" Precision="28" Scale="12" Nullable="false" />
+          <Property Name="MAXTOTALDISCOUNTAMOUNT" Type="numeric" Precision="28" Scale="12" Nullable="false" />
+          <Property Name="MAXLINERETURNAMOUNT" Type="numeric" Precision="28" Scale="12" Nullable="false" />
+          <Property Name="MAXTOTALRETURNAMOUNT" Type="numeric" Precision="28" Scale="12" Nullable="false" />
+          <Property Name="KEYBOARDCODE" Type="nvarchar" MaxLength="20" />
+          <Property Name="LAYOUTNAME" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="RBOSTORETABLE">
+          <Key>
+            <PropertyRef Name="STOREID" />
+            <PropertyRef Name="DATAAREAID" />
+          </Key>
+          <Property Name="STOREID" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="NAME" Type="nvarchar" MaxLength="60" />
+          <Property Name="ADDRESS" Type="nvarchar" MaxLength="250" />
+          <Property Name="STREET" Type="nvarchar" MaxLength="250" />
+          <Property Name="ZIPCODE" Type="nvarchar" MaxLength="10" />
+          <Property Name="CITY" Type="nvarchar" MaxLength="60" />
+          <Property Name="COUNTY" Type="nvarchar" MaxLength="10" />
+          <Property Name="STATE" Type="nvarchar" MaxLength="30" />
+          <Property Name="COUNTRY" Type="nvarchar" MaxLength="10" />
+          <Property Name="PHONE" Type="nvarchar" MaxLength="20" />
+          <Property Name="MANAGERID" Type="nvarchar" MaxLength="20" />
+          <Property Name="OPENFROM" Type="int" />
+          <Property Name="OPENTO" Type="int" />
+          <Property Name="DIMENSION" Type="nvarchar" MaxLength="20" />
+          <Property Name="DIMENSION2_" Type="nvarchar" MaxLength="20" />
+          <Property Name="DIMENSION3_" Type="nvarchar" MaxLength="20" />
+          <Property Name="INVENTLOCATION" Type="nvarchar" MaxLength="20" />
+          <Property Name="STATEMENTMETHOD" Type="int" />
+          <Property Name="ONESTATEMENTPERDAY" Type="tinyint" />
+          <Property Name="CURRENCY" Type="nvarchar" MaxLength="3" />
+          <Property Name="CLOSINGMETHOD" Type="int" />
+          <Property Name="ROUNDINGACCOUNT" Type="nvarchar" MaxLength="20" />
+          <Property Name="MAXIMUMPOSTINGDIFFERENCE" Type="numeric" Precision="28" Scale="12" />
+          <Property Name="MAXROUNDINGAMOUNT" Type="numeric" Precision="28" Scale="12" />
+          <Property Name="MAXSHIFTDIFFERENCEAMOUNT" Type="numeric" Precision="28" Scale="12" />
+          <Property Name="MAXTRANSACTIONDIFFERENCEAMOUNT" Type="numeric" Precision="28" Scale="12" />
+          <Property Name="STATEMENTNUMSEQ" Type="nvarchar" MaxLength="20" />
+          <Property Name="FUNCTIONALITYPROFILE" Type="nvarchar" MaxLength="20" />
+          <Property Name="CREATELABELSFORZEROPRICE" Type="tinyint" />
+          <Property Name="TERMINALNUMSEQ" Type="nvarchar" MaxLength="20" />
+          <Property Name="STAFFNUMSEQ" Type="nvarchar" MaxLength="20" />
+          <Property Name="ITEMNUMSEQ" Type="nvarchar" MaxLength="20" />
+          <Property Name="DISCOUNTOFFERNUMSEQ" Type="nvarchar" MaxLength="20" />
+          <Property Name="MIXANDMATCHNUMSEQ" Type="nvarchar" MaxLength="20" />
+          <Property Name="MULTIBUYDISCOUNTNUMSEQ" Type="nvarchar" MaxLength="20" />
+          <Property Name="INVENTORYLOOKUP" Type="tinyint" />
+          <Property Name="REMOVEADDTENDER" Type="nvarchar" MaxLength="20" />
+          <Property Name="TENDERDECLARATIONCALCULATION" Type="int" />
+          <Property Name="MAXIMUMTEXTLENGTHONRECEIPT" Type="int" />
+          <Property Name="NUMBEROFTOPORBOTTOMLINES" Type="int" />
+          <Property Name="ITEMIDONRECEIPT" Type="int" />
+          <Property Name="SERVICECHARGEPCT" Type="numeric" Precision="28" Scale="12" />
+          <Property Name="INCOMEEXEPENSEACCOUNT" Type="nvarchar" MaxLength="20" />
+          <Property Name="SERVICECHARGEPROMPT" Type="nvarchar" MaxLength="30" />
+          <Property Name="STATEMENTVOUCHERNUMSEQ" Type="nvarchar" MaxLength="10" />
+          <Property Name="TAXGROUP" Type="nvarchar" MaxLength="20" />
+          <Property Name="REPLICATIONCOUNTER" Type="int" />
+          <Property Name="ROUNDINGTAXACCOUNT" Type="nvarchar" MaxLength="20" />
+          <Property Name="MAXROUNDINGTAXAMOUNT" Type="numeric" Precision="28" Scale="12" />
+          <Property Name="CULTURENAME" Type="nvarchar" MaxLength="20" />
+          <Property Name="LAYOUTID" Type="nvarchar" MaxLength="20" />
+          <Property Name="MODIFIEDDATE" Type="datetime" />
+          <Property Name="MODIFIEDTIME" Type="int" />
+          <Property Name="MODIFIEDBY" Type="nvarchar" MaxLength="5" />
+          <Property Name="DATAAREAID" Type="nvarchar" MaxLength="4" Nullable="false" />
+          <Property Name="SQLSERVERNAME" Type="nvarchar" MaxLength="50" />
+          <Property Name="DATABASENAME" Type="nvarchar" MaxLength="50" />
+          <Property Name="USERNAME" Type="nvarchar" MaxLength="50" />
+          <Property Name="PASSWORD" Type="nvarchar" MaxLength="50" />
+          <Property Name="DEFAULTCUSTACCOUNT" Type="nvarchar" MaxLength="20" />
+          <Property Name="USEDEFAULTCUSTACCOUNT" Type="tinyint" />
+          <Property Name="WINDOWSAUTHENTICATION" Type="tinyint" />
+          <Property Name="HIDETRAININGMODE" Type="tinyint" />
+          <Property Name="ADDRESSFORMAT" Type="int" />
+          <Property Name="TAXOVERRIDEGROUP" Type="nvarchar" MaxLength="25" />
+          <Property Name="USEDESTINATIONBASEDTAX" Type="int" />
+          <Property Name="USECUSTOMERBASEDTAX" Type="int" />
+          <Property Name="TAXIDENTIFICATIONNUMBER" Type="nvarchar" MaxLength="25" />
+          <Property Name="KEYEDINPRICECONTAINSTAX" Type="tinyint" />
+          <Property Name="CALCDISCFROM" Type="int" />
+          <Property Name="DISPLAYDISCOUNTINCLTAX" Type="tinyint" />
+          <Property Name="USETAXGROUPFROM" Type="int" />
+          <Property Name="SUSPENDALLOWEOD" Type="int" Nullable="false" />
+          <Property Name="StorePriceSetting" Type="int" />
+          <Property Name="TRANSACTIONSERVICEPROFILE" Type="nvarchar" MaxLength="20" />
+          <Property Name="STYLEPROFILE" Type="nvarchar" MaxLength="20" />
+          <Property Name="KEYBOARDCODE" Type="nvarchar" MaxLength="20" />
+          <Property Name="LAYOUTNAME" Type="nvarchar" MaxLength="50" />
+          <Property Name="KITCHENMANAGERPROFILEID" Type="uniqueidentifier" />
+          <Property Name="USETAXROUNDING" Type="tinyint" />
+          <Property Name="DISPLAYBALANCEWITHTAX" Type="tinyint" />
+          <Property Name="RECEIPTPROFILEID" Type="uniqueidentifier" />
+          <Property Name="RECEIPTLOGO" Type="varbinary(max)" />
+          <Property Name="RECEIPTLOGOWIDTH" Type="int" />
+          <Property Name="FORMINFOFIELD1" Type="nvarchar" MaxLength="60" />
+          <Property Name="FORMINFOFIELD2" Type="nvarchar" MaxLength="60" />
+          <Property Name="FORMINFOFIELD3" Type="nvarchar" MaxLength="60" />
+          <Property Name="FORMINFOFIELD4" Type="nvarchar" MaxLength="60" />
+          <Property Name="BARCODESYMBOLOGY" Type="int" />
+          <Property Name="OPERATIONAUDITSETTING" Type="int" />
+          <Property Name="STARTAMOUNT" Type="numeric" Precision="28" Scale="12" />
+          <Property Name="RETURNSPRINTEDTWICE" Type="tinyint" />
+          <Property Name="TENDERRECEIPTSAREREPRINTED" Type="tinyint" />
+        </EntityType>
+        <EntityType Name="RBOTRANSACTIONINFOCODETRANS">
+          <Key>
+            <PropertyRef Name="TRANSACTIONID" />
+            <PropertyRef Name="LINENUM" />
+            <PropertyRef Name="TYPE" />
+            <PropertyRef Name="INFOCODEID" />
+            <PropertyRef Name="STORE" />
+            <PropertyRef Name="TERMINAL" />
+            <PropertyRef Name="DATAAREAID" />
+          </Key>
+          <Property Name="TRANSACTIONID" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="LINENUM" Type="numeric" Precision="28" Scale="12" Nullable="false" />
+          <Property Name="TYPE" Type="int" Nullable="false" />
+          <Property Name="INFOCODEID" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="INFORMATION" Type="nvarchar" MaxLength="512" />
+          <Property Name="INFOAMOUNT" Type="numeric" Precision="28" Scale="12" />
+          <Property Name="TRANSDATE" Type="datetime" />
+          <Property Name="TRANSTIME" Type="int" />
+          <Property Name="STORE" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="TERMINAL" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="STAFF" Type="nvarchar" MaxLength="20" />
+          <Property Name="ITEMTENDER" Type="nvarchar" MaxLength="20" />
+          <Property Name="AMOUNT" Type="numeric" Precision="28" Scale="12" />
+          <Property Name="INPUTTYPE" Type="int" />
+          <Property Name="SUBINFOCODEID" Type="nvarchar" MaxLength="20" />
+          <Property Name="STATEMENTID" Type="nvarchar" MaxLength="20" />
+          <Property Name="STATEMENTCODE" Type="nvarchar" MaxLength="20" />
+          <Property Name="SOURCECODE" Type="nvarchar" MaxLength="20" />
+          <Property Name="COUNTER" Type="int" />
+          <Property Name="REPLICATED" Type="tinyint" />
+          <Property Name="DATAAREAID" Type="nvarchar" MaxLength="4" Nullable="false" />
+          <Property Name="SOURCECODE2" Type="nvarchar" MaxLength="20" />
+          <Property Name="SOURCECODE3" Type="nvarchar" MaxLength="20" />
+          <Property Name="REPLICATIONCOUNTER" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PROMPT" Type="nvarchar" MaxLength="255" />
+          <Property Name="PRINTPROMPTONRECEIPT" Type="tinyint" />
+          <Property Name="PRINTINPUTONRECEIPT" Type="tinyint" />
+          <Property Name="PRINTINPUTNAMEONRECEIPT" Type="tinyint" />
+          <Property Name="LINEID" Type="numeric" Precision="28" Scale="12" />
+        </EntityType>
+        <EntityType Name="RBOTRANSACTIONPAYMENTTRANS">
+          <Key>
+            <PropertyRef Name="TRANSACTIONID" />
+            <PropertyRef Name="LINENUM" />
+            <PropertyRef Name="STORE" />
+            <PropertyRef Name="TERMINAL" />
+            <PropertyRef Name="DATAAREAID" />
+          </Key>
+          <Property Name="TRANSACTIONID" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="LINENUM" Type="numeric" Precision="28" Scale="12" Nullable="false" />
+          <Property Name="RECEIPTID" Type="nvarchar" MaxLength="20" />
+          <Property Name="STATEMENTCODE" Type="nvarchar" MaxLength="20" />
+          <Property Name="CARDTYPEID" Type="nvarchar" MaxLength="20" />
+          <Property Name="EXCHRATE" Type="numeric" Precision="28" Scale="12" />
+          <Property Name="TENDERTYPE" Type="nvarchar" MaxLength="20" />
+          <Property Name="AMOUNTTENDERED" Type="numeric" Precision="28" Scale="12" />
+          <Property Name="CURRENCY" Type="nvarchar" MaxLength="3" />
+          <Property Name="AMOUNTCUR" Type="numeric" Precision="28" Scale="12" />
+          <Property Name="CARDORACCOUNT" Type="nvarchar" MaxLength="30" />
+          <Property Name="TRANSDATE" Type="datetime" />
+          <Property Name="TRANSTIME" Type="int" />
+          <Property Name="SHIFT" Type="nvarchar" MaxLength="20" />
+          <Property Name="SHIFTDATE" Type="datetime" />
+          <Property Name="STAFF" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="STORE" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="TERMINAL" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="TRANSACTIONSTATUS" Type="int" />
+          <Property Name="STATEMENTID" Type="nvarchar" MaxLength="20" />
+          <Property Name="MANAGERKEYLIVE" Type="tinyint" />
+          <Property Name="CHANGELINE" Type="tinyint" />
+          <Property Name="COUNTER" Type="int" />
+          <Property Name="REPLICATIONCOUNTER" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MESSAGENUM" Type="int" />
+          <Property Name="REPLICATED" Type="tinyint" />
+          <Property Name="QTY" Type="numeric" Precision="28" Scale="12" />
+          <Property Name="ZREPORTID" Type="nvarchar" MaxLength="20" />
+          <Property Name="MODIFIEDDATE" Type="datetime" />
+          <Property Name="DATAAREAID" Type="nvarchar" MaxLength="4" Nullable="false" />
+          <Property Name="MARKUPAMOUNT" Type="numeric" Precision="28" Scale="0" />
+          <Property Name="AUTHENTICATIONCODE" Type="nvarchar" MaxLength="20" />
+          <Property Name="GIFTORCREDITID" Type="nvarchar" MaxLength="20" />
+          <Property Name="BATCHID" Type="nvarchar" MaxLength="20" />
+          <Property Name="EFTAUTHENTICATIONCODE" Type="nvarchar" MaxLength="20" />
+          <Property Name="GIFTCARDID" Type="nvarchar" MaxLength="30" />
+          <Property Name="CREDITVOUCHERID" Type="nvarchar" MaxLength="30" />
+          <Property Name="LOYALTYCARDID" Type="nvarchar" MaxLength="30" />
+          <Property Name="EXCHRATEMST" Type="numeric" Precision="28" Scale="12" />
+          <Property Name="AMOUNTMST" Type="numeric" Precision="28" Scale="12" />
+          <Property Name="LOYALTYPOINTS" Type="numeric" Precision="28" Scale="12" />
+          <Property Name="COMMENT" Type="nvarchar" MaxLength="255" />
+          <Property Name="CARDNUMBERHIDDEN" Type="tinyint" />
+          <Property Name="CARDNAME" Type="nvarchar" MaxLength="30" />
+          <Property Name="CARDISSUER" Type="nvarchar" MaxLength="30" />
+          <Property Name="EXPIRYDATE" Type="nvarchar" MaxLength="10" />
+          <Property Name="CARDHOLDERNAME" Type="nvarchar" MaxLength="50" />
+          <Property Name="CARDENTRYTYPE" Type="int" />
+          <Property Name="CARDBIN" Type="nvarchar" MaxLength="50" />
+          <Property Name="MERCHANTID" Type="nvarchar" MaxLength="50" />
+          <Property Name="AUTHCODE" Type="nvarchar" MaxLength="50" />
+          <Property Name="MESSAGE" Type="nvarchar" MaxLength="255" />
+          <Property Name="RESPONSECODE" Type="nvarchar" MaxLength="50" />
+          <Property Name="DRIVERID" Type="nvarchar" MaxLength="50" />
+          <Property Name="VEHICLEID" Type="nvarchar" MaxLength="50" />
+          <Property Name="ODOMETERREADING" Type="int" />
+          <Property Name="DESCRIPTION" Type="nvarchar" MaxLength="60" />
+          <Property Name="CHECKID" Type="nvarchar" MaxLength="60" Nullable="false" />
+        </EntityType>
+        <EntityType Name="RBOTRANSACTIONSALESTRANS">
+          <Key>
+            <PropertyRef Name="TRANSACTIONID" />
+            <PropertyRef Name="LINENUM" />
+            <PropertyRef Name="STORE" />
+            <PropertyRef Name="TERMINALID" />
+            <PropertyRef Name="DATAAREAID" />
+          </Key>
+          <Property Name="TRANSACTIONID" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="LINENUM" Type="numeric" Precision="28" Scale="12" Nullable="false" />
+          <Property Name="RECEIPTID" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="BARCODE" Type="nvarchar" MaxLength="80" />
+          <Property Name="ITEMID" Type="nvarchar" MaxLength="20" />
+          <Property Name="ITEMDEPARTMENTID" Type="nvarchar" MaxLength="20" />
+          <Property Name="ITEMGROUPID" Type="nvarchar" MaxLength="20" />
+          <Property Name="PRICE" Type="numeric" Precision="28" Scale="12" />
+          <Property Name="NETPRICE" Type="numeric" Precision="28" Scale="12" />
+          <Property Name="QTY" Type="numeric" Precision="28" Scale="12" />
+          <Property Name="TAXGROUP" Type="nvarchar" MaxLength="20" />
+          <Property Name="TRANSACTIONSTATUS" Type="int" />
+          <Property Name="DISCAMOUNT" Type="numeric" Precision="28" Scale="12" />
+          <Property Name="COSTAMOUNT" Type="numeric" Precision="28" Scale="12" />
+          <Property Name="TRANSDATE" Type="datetime" />
+          <Property Name="TRANSTIME" Type="int" />
+          <Property Name="SHIFT" Type="nvarchar" MaxLength="20" />
+          <Property Name="SHIFTDATE" Type="datetime" />
+          <Property Name="NETAMOUNT" Type="numeric" Precision="28" Scale="12" />
+          <Property Name="DISCOFFERID" Type="nvarchar" MaxLength="20" />
+          <Property Name="DISCGROUPID" Type="nvarchar" MaxLength="20" />
+          <Property Name="STDNETPRICE" Type="numeric" Precision="28" Scale="12" />
+          <Property Name="DISCAMOUNTFROMSTDPRICE" Type="numeric" Precision="28" Scale="12" />
+          <Property Name="STATEMENTID" Type="nvarchar" MaxLength="20" />
+          <Property Name="CUSTACCOUNT" Type="nvarchar" MaxLength="20" />
+          <Property Name="SECTION" Type="nvarchar" MaxLength="20" />
+          <Property Name="SHELF" Type="nvarchar" MaxLength="20" />
+          <Property Name="STATEMENTCODE" Type="nvarchar" MaxLength="20" />
+          <Property Name="TRANSACTIONCODE" Type="int" />
+          <Property Name="STORE" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="ITEMIDSCANNED" Type="tinyint" />
+          <Property Name="KEYBOARDITEMENTRY" Type="tinyint" />
+          <Property Name="PRICEINBARCODE" Type="tinyint" />
+          <Property Name="PRICECHANGE" Type="tinyint" />
+          <Property Name="WEIGHTMANUALLYENTERED" Type="tinyint" />
+          <Property Name="LINEWASDISCOUNTED" Type="tinyint" />
+          <Property Name="SCALEITEM" Type="tinyint" />
+          <Property Name="WEIGHTITEM" Type="tinyint" />
+          <Property Name="RETURNNOSALE" Type="tinyint" />
+          <Property Name="ITEMCORRECTEDLINE" Type="tinyint" />
+          <Property Name="SALESTYPE" Type="int" />
+          <Property Name="LINKEDITEMNOTORIGINAL" Type="tinyint" />
+          <Property Name="ORIGINALOFLINKEDITEMLIST" Type="numeric" Precision="28" Scale="12" />
+          <Property Name="TERMINALID" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="STAFF" Type="nvarchar" MaxLength="20" />
+          <Property Name="ITEMPOSTINGGROUP" Type="nvarchar" MaxLength="20" />
+          <Property Name="TOTALROUNDEDAMOUNT" Type="numeric" Precision="28" Scale="12" />
+          <Property Name="COUNTER" Type="int" />
+          <Property Name="REPLICATIONCOUNTER" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="VARIANTID" Type="nvarchar" MaxLength="20" />
+          <Property Name="LINEDSCAMOUNT" Type="numeric" Precision="28" Scale="12" />
+          <Property Name="REPLICATED" Type="tinyint" />
+          <Property Name="CUSTDISCAMOUNT" Type="numeric" Precision="28" Scale="12" />
+          <Property Name="INFOCODEDISCAMOUNT" Type="numeric" Precision="28" Scale="12" />
+          <Property Name="CUSTINVOICEDISCAMOUNT" Type="numeric" Precision="28" Scale="12" />
+          <Property Name="UNIT" Type="nvarchar" MaxLength="20" />
+          <Property Name="UNITQTY" Type="numeric" Precision="28" Scale="12" />
+          <Property Name="UNITPRICE" Type="numeric" Precision="28" Scale="12" />
+          <Property Name="TAXAMOUNT" Type="numeric" Precision="28" Scale="12" />
+          <Property Name="TOTALDISCAMOUNT" Type="numeric" Precision="28" Scale="12" />
+          <Property Name="TOTALDISCPCT" Type="numeric" Precision="28" Scale="12" />
+          <Property Name="TOTALDISCINFOCODELINENUM" Type="numeric" Precision="28" Scale="12" />
+          <Property Name="PERIODICDISCTYPE" Type="int" />
+          <Property Name="PERIODICDISCAMOUNT" Type="numeric" Precision="28" Scale="12" />
+          <Property Name="DISCOUNTAMOUNTFORPRINTING" Type="numeric" Precision="28" Scale="12" />
+          <Property Name="STAFFID" Type="nvarchar" MaxLength="20" />
+          <Property Name="PERIODICDISCGROUP" Type="nvarchar" MaxLength="20" />
+          <Property Name="INVENTTRANSID" Type="nvarchar" MaxLength="20" />
+          <Property Name="INVENTDIMID" Type="nvarchar" MaxLength="20" />
+          <Property Name="PURCHID" Type="nvarchar" MaxLength="20" />
+          <Property Name="FILELOGID" Type="nvarchar" MaxLength="20" />
+          <Property Name="MODIFIEDDATE" Type="datetime" />
+          <Property Name="MODIFIEDTIME" Type="int" />
+          <Property Name="MODIFIEDBY" Type="nvarchar" MaxLength="5" />
+          <Property Name="MODIFIEDTRANSACTIONID" Type="int" />
+          <Property Name="CREATEDDATE" Type="datetime" />
+          <Property Name="CREATEDTIME" Type="int" />
+          <Property Name="CREATEDBY" Type="nvarchar" MaxLength="20" />
+          <Property Name="CREATEDTRANSACTIONID" Type="int" />
+          <Property Name="DATAAREAID" Type="nvarchar" MaxLength="4" Nullable="false" />
+          <Property Name="PUMPID" Type="int" />
+          <Property Name="PRESCRIPTIONID" Type="nvarchar" MaxLength="20" />
+          <Property Name="COMMENT" Type="nvarchar(max)" />
+          <Property Name="LINEDISCPCT" Type="numeric" Precision="28" Scale="12" />
+          <Property Name="WHOLEDISCAMOUNTWITHTAX" Type="numeric" Precision="28" Scale="12" />
+          <Property Name="TOTALDISCAMOUNTWITHTAX" Type="numeric" Precision="28" Scale="12" />
+          <Property Name="LINEDISCAMOUNTWITHTAX" Type="numeric" Precision="28" Scale="12" />
+          <Property Name="PERIODICDISCAMOUNTWITHTAX" Type="numeric" Precision="28" Scale="12" />
+          <Property Name="INVENTBATCHID" Type="nvarchar" MaxLength="20" />
+          <Property Name="GIFTCARD" Type="tinyint" />
+          <Property Name="INVENTSERIALID" Type="nvarchar" MaxLength="20" />
+          <Property Name="RFIDTAGID" Type="nvarchar" MaxLength="24" />
+          <Property Name="RETURNTRANSACTIONID" Type="nvarchar" MaxLength="20" />
+          <Property Name="RETURNQTY" Type="numeric" Precision="28" Scale="12" />
+          <Property Name="ITEMTYPE" Type="int" />
+          <Property Name="SOURCELINENUM" Type="int" />
+          <Property Name="CREDITMEMONUMBER" Type="nvarchar" MaxLength="255" />
+          <Property Name="TAXINCLINPRICE" Type="tinyint" />
+          <Property Name="DESCRIPTION" Type="nvarchar" MaxLength="60" />
+          <Property Name="OILTAX" Type="numeric" Precision="28" Scale="12" />
+          <Property Name="RETURNLINEID" Type="numeric" Precision="28" Scale="12" />
+          <Property Name="ISINFOCODEITEM" Type="tinyint" />
+          <Property Name="INVENTBATCHEXPDATE" Type="datetime" />
+          <Property Name="TENDERRESTRICTIONID" Type="nvarchar" MaxLength="20" />
+          <Property Name="PRICEUNIT" Type="numeric" Precision="28" Scale="12" />
+          <Property Name="NETAMOUNTINCLTAX" Type="numeric" Precision="28" Scale="12" />
+          <Property Name="DOSAGETYPE" Type="nvarchar" MaxLength="255" />
+          <Property Name="DOSAGESTRENGTHUNIT" Type="nvarchar" MaxLength="255" />
+          <Property Name="DOSAGESTRENGTH" Type="numeric" Precision="28" Scale="12" />
+          <Property Name="DOSAGEUNITQUANTITY" Type="numeric" Precision="28" Scale="12" />
+          <Property Name="TAXITEMGROUP" Type="nvarchar" MaxLength="20" />
+          <Property Name="STORETAXGROUP" Type="nvarchar" MaxLength="20" />
+          <Property Name="ORIGINALTAXGROUP" Type="nvarchar" MaxLength="20" />
+          <Property Name="ORIGINALTAXITEMGROUP" Type="nvarchar" MaxLength="20" />
+          <Property Name="CURRENCY" Type="nvarchar" MaxLength="3" />
+          <Property Name="TAXEXEMPT" Type="tinyint" />
+          <Property Name="HOSPITALITYSALESTYPE" Type="nvarchar" MaxLength="20" />
+          <Property Name="ORIGINALPRICE" Type="numeric" Precision="28" Scale="12" />
+          <Property Name="ORIGINALPRICEWITHTAX" Type="numeric" Precision="28" Scale="12" />
+          <Property Name="RETURNRECEIPTID" Type="nvarchar" MaxLength="20" />
+          <Property Name="RETURNSTOREID" Type="nvarchar" MaxLength="20" />
+          <Property Name="RETURNTERMINALID" Type="nvarchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="RBOTRANSACTIONTABLE">
+          <Key>
+            <PropertyRef Name="TRANSACTIONID" />
+            <PropertyRef Name="STORE" />
+            <PropertyRef Name="TERMINAL" />
+            <PropertyRef Name="DATAAREAID" />
+          </Key>
+          <Property Name="TRANSACTIONID" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="TYPE" Type="int" />
+          <Property Name="RECEIPTID" Type="nvarchar" MaxLength="20" />
+          <Property Name="STORE" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="TERMINAL" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="STAFF" Type="nvarchar" MaxLength="20" />
+          <Property Name="TRANSDATE" Type="datetime" />
+          <Property Name="TRANSTIME" Type="int" />
+          <Property Name="SHIFT" Type="nvarchar" MaxLength="20" />
+          <Property Name="SHIFTDATE" Type="datetime" />
+          <Property Name="WRONGSHIFT" Type="int" />
+          <Property Name="INFOCODEDISCGROUP" Type="nvarchar" MaxLength="20" />
+          <Property Name="CUSTACCOUNT" Type="nvarchar" MaxLength="20" />
+          <Property Name="TRANSCODE" Type="int" />
+          <Property Name="SALESPAYMENTDIFFERENCE" Type="numeric" Precision="28" Scale="12" />
+          <Property Name="NETAMOUNT" Type="numeric" Precision="28" Scale="12" />
+          <Property Name="COSTAMOUNT" Type="numeric" Precision="28" Scale="12" />
+          <Property Name="GROSSAMOUNT" Type="numeric" Precision="28" Scale="12" />
+          <Property Name="PAYMENTAMOUNT" Type="numeric" Precision="28" Scale="12" />
+          <Property Name="DISCAMOUNT" Type="numeric" Precision="28" Scale="12" />
+          <Property Name="CUSTDISCAMOUNT" Type="numeric" Precision="28" Scale="12" />
+          <Property Name="TOTALDISCAMOUNT" Type="numeric" Precision="28" Scale="12" />
+          <Property Name="NUMBEROFITEMS" Type="numeric" Precision="28" Scale="12" />
+          <Property Name="AMOUNTTOACCOUNT" Type="numeric" Precision="28" Scale="12" />
+          <Property Name="ROUNDEDAMOUNT" Type="numeric" Precision="28" Scale="12" />
+          <Property Name="ENTRYSTATUS" Type="int" />
+          <Property Name="NUMBEROFINVOICES" Type="int" />
+          <Property Name="NUMBEROFITEMLINES" Type="numeric" Precision="28" Scale="12" />
+          <Property Name="STATEMENTCODE" Type="nvarchar" MaxLength="20" />
+          <Property Name="STATEMENTID" Type="nvarchar" MaxLength="20" />
+          <Property Name="REFUNDRECEIPTID" Type="nvarchar" MaxLength="20" />
+          <Property Name="INCOMEEXPENSEAMOUNT" Type="numeric" Precision="28" Scale="12" />
+          <Property Name="TOACCOUNT" Type="tinyint" />
+          <Property Name="NUMBEROFPAYMENTLINES" Type="int" />
+          <Property Name="SALEISRETURNSALE" Type="tinyint" />
+          <Property Name="COUNTER" Type="int" />
+          <Property Name="TIMEWHENTOTALPRESSED" Type="int" />
+          <Property Name="TIMEWHENTRANSCLOSED" Type="int" />
+          <Property Name="CURRENCY" Type="nvarchar" MaxLength="3" />
+          <Property Name="TRANSTABLEID" Type="int" />
+          <Property Name="OPENDRAWER" Type="tinyint" />
+          <Property Name="REPLICATED" Type="tinyint" />
+          <Property Name="REPLICATIONCOUNTER" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="REPLICATIONCOUNTERFROMORIGIN" Type="int" />
+          <Property Name="INCLUDEDINSTATISTICS" Type="tinyint" />
+          <Property Name="RETRIEVEDFROMRECEIPTID" Type="nvarchar" MaxLength="20" />
+          <Property Name="ZREPORTID" Type="nvarchar" MaxLength="20" />
+          <Property Name="CREATEDONPOSTERMINAL" Type="nvarchar" MaxLength="20" />
+          <Property Name="POSTASSHIPMENT" Type="tinyint" />
+          <Property Name="ITEMSPOSTED" Type="tinyint" />
+          <Property Name="MODIFIEDDATE" Type="datetime" />
+          <Property Name="MODIFIEDTIME" Type="int" />
+          <Property Name="MODIFIEDBY" Type="nvarchar" MaxLength="5" />
+          <Property Name="CREATEDDATE" Type="datetime" />
+          <Property Name="CREATEDTIME" Type="int" />
+          <Property Name="CREATEDBY" Type="nvarchar" MaxLength="20" />
+          <Property Name="DATAAREAID" Type="nvarchar" MaxLength="4" Nullable="false" />
+          <Property Name="DESCRIPTION" Type="nvarchar" MaxLength="150" />
+          <Property Name="CUSTPURCHASEORDER" Type="nvarchar" MaxLength="20" />
+          <Property Name="COMMENT" Type="nvarchar" MaxLength="60" />
+          <Property Name="INVOICECOMMENT" Type="nvarchar" MaxLength="60" />
+          <Property Name="SALESORDERAMOUNT" Type="numeric" Precision="28" Scale="12" />
+          <Property Name="SALESINVOICEAMOUNT" Type="numeric" Precision="28" Scale="12" />
+          <Property Name="RECEIPTEMAIL" Type="nvarchar" MaxLength="80" />
+          <Property Name="EXCHRATE" Type="numeric" Precision="28" Scale="12" />
+          <Property Name="MARKUPAMOUNT" Type="numeric" Precision="28" Scale="12" />
+          <Property Name="MARKUPDESCRIPTION" Type="nvarchar" MaxLength="150" />
+          <Property Name="ORGTRANSSTORE" Type="nvarchar" MaxLength="20" />
+          <Property Name="ORGTRANSTERMINAL" Type="nvarchar" MaxLength="10" />
+          <Property Name="ORGTRANSACTIONID" Type="nvarchar" MaxLength="20" />
+          <Property Name="ORGRECEIPTID" Type="nvarchar" MaxLength="20" />
+          <Property Name="OILTAX" Type="numeric" Precision="28" Scale="12" />
+          <Property Name="TAXINCLINPRICE" Type="tinyint" />
+          <Property Name="TAXEXEMPT" Type="tinyint" />
+          <Property Name="UNCONCLUDEDTRANS" Type="tinyint" />
+          <Property Name="INVENTORYUPDATED" Type="bit" Nullable="false" />
+          <Property Name="SALESSEQUENCEID" Type="nvarchar" MaxLength="20" />
+          <Property Name="BUSINESSDAY" Type="datetime" />
+          <Property Name="TRNGENERATED" Type="bit" />
+          <Property Name="BUSINESSSYSTEMDAY" Type="datetime" />
+        </EntityType>
+        <EntityType Name="RBOTRANSACTIONTAXTRANS">
+          <Key>
+            <PropertyRef Name="TRANSACTIONID" />
+            <PropertyRef Name="LINENUM" />
+            <PropertyRef Name="TAXLINENUM" />
+            <PropertyRef Name="DATAAREAID" />
+            <PropertyRef Name="TRANSHEADER" />
+            <PropertyRef Name="STORE" />
+            <PropertyRef Name="TERMINAL" />
+          </Key>
+          <Property Name="TRANSACTIONID" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="LINENUM" Type="numeric" Precision="28" Scale="12" Nullable="false" />
+          <Property Name="TAXLINENUM" Type="numeric" Precision="28" Scale="12" Nullable="false" />
+          <Property Name="DATAAREAID" Type="nvarchar" MaxLength="4" Nullable="false" />
+          <Property Name="TAXGROUP" Type="nvarchar" MaxLength="20" />
+          <Property Name="TAXCODE" Type="nvarchar" MaxLength="20" />
+          <Property Name="TAXPCT" Type="numeric" Precision="28" Scale="12" />
+          <Property Name="TAXAMOUNT" Type="numeric" Precision="28" Scale="12" />
+          <Property Name="TAXROUNDOFF" Type="numeric" Precision="28" Scale="12" />
+          <Property Name="TAXROUNDOFFTYPE" Type="int" />
+          <Property Name="PRICEWITHTAX" Type="numeric" Precision="28" Scale="12" />
+          <Property Name="TRANSHEADER" Type="tinyint" Nullable="false" />
+          <Property Name="STORE" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="TERMINAL" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="REPLICATIONCOUNTER" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="REPLICATED" Type="tinyint" />
+          <Property Name="TAXCODERECEIPTDISPLAY" Type="nvarchar" MaxLength="20" />
+          <Property Name="TAXGROUPRECEIPTDISPLAY" Type="nvarchar" MaxLength="30" />
+          <Property Name="TAXEXEMPT" Type="tinyint" />
+          <Property Name="TAXEXEMPTIONCODE" Type="nvarchar" MaxLength="20" />
+        </EntityType>
+        <EntityContainer Name="DelevaryNoteModelStoreContainer">
+          <EntitySet Name="CUSTOMERADDRESS" EntityType="Self.CUSTOMERADDRESS" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CUSTTABLE" EntityType="Self.CUSTTABLE" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="RBOCUSTTABLE" EntityType="Self.RBOCUSTTABLE" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="RBOINFOCODETABLE" EntityType="Self.RBOINFOCODETABLE" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="RBOINFOCODETABLESPECIFIC" EntityType="Self.RBOINFOCODETABLESPECIFIC" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="RBOINFORMATIONSUBCODETABLE" EntityType="Self.RBOINFORMATIONSUBCODETABLE" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="RBOSTAFFTABLE" EntityType="Self.RBOSTAFFTABLE" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="RBOSTORETABLE" EntityType="Self.RBOSTORETABLE" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="RBOTRANSACTIONINFOCODETRANS" EntityType="Self.RBOTRANSACTIONINFOCODETRANS" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="RBOTRANSACTIONPAYMENTTRANS" EntityType="Self.RBOTRANSACTIONPAYMENTTRANS" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="RBOTRANSACTIONSALESTRANS" EntityType="Self.RBOTRANSACTIONSALESTRANS" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="RBOTRANSACTIONTABLE" EntityType="Self.RBOTRANSACTIONTABLE" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="RBOTRANSACTIONTAXTRANS" EntityType="Self.RBOTRANSACTIONTAXTRANS" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="DelevaryNoteModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityType Name="CUSTOMERADDRESS">
+          <Key>
+            <PropertyRef Name="ACCOUNTNUM" />
+            <PropertyRef Name="DATAAREAID" />
+            <PropertyRef Name="ADDRESSTYPE" />
+          </Key>
+          <Property Name="ACCOUNTNUM" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="DATAAREAID" Type="String" MaxLength="4" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ADDRESSTYPE" Type="Int32" Nullable="false" />
+          <Property Name="STREET" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="ADDRESS" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="ZIPCODE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="CITY" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+          <Property Name="STATE" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="COUNTY" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="COUNTRY" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="ADDRESSFORMAT" Type="Int32" />
+          <Property Name="TAXGROUP" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="PHONE" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="CELLULARPHONE" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="EMAIL" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+          <Property Name="CONTACTNAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="CUSTTABLE">
+          <Key>
+            <PropertyRef Name="ACCOUNTNUM" />
+            <PropertyRef Name="DATAAREAID" />
+          </Key>
+          <Property Name="ACCOUNTNUM" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="NAME" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+          <Property Name="ADDRESS" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="PHONE" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="TELEFAX" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="INVOICEACCOUNT" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="CUSTGROUP" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="PAYMTERMID" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="CASHDISC" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="CURRENCY" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Name="BLOCKED" Type="Int32" />
+          <Property Name="ONETIMECUSTOMER" Type="Byte" />
+          <Property Name="ACCOUNTSTATEMENT" Type="Int32" />
+          <Property Name="CREDITMAX" Type="Decimal" Precision="28" Scale="12" />
+          <Property Name="MANDATORYCREDITLIMIT" Type="Byte" />
+          <Property Name="DIMENSION" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="DIMENSION2_" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="DIMENSION3_" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="VENDACCOUNT" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="TELEX" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="COUNTRY" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="INVENTLOCATION" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="DLVTERM" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="DLVMODE" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="CLEARINGPERIOD" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="ZIPCODE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="STATE" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="COUNTY" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="URL" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="EMAIL" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+          <Property Name="CELLULARPHONE" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="PHONELOCAL" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="FREIGHTZONE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="CREDITRATING" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="STATISTICSGROUP" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="PAYMMODE" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="BANKACCOUNT" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="NAMEALIAS" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="CONTACTPERSONID" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="INVOICEADDRESS" Type="Int32" />
+          <Property Name="OURACCOUNTNUM" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="SALESPOOLID" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="INCLTAX" Type="Byte" />
+          <Property Name="CUSTITEMGROUPID" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="NUMBERSEQUENCEGROUP" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="LANGUAGEID" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="PAYMDAYID" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="LINEOFBUSINESSID" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="DESTINATIONCODEID" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="WEBSALESORDERDISPLAY" Type="Int32" />
+          <Property Name="PAYMSPEC" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="BANKCENTRALBANKPURPOSETEXT" Type="String" MaxLength="140" FixedLength="false" Unicode="true" />
+          <Property Name="BANKCENTRALBANKPURPOSECODE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="PRINTMODULETYPE" Type="Int32" />
+          <Property Name="CITY" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+          <Property Name="STREET" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="PAGER" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="SMS" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+          <Property Name="REFZIPCODE" Type="Int32" />
+          <Property Name="PBACUSTGROUPID" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="DATAAREAID" Type="String" MaxLength="4" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="VATNUM" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="TAXGROUP" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="TAXLICENSENUM" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="FORECASTDMPINCLUDE" Type="Byte" />
+          <Property Name="LINEDISC" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="SALESGROUP" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="PRICEGROUP" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="MULTILINEDISC" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="ENDDISC" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="MARKUPGROUP" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="COMMISSIONGROUP" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="DEL_QUOTATIONCOPIES" Type="Int32" />
+          <Property Name="DEL_QUOTATIONORIGINALS" Type="Int32" />
+          <Property Name="DEL_CONFIRMATIONORIGINALS" Type="Int32" />
+          <Property Name="DEL_INVOICECOPIES" Type="Int32" />
+          <Property Name="DEL_INVOICEORIGINALS" Type="Int32" />
+          <Property Name="DEL_PACKINGSLIPCOPIES" Type="Int32" />
+          <Property Name="DEL_PACKINGSLIPORIGINALS" Type="Int32" />
+          <Property Name="DEL_CONFIRMATIONCOPIES" Type="Int32" />
+          <Property Name="SUPPITEMGROUPID" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="PACKMATERIALFEELICENSENUM" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="ORGID" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="USEPURCHREQUEST" Type="Byte" />
+          <Property Name="TAXOFFICE" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="NONCHARGABLEACCOUNT" Type="Byte" />
+          <Property Name="ADDRESSFORMAT" Type="Int32" />
+          <Property Name="FIRSTNAME" Type="String" MaxLength="31" FixedLength="false" Unicode="true" />
+          <Property Name="MIDDLENAME" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="LASTNAME" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="NAMEPREFIX" Type="String" MaxLength="8" FixedLength="false" Unicode="true" />
+          <Property Name="NAMESUFFIX" Type="String" MaxLength="8" FixedLength="false" Unicode="true" />
+          <Property Name="LOCALLYSAVED" Type="Byte" Nullable="false" />
+          <Property Name="LOYALTYCUSTOMER" Type="Byte" />
+          <Property Name="GENDER" Type="Int32" />
+          <Property Name="DATEOFBIRTH" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="RBOCUSTTABLE">
+          <Key>
+            <PropertyRef Name="ACCOUNTNUM" />
+            <PropertyRef Name="DATAAREAID" />
+          </Key>
+          <Property Name="ACCOUNTNUM" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="OTHERTENDERINFINALIZING" Type="Byte" />
+          <Property Name="POSTASSHIPMENT" Type="Byte" />
+          <Property Name="DATAAREAID" Type="String" MaxLength="4" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="USEORDERNUMBERREFERENCE" Type="Byte" />
+          <Property Name="RECEIPTOPTION" Type="Int32" />
+          <Property Name="RECEIPTEMAIL" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+          <Property Name="NONCHARGABLEACCOUNT" Type="Byte" />
+          <Property Name="REQUIRESAPPROVAL" Type="Byte" />
+        </EntityType>
+        <EntityType Name="RBOINFOCODETABLE">
+          <Key>
+            <PropertyRef Name="INFOCODEID" />
+            <PropertyRef Name="DATAAREAID" />
+          </Key>
+          <Property Name="INFOCODEID" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="DESCRIPTION" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+          <Property Name="PROMPT" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="ONCEPERTRANSACTION" Type="Byte" />
+          <Property Name="VALUEISAMOUNTORQUANTITY" Type="Byte" />
+          <Property Name="PRINTPROMPTONRECEIPT" Type="Byte" />
+          <Property Name="PRINTINPUTONRECEIPT" Type="Byte" />
+          <Property Name="PRINTINPUTNAMEONRECEIPT" Type="Byte" />
+          <Property Name="INPUTTYPE" Type="Int32" />
+          <Property Name="MINIMUMVALUE" Type="Decimal" Precision="28" Scale="12" />
+          <Property Name="MAXIMUMVALUE" Type="Decimal" Precision="28" Scale="12" />
+          <Property Name="MINIMUMLENGTH" Type="Int32" />
+          <Property Name="MAXIMUMLENGTH" Type="Int32" />
+          <Property Name="INPUTREQUIRED" Type="Byte" />
+          <Property Name="STD1INVALUE" Type="Byte" />
+          <Property Name="LINKEDINFOCODEID" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="RANDOMFACTOR" Type="Decimal" Precision="28" Scale="12" />
+          <Property Name="RANDOMCOUNTER" Type="Decimal" Precision="28" Scale="12" />
+          <Property Name="DATATYPEID" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="MODIFIEDDATE" Type="DateTime" Precision="3" />
+          <Property Name="MODIFIEDTIME" Type="Int32" />
+          <Property Name="MODIFIEDBY" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="DATAAREAID" Type="String" MaxLength="4" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ADDITIONALCHECK" Type="Int32" />
+          <Property Name="USAGECATEGORY" Type="Int32" />
+          <Property Name="DISPLAYOPTION" Type="Int32" />
+          <Property Name="LINKITEMLINESTOTRIGGERLINE" Type="Byte" />
+          <Property Name="MULTIPLESELECTION" Type="Byte" />
+          <Property Name="TRIGGERING" Type="Byte" />
+          <Property Name="MINSELECTION" Type="Int32" />
+          <Property Name="MAXSELECTION" Type="Int32" />
+          <Property Name="CREATEINFOCODETRANSENTRIES" Type="Byte" />
+          <Property Name="EXPLANATORYHEADERTEXT" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="OKPRESSEDACTION" Type="Int32" />
+        </EntityType>
+        <EntityType Name="RBOINFOCODETABLESPECIFIC">
+          <Key>
+            <PropertyRef Name="REFRELATION" />
+            <PropertyRef Name="INFOCODEID" />
+            <PropertyRef Name="REFRELATION2" />
+            <PropertyRef Name="REFRELATION3" />
+            <PropertyRef Name="REFTABLEID" />
+            <PropertyRef Name="DATAAREAID" />
+          </Key>
+          <Property Name="REFRELATION" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="SEQUENCE" Type="Int32" />
+          <Property Name="INFOCODEID" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="INPUTREQUIRED" Type="Byte" />
+          <Property Name="WHENREQUIRED" Type="Int32" />
+          <Property Name="REFRELATION2" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="REFRELATION3" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="REFTABLEID" Type="Int32" Nullable="false" />
+          <Property Name="DATAAREAID" Type="String" MaxLength="4" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="TRIGGERING" Type="Byte" />
+          <Property Name="UNITOFMEASURE" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="SALESTYPEFILTER" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="USAGECATEGORY" Type="Int32" />
+        </EntityType>
+        <EntityType Name="RBOINFORMATIONSUBCODETABLE">
+          <Key>
+            <PropertyRef Name="INFOCODEID" />
+            <PropertyRef Name="SUBCODEID" />
+            <PropertyRef Name="DATAAREAID" />
+          </Key>
+          <Property Name="INFOCODEID" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="SUBCODEID" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="DESCRIPTION" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+          <Property Name="TRIGGERFUNCTION" Type="Int32" />
+          <Property Name="TRIGGERCODE" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="NEWSALESLINE" Type="Byte" />
+          <Property Name="PRICETYPE" Type="Int32" />
+          <Property Name="AMOUNTPERCENT" Type="Decimal" Precision="28" Scale="12" />
+          <Property Name="DATAAREAID" Type="String" MaxLength="4" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="USAGECATEGORY" Type="Int32" />
+          <Property Name="VARIANTCODE" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="VARIANTNEEDED" Type="Byte" />
+          <Property Name="QTYLINKEDTOTRIGGERLINE" Type="Byte" />
+          <Property Name="PRICEHANDLING" Type="Int32" />
+          <Property Name="LINKEDINFOCODE" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="UNITOFMEASURE" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="QTYPERUNITOFMEASURE" Type="Decimal" Precision="28" Scale="12" />
+          <Property Name="INFOCODEPROMPT" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="MAXSELECTION" Type="Int32" />
+          <Property Name="SERIALLOTNEEDED" Type="Byte" />
+        </EntityType>
+        <EntityType Name="RBOTRANSACTIONINFOCODETRAN">
+          <Key>
+            <PropertyRef Name="TRANSACTIONID" />
+            <PropertyRef Name="LINENUM" />
+            <PropertyRef Name="TYPE" />
+            <PropertyRef Name="INFOCODEID" />
+            <PropertyRef Name="STORE" />
+            <PropertyRef Name="TERMINAL" />
+            <PropertyRef Name="DATAAREAID" />
+          </Key>
+          <Property Name="TRANSACTIONID" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="LINENUM" Type="Decimal" Precision="28" Scale="12" Nullable="false" />
+          <Property Name="TYPE" Type="Int32" Nullable="false" />
+          <Property Name="INFOCODEID" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="INFORMATION" Type="String" MaxLength="512" FixedLength="false" Unicode="true" />
+          <Property Name="INFOAMOUNT" Type="Decimal" Precision="28" Scale="12" />
+          <Property Name="TRANSDATE" Type="DateTime" Precision="3" />
+          <Property Name="TRANSTIME" Type="Int32" />
+          <Property Name="STORE" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="TERMINAL" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="STAFF" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="ITEMTENDER" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="AMOUNT" Type="Decimal" Precision="28" Scale="12" />
+          <Property Name="INPUTTYPE" Type="Int32" />
+          <Property Name="SUBINFOCODEID" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="STATEMENTID" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="STATEMENTCODE" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="SOURCECODE" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="COUNTER" Type="Int32" />
+          <Property Name="REPLICATED" Type="Byte" />
+          <Property Name="DATAAREAID" Type="String" MaxLength="4" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="SOURCECODE2" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="SOURCECODE3" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="REPLICATIONCOUNTER" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PROMPT" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="PRINTPROMPTONRECEIPT" Type="Byte" />
+          <Property Name="PRINTINPUTONRECEIPT" Type="Byte" />
+          <Property Name="PRINTINPUTNAMEONRECEIPT" Type="Byte" />
+          <Property Name="LINEID" Type="Decimal" Precision="28" Scale="12" />
+        </EntityType>
+        <EntityType Name="RBOTRANSACTIONPAYMENTTRAN">
+          <Key>
+            <PropertyRef Name="TRANSACTIONID" />
+            <PropertyRef Name="LINENUM" />
+            <PropertyRef Name="STORE" />
+            <PropertyRef Name="TERMINAL" />
+            <PropertyRef Name="DATAAREAID" />
+          </Key>
+          <Property Name="TRANSACTIONID" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="LINENUM" Type="Decimal" Precision="28" Scale="12" Nullable="false" />
+          <Property Name="RECEIPTID" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="STATEMENTCODE" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="CARDTYPEID" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="EXCHRATE" Type="Decimal" Precision="28" Scale="12" />
+          <Property Name="TENDERTYPE" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="AMOUNTTENDERED" Type="Decimal" Precision="28" Scale="12" />
+          <Property Name="CURRENCY" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Name="AMOUNTCUR" Type="Decimal" Precision="28" Scale="12" />
+          <Property Name="CARDORACCOUNT" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="TRANSDATE" Type="DateTime" Precision="3" />
+          <Property Name="TRANSTIME" Type="Int32" />
+          <Property Name="SHIFT" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="SHIFTDATE" Type="DateTime" Precision="3" />
+          <Property Name="STAFF" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="STORE" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="TERMINAL" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="TRANSACTIONSTATUS" Type="Int32" />
+          <Property Name="STATEMENTID" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="MANAGERKEYLIVE" Type="Byte" />
+          <Property Name="CHANGELINE" Type="Byte" />
+          <Property Name="COUNTER" Type="Int32" />
+          <Property Name="REPLICATIONCOUNTER" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MESSAGENUM" Type="Int32" />
+          <Property Name="REPLICATED" Type="Byte" />
+          <Property Name="QTY" Type="Decimal" Precision="28" Scale="12" />
+          <Property Name="ZREPORTID" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="MODIFIEDDATE" Type="DateTime" Precision="3" />
+          <Property Name="DATAAREAID" Type="String" MaxLength="4" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="MARKUPAMOUNT" Type="Decimal" Precision="28" Scale="0" />
+          <Property Name="AUTHENTICATIONCODE" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="GIFTORCREDITID" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="BATCHID" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="EFTAUTHENTICATIONCODE" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="GIFTCARDID" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="CREDITVOUCHERID" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="LOYALTYCARDID" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="EXCHRATEMST" Type="Decimal" Precision="28" Scale="12" />
+          <Property Name="AMOUNTMST" Type="Decimal" Precision="28" Scale="12" />
+          <Property Name="LOYALTYPOINTS" Type="Decimal" Precision="28" Scale="12" />
+          <Property Name="COMMENT" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="CARDNUMBERHIDDEN" Type="Byte" />
+          <Property Name="CARDNAME" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="CARDISSUER" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="EXPIRYDATE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="CARDHOLDERNAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CARDENTRYTYPE" Type="Int32" />
+          <Property Name="CARDBIN" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="MERCHANTID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="AUTHCODE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="MESSAGE" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="RESPONSECODE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DRIVERID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="VEHICLEID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ODOMETERREADING" Type="Int32" />
+          <Property Name="DESCRIPTION" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+          <Property Name="CHECKID" Type="String" MaxLength="60" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="RBOTRANSACTIONSALESTRAN">
+          <Key>
+            <PropertyRef Name="TRANSACTIONID" />
+            <PropertyRef Name="LINENUM" />
+            <PropertyRef Name="STORE" />
+            <PropertyRef Name="TERMINALID" />
+            <PropertyRef Name="DATAAREAID" />
+          </Key>
+          <Property Name="TRANSACTIONID" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="LINENUM" Type="Decimal" Precision="28" Scale="12" Nullable="false" />
+          <Property Name="RECEIPTID" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="BARCODE" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+          <Property Name="ITEMID" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="ITEMDEPARTMENTID" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="ITEMGROUPID" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="PRICE" Type="Decimal" Precision="28" Scale="12" />
+          <Property Name="NETPRICE" Type="Decimal" Precision="28" Scale="12" />
+          <Property Name="QTY" Type="Decimal" Precision="28" Scale="12" />
+          <Property Name="TAXGROUP" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="TRANSACTIONSTATUS" Type="Int32" />
+          <Property Name="DISCAMOUNT" Type="Decimal" Precision="28" Scale="12" />
+          <Property Name="COSTAMOUNT" Type="Decimal" Precision="28" Scale="12" />
+          <Property Name="TRANSDATE" Type="DateTime" Precision="3" />
+          <Property Name="TRANSTIME" Type="Int32" />
+          <Property Name="SHIFT" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="SHIFTDATE" Type="DateTime" Precision="3" />
+          <Property Name="NETAMOUNT" Type="Decimal" Precision="28" Scale="12" />
+          <Property Name="DISCOFFERID" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="DISCGROUPID" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="STDNETPRICE" Type="Decimal" Precision="28" Scale="12" />
+          <Property Name="DISCAMOUNTFROMSTDPRICE" Type="Decimal" Precision="28" Scale="12" />
+          <Property Name="STATEMENTID" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="CUSTACCOUNT" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="SECTION" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="SHELF" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="STATEMENTCODE" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="TRANSACTIONCODE" Type="Int32" />
+          <Property Name="STORE" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ITEMIDSCANNED" Type="Byte" />
+          <Property Name="KEYBOARDITEMENTRY" Type="Byte" />
+          <Property Name="PRICEINBARCODE" Type="Byte" />
+          <Property Name="PRICECHANGE" Type="Byte" />
+          <Property Name="WEIGHTMANUALLYENTERED" Type="Byte" />
+          <Property Name="LINEWASDISCOUNTED" Type="Byte" />
+          <Property Name="SCALEITEM" Type="Byte" />
+          <Property Name="WEIGHTITEM" Type="Byte" />
+          <Property Name="RETURNNOSALE" Type="Byte" />
+          <Property Name="ITEMCORRECTEDLINE" Type="Byte" />
+          <Property Name="SALESTYPE" Type="Int32" />
+          <Property Name="LINKEDITEMNOTORIGINAL" Type="Byte" />
+          <Property Name="ORIGINALOFLINKEDITEMLIST" Type="Decimal" Precision="28" Scale="12" />
+          <Property Name="TERMINALID" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="STAFF" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="ITEMPOSTINGGROUP" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="TOTALROUNDEDAMOUNT" Type="Decimal" Precision="28" Scale="12" />
+          <Property Name="COUNTER" Type="Int32" />
+          <Property Name="REPLICATIONCOUNTER" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="VARIANTID" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="LINEDSCAMOUNT" Type="Decimal" Precision="28" Scale="12" />
+          <Property Name="REPLICATED" Type="Byte" />
+          <Property Name="CUSTDISCAMOUNT" Type="Decimal" Precision="28" Scale="12" />
+          <Property Name="INFOCODEDISCAMOUNT" Type="Decimal" Precision="28" Scale="12" />
+          <Property Name="CUSTINVOICEDISCAMOUNT" Type="Decimal" Precision="28" Scale="12" />
+          <Property Name="UNIT" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="UNITQTY" Type="Decimal" Precision="28" Scale="12" />
+          <Property Name="UNITPRICE" Type="Decimal" Precision="28" Scale="12" />
+          <Property Name="TAXAMOUNT" Type="Decimal" Precision="28" Scale="12" />
+          <Property Name="TOTALDISCAMOUNT" Type="Decimal" Precision="28" Scale="12" />
+          <Property Name="TOTALDISCPCT" Type="Decimal" Precision="28" Scale="12" />
+          <Property Name="TOTALDISCINFOCODELINENUM" Type="Decimal" Precision="28" Scale="12" />
+          <Property Name="PERIODICDISCTYPE" Type="Int32" />
+          <Property Name="PERIODICDISCAMOUNT" Type="Decimal" Precision="28" Scale="12" />
+          <Property Name="DISCOUNTAMOUNTFORPRINTING" Type="Decimal" Precision="28" Scale="12" />
+          <Property Name="STAFFID" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="PERIODICDISCGROUP" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="INVENTTRANSID" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="INVENTDIMID" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="PURCHID" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="FILELOGID" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="MODIFIEDDATE" Type="DateTime" Precision="3" />
+          <Property Name="MODIFIEDTIME" Type="Int32" />
+          <Property Name="MODIFIEDBY" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="MODIFIEDTRANSACTIONID" Type="Int32" />
+          <Property Name="CREATEDDATE" Type="DateTime" Precision="3" />
+          <Property Name="CREATEDTIME" Type="Int32" />
+          <Property Name="CREATEDBY" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="CREATEDTRANSACTIONID" Type="Int32" />
+          <Property Name="DATAAREAID" Type="String" MaxLength="4" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="PUMPID" Type="Int32" />
+          <Property Name="PRESCRIPTIONID" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="COMMENT" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="LINEDISCPCT" Type="Decimal" Precision="28" Scale="12" />
+          <Property Name="WHOLEDISCAMOUNTWITHTAX" Type="Decimal" Precision="28" Scale="12" />
+          <Property Name="TOTALDISCAMOUNTWITHTAX" Type="Decimal" Precision="28" Scale="12" />
+          <Property Name="LINEDISCAMOUNTWITHTAX" Type="Decimal" Precision="28" Scale="12" />
+          <Property Name="PERIODICDISCAMOUNTWITHTAX" Type="Decimal" Precision="28" Scale="12" />
+          <Property Name="INVENTBATCHID" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="GIFTCARD" Type="Byte" />
+          <Property Name="INVENTSERIALID" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="RFIDTAGID" Type="String" MaxLength="24" FixedLength="false" Unicode="true" />
+          <Property Name="RETURNTRANSACTIONID" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="RETURNQTY" Type="Decimal" Precision="28" Scale="12" />
+          <Property Name="ITEMTYPE" Type="Int32" />
+          <Property Name="SOURCELINENUM" Type="Int32" />
+          <Property Name="CREDITMEMONUMBER" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="TAXINCLINPRICE" Type="Byte" />
+          <Property Name="DESCRIPTION" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+          <Property Name="OILTAX" Type="Decimal" Precision="28" Scale="12" />
+          <Property Name="RETURNLINEID" Type="Decimal" Precision="28" Scale="12" />
+          <Property Name="ISINFOCODEITEM" Type="Byte" />
+          <Property Name="INVENTBATCHEXPDATE" Type="DateTime" Precision="3" />
+          <Property Name="TENDERRESTRICTIONID" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="PRICEUNIT" Type="Decimal" Precision="28" Scale="12" />
+          <Property Name="NETAMOUNTINCLTAX" Type="Decimal" Precision="28" Scale="12" />
+          <Property Name="DOSAGETYPE" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="DOSAGESTRENGTHUNIT" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="DOSAGESTRENGTH" Type="Decimal" Precision="28" Scale="12" />
+          <Property Name="DOSAGEUNITQUANTITY" Type="Decimal" Precision="28" Scale="12" />
+          <Property Name="TAXITEMGROUP" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="STORETAXGROUP" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="ORIGINALTAXGROUP" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="ORIGINALTAXITEMGROUP" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="CURRENCY" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Name="TAXEXEMPT" Type="Byte" />
+          <Property Name="HOSPITALITYSALESTYPE" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="ORIGINALPRICE" Type="Decimal" Precision="28" Scale="12" />
+          <Property Name="ORIGINALPRICEWITHTAX" Type="Decimal" Precision="28" Scale="12" />
+          <Property Name="RETURNRECEIPTID" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="RETURNSTOREID" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="RETURNTERMINALID" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="RBOTRANSACTIONTABLE">
+          <Key>
+            <PropertyRef Name="TRANSACTIONID" />
+            <PropertyRef Name="STORE" />
+            <PropertyRef Name="TERMINAL" />
+            <PropertyRef Name="DATAAREAID" />
+          </Key>
+          <Property Name="TRANSACTIONID" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="TYPE" Type="Int32" />
+          <Property Name="RECEIPTID" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="STORE" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="TERMINAL" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="STAFF" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="TRANSDATE" Type="DateTime" Precision="3" />
+          <Property Name="TRANSTIME" Type="Int32" />
+          <Property Name="SHIFT" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="SHIFTDATE" Type="DateTime" Precision="3" />
+          <Property Name="WRONGSHIFT" Type="Int32" />
+          <Property Name="INFOCODEDISCGROUP" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="CUSTACCOUNT" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="TRANSCODE" Type="Int32" />
+          <Property Name="SALESPAYMENTDIFFERENCE" Type="Decimal" Precision="28" Scale="12" />
+          <Property Name="NETAMOUNT" Type="Decimal" Precision="28" Scale="12" />
+          <Property Name="COSTAMOUNT" Type="Decimal" Precision="28" Scale="12" />
+          <Property Name="GROSSAMOUNT" Type="Decimal" Precision="28" Scale="12" />
+          <Property Name="PAYMENTAMOUNT" Type="Decimal" Precision="28" Scale="12" />
+          <Property Name="DISCAMOUNT" Type="Decimal" Precision="28" Scale="12" />
+          <Property Name="CUSTDISCAMOUNT" Type="Decimal" Precision="28" Scale="12" />
+          <Property Name="TOTALDISCAMOUNT" Type="Decimal" Precision="28" Scale="12" />
+          <Property Name="NUMBEROFITEMS" Type="Decimal" Precision="28" Scale="12" />
+          <Property Name="AMOUNTTOACCOUNT" Type="Decimal" Precision="28" Scale="12" />
+          <Property Name="ROUNDEDAMOUNT" Type="Decimal" Precision="28" Scale="12" />
+          <Property Name="ENTRYSTATUS" Type="Int32" />
+          <Property Name="NUMBEROFINVOICES" Type="Int32" />
+          <Property Name="NUMBEROFITEMLINES" Type="Decimal" Precision="28" Scale="12" />
+          <Property Name="STATEMENTCODE" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="STATEMENTID" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="REFUNDRECEIPTID" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="INCOMEEXPENSEAMOUNT" Type="Decimal" Precision="28" Scale="12" />
+          <Property Name="TOACCOUNT" Type="Byte" />
+          <Property Name="NUMBEROFPAYMENTLINES" Type="Int32" />
+          <Property Name="SALEISRETURNSALE" Type="Byte" />
+          <Property Name="COUNTER" Type="Int32" />
+          <Property Name="TIMEWHENTOTALPRESSED" Type="Int32" />
+          <Property Name="TIMEWHENTRANSCLOSED" Type="Int32" />
+          <Property Name="CURRENCY" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Name="TRANSTABLEID" Type="Int32" />
+          <Property Name="OPENDRAWER" Type="Byte" />
+          <Property Name="REPLICATED" Type="Byte" />
+          <Property Name="REPLICATIONCOUNTER" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="REPLICATIONCOUNTERFROMORIGIN" Type="Int32" />
+          <Property Name="INCLUDEDINSTATISTICS" Type="Byte" />
+          <Property Name="RETRIEVEDFROMRECEIPTID" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="ZREPORTID" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="CREATEDONPOSTERMINAL" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="POSTASSHIPMENT" Type="Byte" />
+          <Property Name="ITEMSPOSTED" Type="Byte" />
+          <Property Name="MODIFIEDDATE" Type="DateTime" Precision="3" />
+          <Property Name="MODIFIEDTIME" Type="Int32" />
+          <Property Name="MODIFIEDBY" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="CREATEDDATE" Type="DateTime" Precision="3" />
+          <Property Name="CREATEDTIME" Type="Int32" />
+          <Property Name="CREATEDBY" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="DATAAREAID" Type="String" MaxLength="4" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="DESCRIPTION" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="CUSTPURCHASEORDER" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="COMMENT" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+          <Property Name="INVOICECOMMENT" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+          <Property Name="SALESORDERAMOUNT" Type="Decimal" Precision="28" Scale="12" />
+          <Property Name="SALESINVOICEAMOUNT" Type="Decimal" Precision="28" Scale="12" />
+          <Property Name="RECEIPTEMAIL" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+          <Property Name="EXCHRATE" Type="Decimal" Precision="28" Scale="12" />
+          <Property Name="MARKUPAMOUNT" Type="Decimal" Precision="28" Scale="12" />
+          <Property Name="MARKUPDESCRIPTION" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="ORGTRANSSTORE" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="ORGTRANSTERMINAL" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="ORGTRANSACTIONID" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="ORGRECEIPTID" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="OILTAX" Type="Decimal" Precision="28" Scale="12" />
+          <Property Name="TAXINCLINPRICE" Type="Byte" />
+          <Property Name="TAXEXEMPT" Type="Byte" />
+          <Property Name="UNCONCLUDEDTRANS" Type="Byte" />
+          <Property Name="INVENTORYUPDATED" Type="Boolean" Nullable="false" />
+          <Property Name="SALESSEQUENCEID" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="BUSINESSDAY" Type="DateTime" Precision="3" />
+          <Property Name="TRNGENERATED" Type="Boolean" />
+          <Property Name="BUSINESSSYSTEMDAY" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="RBOTRANSACTIONTAXTRAN">
+          <Key>
+            <PropertyRef Name="TRANSACTIONID" />
+            <PropertyRef Name="LINENUM" />
+            <PropertyRef Name="TAXLINENUM" />
+            <PropertyRef Name="DATAAREAID" />
+            <PropertyRef Name="TRANSHEADER" />
+            <PropertyRef Name="STORE" />
+            <PropertyRef Name="TERMINAL" />
+          </Key>
+          <Property Name="TRANSACTIONID" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="LINENUM" Type="Decimal" Precision="28" Scale="12" Nullable="false" />
+          <Property Name="TAXLINENUM" Type="Decimal" Precision="28" Scale="12" Nullable="false" />
+          <Property Name="DATAAREAID" Type="String" MaxLength="4" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="TAXGROUP" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="TAXCODE" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="TAXPCT" Type="Decimal" Precision="28" Scale="12" />
+          <Property Name="TAXAMOUNT" Type="Decimal" Precision="28" Scale="12" />
+          <Property Name="TAXROUNDOFF" Type="Decimal" Precision="28" Scale="12" />
+          <Property Name="TAXROUNDOFFTYPE" Type="Int32" />
+          <Property Name="PRICEWITHTAX" Type="Decimal" Precision="28" Scale="12" />
+          <Property Name="TRANSHEADER" Type="Byte" Nullable="false" />
+          <Property Name="STORE" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="TERMINAL" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="REPLICATIONCOUNTER" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="REPLICATED" Type="Byte" />
+          <Property Name="TAXCODERECEIPTDISPLAY" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="TAXGROUPRECEIPTDISPLAY" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="TAXEXEMPT" Type="Byte" />
+          <Property Name="TAXEXEMPTIONCODE" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityContainer Name="GS295_DXB_100ConnectionString" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="CUSTOMERADDRESSes" EntityType="Self.CUSTOMERADDRESS" />
+          <EntitySet Name="CUSTTABLEs" EntityType="Self.CUSTTABLE" />
+          <EntitySet Name="RBOCUSTTABLEs" EntityType="Self.RBOCUSTTABLE" />
+          <EntitySet Name="RBOINFOCODETABLEs" EntityType="Self.RBOINFOCODETABLE" />
+          <EntitySet Name="RBOINFOCODETABLESPECIFICs" EntityType="Self.RBOINFOCODETABLESPECIFIC" />
+          <EntitySet Name="RBOINFORMATIONSUBCODETABLEs" EntityType="Self.RBOINFORMATIONSUBCODETABLE" />
+          <EntitySet Name="RBOTRANSACTIONINFOCODETRANS" EntityType="Self.RBOTRANSACTIONINFOCODETRAN" />
+          <EntitySet Name="RBOTRANSACTIONPAYMENTTRANS" EntityType="Self.RBOTRANSACTIONPAYMENTTRAN" />
+          <EntitySet Name="RBOTRANSACTIONSALESTRANS" EntityType="Self.RBOTRANSACTIONSALESTRAN" />
+          <EntitySet Name="RBOTRANSACTIONTABLEs" EntityType="Self.RBOTRANSACTIONTABLE" />
+          <EntitySet Name="RBOTRANSACTIONTAXTRANS" EntityType="Self.RBOTRANSACTIONTAXTRAN" />
+          <EntitySet Name="RBOSTAFFTABLE" EntityType="DelevaryNoteModel.RBOSTAFFTABLE" />
+          <EntitySet Name="RBOSTORETABLE" EntityType="DelevaryNoteModel.RBOSTORETABLE" />
+        </EntityContainer>
+        <EntityType Name="RBOSTAFFTABLE">
+          <Key>
+            <PropertyRef Name="STAFFID" />
+            <PropertyRef Name="DATAAREAID" />
+          </Key>
+          <Property Name="STAFFID" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="NAME" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+          <Property Name="STOREID" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="PASSWORD" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="CHANGEPASSWORD" Type="Byte" />
+          <Property Name="ALLOWTRANSACTIONVOIDING" Type="Byte" />
+          <Property Name="MANAGERPRIVILEGES" Type="Byte" />
+          <Property Name="ALLOWXREPORTPRINTING" Type="Byte" />
+          <Property Name="ALLOWTENDERDECLARATION" Type="Byte" />
+          <Property Name="ALLOWFLOATINGDECLARATION" Type="Byte" />
+          <Property Name="PRICEOVERRIDE" Type="Int32" />
+          <Property Name="MAXDISCOUNTPCT" Type="Decimal" Precision="28" Scale="12" />
+          <Property Name="ALLOWCHANGENOVOID" Type="Byte" />
+          <Property Name="ALLOWTRANSACTIONSUSPENSION" Type="Byte" />
+          <Property Name="ALLOWOPENDRAWERONLY" Type="Byte" />
+          <Property Name="FIRSTNAME" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="LASTNAME" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="EMPLOYMENTTYPE" Type="Int32" />
+          <Property Name="ADDRESS" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="STREET" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="ZIPCODE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="CITY" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="COUNTY" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="STATE" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="COUNTRY" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="DEL_PHONELOCAL" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="PHONEWORK" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="BLOCKED" Type="Byte" />
+          <Property Name="BLOCKINGDATE" Type="DateTime" Precision="3" />
+          <Property Name="LEFTHANDED" Type="Byte" />
+          <Property Name="PERMISSIONGROUPID" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="ZREPORTID" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="NAMEONRECEIPT" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="PAYROLLNUMBER" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="CONTINUEONTSERRORS" Type="Byte" />
+          <Property Name="PHONEHOME" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="MAXTOTALDISCOUNTPCT" Type="Decimal" Precision="28" Scale="12" />
+          <Property Name="LAYOUTID" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="MODIFIEDDATE" Type="DateTime" Precision="3" />
+          <Property Name="MODIFIEDTIME" Type="Int32" />
+          <Property Name="MODIFIEDBY" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="DATAAREAID" Type="String" Nullable="false" MaxLength="4" FixedLength="false" Unicode="true" />
+          <Property Name="VISUALPROFILE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="OPERATORCULTURE" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="MAXLINEDISCOUNTAMOUNT" Type="Decimal" Nullable="false" Precision="28" Scale="12" />
+          <Property Name="MAXTOTALDISCOUNTAMOUNT" Type="Decimal" Nullable="false" Precision="28" Scale="12" />
+          <Property Name="MAXLINERETURNAMOUNT" Type="Decimal" Nullable="false" Precision="28" Scale="12" />
+          <Property Name="MAXTOTALRETURNAMOUNT" Type="Decimal" Nullable="false" Precision="28" Scale="12" />
+          <Property Name="KEYBOARDCODE" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="LAYOUTNAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="RBOSTORETABLE">
+          <Key>
+            <PropertyRef Name="STOREID" />
+            <PropertyRef Name="DATAAREAID" />
+          </Key>
+          <Property Name="STOREID" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="NAME" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+          <Property Name="ADDRESS" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="STREET" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="ZIPCODE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="CITY" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+          <Property Name="COUNTY" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="STATE" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="COUNTRY" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="PHONE" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="MANAGERID" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="OPENFROM" Type="Int32" />
+          <Property Name="OPENTO" Type="Int32" />
+          <Property Name="DIMENSION" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="DIMENSION2_" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="DIMENSION3_" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="INVENTLOCATION" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="STATEMENTMETHOD" Type="Int32" />
+          <Property Name="ONESTATEMENTPERDAY" Type="Byte" />
+          <Property Name="CURRENCY" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Name="CLOSINGMETHOD" Type="Int32" />
+          <Property Name="ROUNDINGACCOUNT" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="MAXIMUMPOSTINGDIFFERENCE" Type="Decimal" Precision="28" Scale="12" />
+          <Property Name="MAXROUNDINGAMOUNT" Type="Decimal" Precision="28" Scale="12" />
+          <Property Name="MAXSHIFTDIFFERENCEAMOUNT" Type="Decimal" Precision="28" Scale="12" />
+          <Property Name="MAXTRANSACTIONDIFFERENCEAMOUNT" Type="Decimal" Precision="28" Scale="12" />
+          <Property Name="STATEMENTNUMSEQ" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="FUNCTIONALITYPROFILE" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="CREATELABELSFORZEROPRICE" Type="Byte" />
+          <Property Name="TERMINALNUMSEQ" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="STAFFNUMSEQ" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="ITEMNUMSEQ" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="DISCOUNTOFFERNUMSEQ" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="MIXANDMATCHNUMSEQ" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="MULTIBUYDISCOUNTNUMSEQ" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="INVENTORYLOOKUP" Type="Byte" />
+          <Property Name="REMOVEADDTENDER" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="TENDERDECLARATIONCALCULATION" Type="Int32" />
+          <Property Name="MAXIMUMTEXTLENGTHONRECEIPT" Type="Int32" />
+          <Property Name="NUMBEROFTOPORBOTTOMLINES" Type="Int32" />
+          <Property Name="ITEMIDONRECEIPT" Type="Int32" />
+          <Property Name="SERVICECHARGEPCT" Type="Decimal" Precision="28" Scale="12" />
+          <Property Name="INCOMEEXEPENSEACCOUNT" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="SERVICECHARGEPROMPT" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="STATEMENTVOUCHERNUMSEQ" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="TAXGROUP" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="REPLICATIONCOUNTER" Type="Int32" />
+          <Property Name="ROUNDINGTAXACCOUNT" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="MAXROUNDINGTAXAMOUNT" Type="Decimal" Precision="28" Scale="12" />
+          <Property Name="CULTURENAME" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="LAYOUTID" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="MODIFIEDDATE" Type="DateTime" Precision="3" />
+          <Property Name="MODIFIEDTIME" Type="Int32" />
+          <Property Name="MODIFIEDBY" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="DATAAREAID" Type="String" Nullable="false" MaxLength="4" FixedLength="false" Unicode="true" />
+          <Property Name="SQLSERVERNAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DATABASENAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="USERNAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PASSWORD" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DEFAULTCUSTACCOUNT" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="USEDEFAULTCUSTACCOUNT" Type="Byte" />
+          <Property Name="WINDOWSAUTHENTICATION" Type="Byte" />
+          <Property Name="HIDETRAININGMODE" Type="Byte" />
+          <Property Name="ADDRESSFORMAT" Type="Int32" />
+          <Property Name="TAXOVERRIDEGROUP" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="USEDESTINATIONBASEDTAX" Type="Int32" />
+          <Property Name="USECUSTOMERBASEDTAX" Type="Int32" />
+          <Property Name="TAXIDENTIFICATIONNUMBER" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="KEYEDINPRICECONTAINSTAX" Type="Byte" />
+          <Property Name="CALCDISCFROM" Type="Int32" />
+          <Property Name="DISPLAYDISCOUNTINCLTAX" Type="Byte" />
+          <Property Name="USETAXGROUPFROM" Type="Int32" />
+          <Property Name="SUSPENDALLOWEOD" Type="Int32" Nullable="false" />
+          <Property Name="StorePriceSetting" Type="Int32" />
+          <Property Name="TRANSACTIONSERVICEPROFILE" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="STYLEPROFILE" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="KEYBOARDCODE" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="LAYOUTNAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="KITCHENMANAGERPROFILEID" Type="Guid" />
+          <Property Name="USETAXROUNDING" Type="Byte" />
+          <Property Name="DISPLAYBALANCEWITHTAX" Type="Byte" />
+          <Property Name="RECEIPTPROFILEID" Type="Guid" />
+          <Property Name="RECEIPTLOGO" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="RECEIPTLOGOWIDTH" Type="Int32" />
+          <Property Name="FORMINFOFIELD1" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+          <Property Name="FORMINFOFIELD2" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+          <Property Name="FORMINFOFIELD3" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+          <Property Name="FORMINFOFIELD4" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+          <Property Name="BARCODESYMBOLOGY" Type="Int32" />
+          <Property Name="OPERATIONAUDITSETTING" Type="Int32" />
+          <Property Name="STARTAMOUNT" Type="Decimal" Precision="28" Scale="12" />
+          <Property Name="RETURNSPRINTEDTWICE" Type="Byte" />
+          <Property Name="TENDERRECEIPTSAREREPRINTED" Type="Byte" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="DelevaryNoteModelStoreContainer" CdmEntityContainer="GS295_DXB_100ConnectionString">
+          <EntitySetMapping Name="CUSTOMERADDRESSes">
+            <EntityTypeMapping TypeName="DelevaryNoteModel.CUSTOMERADDRESS">
+              <MappingFragment StoreEntitySet="CUSTOMERADDRESS">
+                <ScalarProperty Name="ACCOUNTNUM" ColumnName="ACCOUNTNUM" />
+                <ScalarProperty Name="DATAAREAID" ColumnName="DATAAREAID" />
+                <ScalarProperty Name="ADDRESSTYPE" ColumnName="ADDRESSTYPE" />
+                <ScalarProperty Name="STREET" ColumnName="STREET" />
+                <ScalarProperty Name="ADDRESS" ColumnName="ADDRESS" />
+                <ScalarProperty Name="ZIPCODE" ColumnName="ZIPCODE" />
+                <ScalarProperty Name="CITY" ColumnName="CITY" />
+                <ScalarProperty Name="STATE" ColumnName="STATE" />
+                <ScalarProperty Name="COUNTY" ColumnName="COUNTY" />
+                <ScalarProperty Name="COUNTRY" ColumnName="COUNTRY" />
+                <ScalarProperty Name="ADDRESSFORMAT" ColumnName="ADDRESSFORMAT" />
+                <ScalarProperty Name="TAXGROUP" ColumnName="TAXGROUP" />
+                <ScalarProperty Name="PHONE" ColumnName="PHONE" />
+                <ScalarProperty Name="CELLULARPHONE" ColumnName="CELLULARPHONE" />
+                <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+                <ScalarProperty Name="CONTACTNAME" ColumnName="CONTACTNAME" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CUSTTABLEs">
+            <EntityTypeMapping TypeName="DelevaryNoteModel.CUSTTABLE">
+              <MappingFragment StoreEntitySet="CUSTTABLE">
+                <ScalarProperty Name="ACCOUNTNUM" ColumnName="ACCOUNTNUM" />
+                <ScalarProperty Name="NAME" ColumnName="NAME" />
+                <ScalarProperty Name="ADDRESS" ColumnName="ADDRESS" />
+                <ScalarProperty Name="PHONE" ColumnName="PHONE" />
+                <ScalarProperty Name="TELEFAX" ColumnName="TELEFAX" />
+                <ScalarProperty Name="INVOICEACCOUNT" ColumnName="INVOICEACCOUNT" />
+                <ScalarProperty Name="CUSTGROUP" ColumnName="CUSTGROUP" />
+                <ScalarProperty Name="PAYMTERMID" ColumnName="PAYMTERMID" />
+                <ScalarProperty Name="CASHDISC" ColumnName="CASHDISC" />
+                <ScalarProperty Name="CURRENCY" ColumnName="CURRENCY" />
+                <ScalarProperty Name="BLOCKED" ColumnName="BLOCKED" />
+                <ScalarProperty Name="ONETIMECUSTOMER" ColumnName="ONETIMECUSTOMER" />
+                <ScalarProperty Name="ACCOUNTSTATEMENT" ColumnName="ACCOUNTSTATEMENT" />
+                <ScalarProperty Name="CREDITMAX" ColumnName="CREDITMAX" />
+                <ScalarProperty Name="MANDATORYCREDITLIMIT" ColumnName="MANDATORYCREDITLIMIT" />
+                <ScalarProperty Name="DIMENSION" ColumnName="DIMENSION" />
+                <ScalarProperty Name="DIMENSION2_" ColumnName="DIMENSION2_" />
+                <ScalarProperty Name="DIMENSION3_" ColumnName="DIMENSION3_" />
+                <ScalarProperty Name="VENDACCOUNT" ColumnName="VENDACCOUNT" />
+                <ScalarProperty Name="TELEX" ColumnName="TELEX" />
+                <ScalarProperty Name="COUNTRY" ColumnName="COUNTRY" />
+                <ScalarProperty Name="INVENTLOCATION" ColumnName="INVENTLOCATION" />
+                <ScalarProperty Name="DLVTERM" ColumnName="DLVTERM" />
+                <ScalarProperty Name="DLVMODE" ColumnName="DLVMODE" />
+                <ScalarProperty Name="CLEARINGPERIOD" ColumnName="CLEARINGPERIOD" />
+                <ScalarProperty Name="ZIPCODE" ColumnName="ZIPCODE" />
+                <ScalarProperty Name="STATE" ColumnName="STATE" />
+                <ScalarProperty Name="COUNTY" ColumnName="COUNTY" />
+                <ScalarProperty Name="URL" ColumnName="URL" />
+                <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+                <ScalarProperty Name="CELLULARPHONE" ColumnName="CELLULARPHONE" />
+                <ScalarProperty Name="PHONELOCAL" ColumnName="PHONELOCAL" />
+                <ScalarProperty Name="FREIGHTZONE" ColumnName="FREIGHTZONE" />
+                <ScalarProperty Name="CREDITRATING" ColumnName="CREDITRATING" />
+                <ScalarProperty Name="STATISTICSGROUP" ColumnName="STATISTICSGROUP" />
+                <ScalarProperty Name="PAYMMODE" ColumnName="PAYMMODE" />
+                <ScalarProperty Name="BANKACCOUNT" ColumnName="BANKACCOUNT" />
+                <ScalarProperty Name="NAMEALIAS" ColumnName="NAMEALIAS" />
+                <ScalarProperty Name="CONTACTPERSONID" ColumnName="CONTACTPERSONID" />
+                <ScalarProperty Name="INVOICEADDRESS" ColumnName="INVOICEADDRESS" />
+                <ScalarProperty Name="OURACCOUNTNUM" ColumnName="OURACCOUNTNUM" />
+                <ScalarProperty Name="SALESPOOLID" ColumnName="SALESPOOLID" />
+                <ScalarProperty Name="INCLTAX" ColumnName="INCLTAX" />
+                <ScalarProperty Name="CUSTITEMGROUPID" ColumnName="CUSTITEMGROUPID" />
+                <ScalarProperty Name="NUMBERSEQUENCEGROUP" ColumnName="NUMBERSEQUENCEGROUP" />
+                <ScalarProperty Name="LANGUAGEID" ColumnName="LANGUAGEID" />
+                <ScalarProperty Name="PAYMDAYID" ColumnName="PAYMDAYID" />
+                <ScalarProperty Name="LINEOFBUSINESSID" ColumnName="LINEOFBUSINESSID" />
+                <ScalarProperty Name="DESTINATIONCODEID" ColumnName="DESTINATIONCODEID" />
+                <ScalarProperty Name="WEBSALESORDERDISPLAY" ColumnName="WEBSALESORDERDISPLAY" />
+                <ScalarProperty Name="PAYMSPEC" ColumnName="PAYMSPEC" />
+                <ScalarProperty Name="BANKCENTRALBANKPURPOSETEXT" ColumnName="BANKCENTRALBANKPURPOSETEXT" />
+                <ScalarProperty Name="BANKCENTRALBANKPURPOSECODE" ColumnName="BANKCENTRALBANKPURPOSECODE" />
+                <ScalarProperty Name="PRINTMODULETYPE" ColumnName="PRINTMODULETYPE" />
+                <ScalarProperty Name="CITY" ColumnName="CITY" />
+                <ScalarProperty Name="STREET" ColumnName="STREET" />
+                <ScalarProperty Name="PAGER" ColumnName="PAGER" />
+                <ScalarProperty Name="SMS" ColumnName="SMS" />
+                <ScalarProperty Name="REFZIPCODE" ColumnName="REFZIPCODE" />
+                <ScalarProperty Name="PBACUSTGROUPID" ColumnName="PBACUSTGROUPID" />
+                <ScalarProperty Name="DATAAREAID" ColumnName="DATAAREAID" />
+                <ScalarProperty Name="VATNUM" ColumnName="VATNUM" />
+                <ScalarProperty Name="TAXGROUP" ColumnName="TAXGROUP" />
+                <ScalarProperty Name="TAXLICENSENUM" ColumnName="TAXLICENSENUM" />
+                <ScalarProperty Name="FORECASTDMPINCLUDE" ColumnName="FORECASTDMPINCLUDE" />
+                <ScalarProperty Name="LINEDISC" ColumnName="LINEDISC" />
+                <ScalarProperty Name="SALESGROUP" ColumnName="SALESGROUP" />
+                <ScalarProperty Name="PRICEGROUP" ColumnName="PRICEGROUP" />
+                <ScalarProperty Name="MULTILINEDISC" ColumnName="MULTILINEDISC" />
+                <ScalarProperty Name="ENDDISC" ColumnName="ENDDISC" />
+                <ScalarProperty Name="MARKUPGROUP" ColumnName="MARKUPGROUP" />
+                <ScalarProperty Name="COMMISSIONGROUP" ColumnName="COMMISSIONGROUP" />
+                <ScalarProperty Name="DEL_QUOTATIONCOPIES" ColumnName="DEL_QUOTATIONCOPIES" />
+                <ScalarProperty Name="DEL_QUOTATIONORIGINALS" ColumnName="DEL_QUOTATIONORIGINALS" />
+                <ScalarProperty Name="DEL_CONFIRMATIONORIGINALS" ColumnName="DEL_CONFIRMATIONORIGINALS" />
+                <ScalarProperty Name="DEL_INVOICECOPIES" ColumnName="DEL_INVOICECOPIES" />
+                <ScalarProperty Name="DEL_INVOICEORIGINALS" ColumnName="DEL_INVOICEORIGINALS" />
+                <ScalarProperty Name="DEL_PACKINGSLIPCOPIES" ColumnName="DEL_PACKINGSLIPCOPIES" />
+                <ScalarProperty Name="DEL_PACKINGSLIPORIGINALS" ColumnName="DEL_PACKINGSLIPORIGINALS" />
+                <ScalarProperty Name="DEL_CONFIRMATIONCOPIES" ColumnName="DEL_CONFIRMATIONCOPIES" />
+                <ScalarProperty Name="SUPPITEMGROUPID" ColumnName="SUPPITEMGROUPID" />
+                <ScalarProperty Name="PACKMATERIALFEELICENSENUM" ColumnName="PACKMATERIALFEELICENSENUM" />
+                <ScalarProperty Name="ORGID" ColumnName="ORGID" />
+                <ScalarProperty Name="USEPURCHREQUEST" ColumnName="USEPURCHREQUEST" />
+                <ScalarProperty Name="TAXOFFICE" ColumnName="TAXOFFICE" />
+                <ScalarProperty Name="NONCHARGABLEACCOUNT" ColumnName="NONCHARGABLEACCOUNT" />
+                <ScalarProperty Name="ADDRESSFORMAT" ColumnName="ADDRESSFORMAT" />
+                <ScalarProperty Name="FIRSTNAME" ColumnName="FIRSTNAME" />
+                <ScalarProperty Name="MIDDLENAME" ColumnName="MIDDLENAME" />
+                <ScalarProperty Name="LASTNAME" ColumnName="LASTNAME" />
+                <ScalarProperty Name="NAMEPREFIX" ColumnName="NAMEPREFIX" />
+                <ScalarProperty Name="NAMESUFFIX" ColumnName="NAMESUFFIX" />
+                <ScalarProperty Name="LOCALLYSAVED" ColumnName="LOCALLYSAVED" />
+                <ScalarProperty Name="LOYALTYCUSTOMER" ColumnName="LOYALTYCUSTOMER" />
+                <ScalarProperty Name="GENDER" ColumnName="GENDER" />
+                <ScalarProperty Name="DATEOFBIRTH" ColumnName="DATEOFBIRTH" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RBOCUSTTABLEs">
+            <EntityTypeMapping TypeName="DelevaryNoteModel.RBOCUSTTABLE">
+              <MappingFragment StoreEntitySet="RBOCUSTTABLE">
+                <ScalarProperty Name="ACCOUNTNUM" ColumnName="ACCOUNTNUM" />
+                <ScalarProperty Name="OTHERTENDERINFINALIZING" ColumnName="OTHERTENDERINFINALIZING" />
+                <ScalarProperty Name="POSTASSHIPMENT" ColumnName="POSTASSHIPMENT" />
+                <ScalarProperty Name="DATAAREAID" ColumnName="DATAAREAID" />
+                <ScalarProperty Name="USEORDERNUMBERREFERENCE" ColumnName="USEORDERNUMBERREFERENCE" />
+                <ScalarProperty Name="RECEIPTOPTION" ColumnName="RECEIPTOPTION" />
+                <ScalarProperty Name="RECEIPTEMAIL" ColumnName="RECEIPTEMAIL" />
+                <ScalarProperty Name="NONCHARGABLEACCOUNT" ColumnName="NONCHARGABLEACCOUNT" />
+                <ScalarProperty Name="REQUIRESAPPROVAL" ColumnName="REQUIRESAPPROVAL" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RBOINFOCODETABLEs">
+            <EntityTypeMapping TypeName="DelevaryNoteModel.RBOINFOCODETABLE">
+              <MappingFragment StoreEntitySet="RBOINFOCODETABLE">
+                <ScalarProperty Name="INFOCODEID" ColumnName="INFOCODEID" />
+                <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
+                <ScalarProperty Name="PROMPT" ColumnName="PROMPT" />
+                <ScalarProperty Name="ONCEPERTRANSACTION" ColumnName="ONCEPERTRANSACTION" />
+                <ScalarProperty Name="VALUEISAMOUNTORQUANTITY" ColumnName="VALUEISAMOUNTORQUANTITY" />
+                <ScalarProperty Name="PRINTPROMPTONRECEIPT" ColumnName="PRINTPROMPTONRECEIPT" />
+                <ScalarProperty Name="PRINTINPUTONRECEIPT" ColumnName="PRINTINPUTONRECEIPT" />
+                <ScalarProperty Name="PRINTINPUTNAMEONRECEIPT" ColumnName="PRINTINPUTNAMEONRECEIPT" />
+                <ScalarProperty Name="INPUTTYPE" ColumnName="INPUTTYPE" />
+                <ScalarProperty Name="MINIMUMVALUE" ColumnName="MINIMUMVALUE" />
+                <ScalarProperty Name="MAXIMUMVALUE" ColumnName="MAXIMUMVALUE" />
+                <ScalarProperty Name="MINIMUMLENGTH" ColumnName="MINIMUMLENGTH" />
+                <ScalarProperty Name="MAXIMUMLENGTH" ColumnName="MAXIMUMLENGTH" />
+                <ScalarProperty Name="INPUTREQUIRED" ColumnName="INPUTREQUIRED" />
+                <ScalarProperty Name="STD1INVALUE" ColumnName="STD1INVALUE" />
+                <ScalarProperty Name="LINKEDINFOCODEID" ColumnName="LINKEDINFOCODEID" />
+                <ScalarProperty Name="RANDOMFACTOR" ColumnName="RANDOMFACTOR" />
+                <ScalarProperty Name="RANDOMCOUNTER" ColumnName="RANDOMCOUNTER" />
+                <ScalarProperty Name="DATATYPEID" ColumnName="DATATYPEID" />
+                <ScalarProperty Name="MODIFIEDDATE" ColumnName="MODIFIEDDATE" />
+                <ScalarProperty Name="MODIFIEDTIME" ColumnName="MODIFIEDTIME" />
+                <ScalarProperty Name="MODIFIEDBY" ColumnName="MODIFIEDBY" />
+                <ScalarProperty Name="DATAAREAID" ColumnName="DATAAREAID" />
+                <ScalarProperty Name="ADDITIONALCHECK" ColumnName="ADDITIONALCHECK" />
+                <ScalarProperty Name="USAGECATEGORY" ColumnName="USAGECATEGORY" />
+                <ScalarProperty Name="DISPLAYOPTION" ColumnName="DISPLAYOPTION" />
+                <ScalarProperty Name="LINKITEMLINESTOTRIGGERLINE" ColumnName="LINKITEMLINESTOTRIGGERLINE" />
+                <ScalarProperty Name="MULTIPLESELECTION" ColumnName="MULTIPLESELECTION" />
+                <ScalarProperty Name="TRIGGERING" ColumnName="TRIGGERING" />
+                <ScalarProperty Name="MINSELECTION" ColumnName="MINSELECTION" />
+                <ScalarProperty Name="MAXSELECTION" ColumnName="MAXSELECTION" />
+                <ScalarProperty Name="CREATEINFOCODETRANSENTRIES" ColumnName="CREATEINFOCODETRANSENTRIES" />
+                <ScalarProperty Name="EXPLANATORYHEADERTEXT" ColumnName="EXPLANATORYHEADERTEXT" />
+                <ScalarProperty Name="OKPRESSEDACTION" ColumnName="OKPRESSEDACTION" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RBOINFOCODETABLESPECIFICs">
+            <EntityTypeMapping TypeName="DelevaryNoteModel.RBOINFOCODETABLESPECIFIC">
+              <MappingFragment StoreEntitySet="RBOINFOCODETABLESPECIFIC">
+                <ScalarProperty Name="REFRELATION" ColumnName="REFRELATION" />
+                <ScalarProperty Name="SEQUENCE" ColumnName="SEQUENCE" />
+                <ScalarProperty Name="INFOCODEID" ColumnName="INFOCODEID" />
+                <ScalarProperty Name="INPUTREQUIRED" ColumnName="INPUTREQUIRED" />
+                <ScalarProperty Name="WHENREQUIRED" ColumnName="WHENREQUIRED" />
+                <ScalarProperty Name="REFRELATION2" ColumnName="REFRELATION2" />
+                <ScalarProperty Name="REFRELATION3" ColumnName="REFRELATION3" />
+                <ScalarProperty Name="REFTABLEID" ColumnName="REFTABLEID" />
+                <ScalarProperty Name="DATAAREAID" ColumnName="DATAAREAID" />
+                <ScalarProperty Name="TRIGGERING" ColumnName="TRIGGERING" />
+                <ScalarProperty Name="UNITOFMEASURE" ColumnName="UNITOFMEASURE" />
+                <ScalarProperty Name="SALESTYPEFILTER" ColumnName="SALESTYPEFILTER" />
+                <ScalarProperty Name="USAGECATEGORY" ColumnName="USAGECATEGORY" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RBOINFORMATIONSUBCODETABLEs">
+            <EntityTypeMapping TypeName="DelevaryNoteModel.RBOINFORMATIONSUBCODETABLE">
+              <MappingFragment StoreEntitySet="RBOINFORMATIONSUBCODETABLE">
+                <ScalarProperty Name="INFOCODEID" ColumnName="INFOCODEID" />
+                <ScalarProperty Name="SUBCODEID" ColumnName="SUBCODEID" />
+                <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
+                <ScalarProperty Name="TRIGGERFUNCTION" ColumnName="TRIGGERFUNCTION" />
+                <ScalarProperty Name="TRIGGERCODE" ColumnName="TRIGGERCODE" />
+                <ScalarProperty Name="NEWSALESLINE" ColumnName="NEWSALESLINE" />
+                <ScalarProperty Name="PRICETYPE" ColumnName="PRICETYPE" />
+                <ScalarProperty Name="AMOUNTPERCENT" ColumnName="AMOUNTPERCENT" />
+                <ScalarProperty Name="DATAAREAID" ColumnName="DATAAREAID" />
+                <ScalarProperty Name="USAGECATEGORY" ColumnName="USAGECATEGORY" />
+                <ScalarProperty Name="VARIANTCODE" ColumnName="VARIANTCODE" />
+                <ScalarProperty Name="VARIANTNEEDED" ColumnName="VARIANTNEEDED" />
+                <ScalarProperty Name="QTYLINKEDTOTRIGGERLINE" ColumnName="QTYLINKEDTOTRIGGERLINE" />
+                <ScalarProperty Name="PRICEHANDLING" ColumnName="PRICEHANDLING" />
+                <ScalarProperty Name="LINKEDINFOCODE" ColumnName="LINKEDINFOCODE" />
+                <ScalarProperty Name="UNITOFMEASURE" ColumnName="UNITOFMEASURE" />
+                <ScalarProperty Name="QTYPERUNITOFMEASURE" ColumnName="QTYPERUNITOFMEASURE" />
+                <ScalarProperty Name="INFOCODEPROMPT" ColumnName="INFOCODEPROMPT" />
+                <ScalarProperty Name="MAXSELECTION" ColumnName="MAXSELECTION" />
+                <ScalarProperty Name="SERIALLOTNEEDED" ColumnName="SERIALLOTNEEDED" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RBOTRANSACTIONINFOCODETRANS">
+            <EntityTypeMapping TypeName="DelevaryNoteModel.RBOTRANSACTIONINFOCODETRAN">
+              <MappingFragment StoreEntitySet="RBOTRANSACTIONINFOCODETRANS">
+                <ScalarProperty Name="TRANSACTIONID" ColumnName="TRANSACTIONID" />
+                <ScalarProperty Name="LINENUM" ColumnName="LINENUM" />
+                <ScalarProperty Name="TYPE" ColumnName="TYPE" />
+                <ScalarProperty Name="INFOCODEID" ColumnName="INFOCODEID" />
+                <ScalarProperty Name="INFORMATION" ColumnName="INFORMATION" />
+                <ScalarProperty Name="INFOAMOUNT" ColumnName="INFOAMOUNT" />
+                <ScalarProperty Name="TRANSDATE" ColumnName="TRANSDATE" />
+                <ScalarProperty Name="TRANSTIME" ColumnName="TRANSTIME" />
+                <ScalarProperty Name="STORE" ColumnName="STORE" />
+                <ScalarProperty Name="TERMINAL" ColumnName="TERMINAL" />
+                <ScalarProperty Name="STAFF" ColumnName="STAFF" />
+                <ScalarProperty Name="ITEMTENDER" ColumnName="ITEMTENDER" />
+                <ScalarProperty Name="AMOUNT" ColumnName="AMOUNT" />
+                <ScalarProperty Name="INPUTTYPE" ColumnName="INPUTTYPE" />
+                <ScalarProperty Name="SUBINFOCODEID" ColumnName="SUBINFOCODEID" />
+                <ScalarProperty Name="STATEMENTID" ColumnName="STATEMENTID" />
+                <ScalarProperty Name="STATEMENTCODE" ColumnName="STATEMENTCODE" />
+                <ScalarProperty Name="SOURCECODE" ColumnName="SOURCECODE" />
+                <ScalarProperty Name="COUNTER" ColumnName="COUNTER" />
+                <ScalarProperty Name="REPLICATED" ColumnName="REPLICATED" />
+                <ScalarProperty Name="DATAAREAID" ColumnName="DATAAREAID" />
+                <ScalarProperty Name="SOURCECODE2" ColumnName="SOURCECODE2" />
+                <ScalarProperty Name="SOURCECODE3" ColumnName="SOURCECODE3" />
+                <ScalarProperty Name="REPLICATIONCOUNTER" ColumnName="REPLICATIONCOUNTER" />
+                <ScalarProperty Name="PROMPT" ColumnName="PROMPT" />
+                <ScalarProperty Name="PRINTPROMPTONRECEIPT" ColumnName="PRINTPROMPTONRECEIPT" />
+                <ScalarProperty Name="PRINTINPUTONRECEIPT" ColumnName="PRINTINPUTONRECEIPT" />
+                <ScalarProperty Name="PRINTINPUTNAMEONRECEIPT" ColumnName="PRINTINPUTNAMEONRECEIPT" />
+                <ScalarProperty Name="LINEID" ColumnName="LINEID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RBOTRANSACTIONPAYMENTTRANS">
+            <EntityTypeMapping TypeName="DelevaryNoteModel.RBOTRANSACTIONPAYMENTTRAN">
+              <MappingFragment StoreEntitySet="RBOTRANSACTIONPAYMENTTRANS">
+                <ScalarProperty Name="TRANSACTIONID" ColumnName="TRANSACTIONID" />
+                <ScalarProperty Name="LINENUM" ColumnName="LINENUM" />
+                <ScalarProperty Name="RECEIPTID" ColumnName="RECEIPTID" />
+                <ScalarProperty Name="STATEMENTCODE" ColumnName="STATEMENTCODE" />
+                <ScalarProperty Name="CARDTYPEID" ColumnName="CARDTYPEID" />
+                <ScalarProperty Name="EXCHRATE" ColumnName="EXCHRATE" />
+                <ScalarProperty Name="TENDERTYPE" ColumnName="TENDERTYPE" />
+                <ScalarProperty Name="AMOUNTTENDERED" ColumnName="AMOUNTTENDERED" />
+                <ScalarProperty Name="CURRENCY" ColumnName="CURRENCY" />
+                <ScalarProperty Name="AMOUNTCUR" ColumnName="AMOUNTCUR" />
+                <ScalarProperty Name="CARDORACCOUNT" ColumnName="CARDORACCOUNT" />
+                <ScalarProperty Name="TRANSDATE" ColumnName="TRANSDATE" />
+                <ScalarProperty Name="TRANSTIME" ColumnName="TRANSTIME" />
+                <ScalarProperty Name="SHIFT" ColumnName="SHIFT" />
+                <ScalarProperty Name="SHIFTDATE" ColumnName="SHIFTDATE" />
+                <ScalarProperty Name="STAFF" ColumnName="STAFF" />
+                <ScalarProperty Name="STORE" ColumnName="STORE" />
+                <ScalarProperty Name="TERMINAL" ColumnName="TERMINAL" />
+                <ScalarProperty Name="TRANSACTIONSTATUS" ColumnName="TRANSACTIONSTATUS" />
+                <ScalarProperty Name="STATEMENTID" ColumnName="STATEMENTID" />
+                <ScalarProperty Name="MANAGERKEYLIVE" ColumnName="MANAGERKEYLIVE" />
+                <ScalarProperty Name="CHANGELINE" ColumnName="CHANGELINE" />
+                <ScalarProperty Name="COUNTER" ColumnName="COUNTER" />
+                <ScalarProperty Name="REPLICATIONCOUNTER" ColumnName="REPLICATIONCOUNTER" />
+                <ScalarProperty Name="MESSAGENUM" ColumnName="MESSAGENUM" />
+                <ScalarProperty Name="REPLICATED" ColumnName="REPLICATED" />
+                <ScalarProperty Name="QTY" ColumnName="QTY" />
+                <ScalarProperty Name="ZREPORTID" ColumnName="ZREPORTID" />
+                <ScalarProperty Name="MODIFIEDDATE" ColumnName="MODIFIEDDATE" />
+                <ScalarProperty Name="DATAAREAID" ColumnName="DATAAREAID" />
+                <ScalarProperty Name="MARKUPAMOUNT" ColumnName="MARKUPAMOUNT" />
+                <ScalarProperty Name="AUTHENTICATIONCODE" ColumnName="AUTHENTICATIONCODE" />
+                <ScalarProperty Name="GIFTORCREDITID" ColumnName="GIFTORCREDITID" />
+                <ScalarProperty Name="BATCHID" ColumnName="BATCHID" />
+                <ScalarProperty Name="EFTAUTHENTICATIONCODE" ColumnName="EFTAUTHENTICATIONCODE" />
+                <ScalarProperty Name="GIFTCARDID" ColumnName="GIFTCARDID" />
+                <ScalarProperty Name="CREDITVOUCHERID" ColumnName="CREDITVOUCHERID" />
+                <ScalarProperty Name="LOYALTYCARDID" ColumnName="LOYALTYCARDID" />
+                <ScalarProperty Name="EXCHRATEMST" ColumnName="EXCHRATEMST" />
+                <ScalarProperty Name="AMOUNTMST" ColumnName="AMOUNTMST" />
+                <ScalarProperty Name="LOYALTYPOINTS" ColumnName="LOYALTYPOINTS" />
+                <ScalarProperty Name="COMMENT" ColumnName="COMMENT" />
+                <ScalarProperty Name="CARDNUMBERHIDDEN" ColumnName="CARDNUMBERHIDDEN" />
+                <ScalarProperty Name="CARDNAME" ColumnName="CARDNAME" />
+                <ScalarProperty Name="CARDISSUER" ColumnName="CARDISSUER" />
+                <ScalarProperty Name="EXPIRYDATE" ColumnName="EXPIRYDATE" />
+                <ScalarProperty Name="CARDHOLDERNAME" ColumnName="CARDHOLDERNAME" />
+                <ScalarProperty Name="CARDENTRYTYPE" ColumnName="CARDENTRYTYPE" />
+                <ScalarProperty Name="CARDBIN" ColumnName="CARDBIN" />
+                <ScalarProperty Name="MERCHANTID" ColumnName="MERCHANTID" />
+                <ScalarProperty Name="AUTHCODE" ColumnName="AUTHCODE" />
+                <ScalarProperty Name="MESSAGE" ColumnName="MESSAGE" />
+                <ScalarProperty Name="RESPONSECODE" ColumnName="RESPONSECODE" />
+                <ScalarProperty Name="DRIVERID" ColumnName="DRIVERID" />
+                <ScalarProperty Name="VEHICLEID" ColumnName="VEHICLEID" />
+                <ScalarProperty Name="ODOMETERREADING" ColumnName="ODOMETERREADING" />
+                <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
+                <ScalarProperty Name="CHECKID" ColumnName="CHECKID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RBOTRANSACTIONSALESTRANS">
+            <EntityTypeMapping TypeName="DelevaryNoteModel.RBOTRANSACTIONSALESTRAN">
+              <MappingFragment StoreEntitySet="RBOTRANSACTIONSALESTRANS">
+                <ScalarProperty Name="TRANSACTIONID" ColumnName="TRANSACTIONID" />
+                <ScalarProperty Name="LINENUM" ColumnName="LINENUM" />
+                <ScalarProperty Name="RECEIPTID" ColumnName="RECEIPTID" />
+                <ScalarProperty Name="BARCODE" ColumnName="BARCODE" />
+                <ScalarProperty Name="ITEMID" ColumnName="ITEMID" />
+                <ScalarProperty Name="ITEMDEPARTMENTID" ColumnName="ITEMDEPARTMENTID" />
+                <ScalarProperty Name="ITEMGROUPID" ColumnName="ITEMGROUPID" />
+                <ScalarProperty Name="PRICE" ColumnName="PRICE" />
+                <ScalarProperty Name="NETPRICE" ColumnName="NETPRICE" />
+                <ScalarProperty Name="QTY" ColumnName="QTY" />
+                <ScalarProperty Name="TAXGROUP" ColumnName="TAXGROUP" />
+                <ScalarProperty Name="TRANSACTIONSTATUS" ColumnName="TRANSACTIONSTATUS" />
+                <ScalarProperty Name="DISCAMOUNT" ColumnName="DISCAMOUNT" />
+                <ScalarProperty Name="COSTAMOUNT" ColumnName="COSTAMOUNT" />
+                <ScalarProperty Name="TRANSDATE" ColumnName="TRANSDATE" />
+                <ScalarProperty Name="TRANSTIME" ColumnName="TRANSTIME" />
+                <ScalarProperty Name="SHIFT" ColumnName="SHIFT" />
+                <ScalarProperty Name="SHIFTDATE" ColumnName="SHIFTDATE" />
+                <ScalarProperty Name="NETAMOUNT" ColumnName="NETAMOUNT" />
+                <ScalarProperty Name="DISCOFFERID" ColumnName="DISCOFFERID" />
+                <ScalarProperty Name="DISCGROUPID" ColumnName="DISCGROUPID" />
+                <ScalarProperty Name="STDNETPRICE" ColumnName="STDNETPRICE" />
+                <ScalarProperty Name="DISCAMOUNTFROMSTDPRICE" ColumnName="DISCAMOUNTFROMSTDPRICE" />
+                <ScalarProperty Name="STATEMENTID" ColumnName="STATEMENTID" />
+                <ScalarProperty Name="CUSTACCOUNT" ColumnName="CUSTACCOUNT" />
+                <ScalarProperty Name="SECTION" ColumnName="SECTION" />
+                <ScalarProperty Name="SHELF" ColumnName="SHELF" />
+                <ScalarProperty Name="STATEMENTCODE" ColumnName="STATEMENTCODE" />
+                <ScalarProperty Name="TRANSACTIONCODE" ColumnName="TRANSACTIONCODE" />
+                <ScalarProperty Name="STORE" ColumnName="STORE" />
+                <ScalarProperty Name="ITEMIDSCANNED" ColumnName="ITEMIDSCANNED" />
+                <ScalarProperty Name="KEYBOARDITEMENTRY" ColumnName="KEYBOARDITEMENTRY" />
+                <ScalarProperty Name="PRICEINBARCODE" ColumnName="PRICEINBARCODE" />
+                <ScalarProperty Name="PRICECHANGE" ColumnName="PRICECHANGE" />
+                <ScalarProperty Name="WEIGHTMANUALLYENTERED" ColumnName="WEIGHTMANUALLYENTERED" />
+                <ScalarProperty Name="LINEWASDISCOUNTED" ColumnName="LINEWASDISCOUNTED" />
+                <ScalarProperty Name="SCALEITEM" ColumnName="SCALEITEM" />
+                <ScalarProperty Name="WEIGHTITEM" ColumnName="WEIGHTITEM" />
+                <ScalarProperty Name="RETURNNOSALE" ColumnName="RETURNNOSALE" />
+                <ScalarProperty Name="ITEMCORRECTEDLINE" ColumnName="ITEMCORRECTEDLINE" />
+                <ScalarProperty Name="SALESTYPE" ColumnName="SALESTYPE" />
+                <ScalarProperty Name="LINKEDITEMNOTORIGINAL" ColumnName="LINKEDITEMNOTORIGINAL" />
+                <ScalarProperty Name="ORIGINALOFLINKEDITEMLIST" ColumnName="ORIGINALOFLINKEDITEMLIST" />
+                <ScalarProperty Name="TERMINALID" ColumnName="TERMINALID" />
+                <ScalarProperty Name="STAFF" ColumnName="STAFF" />
+                <ScalarProperty Name="ITEMPOSTINGGROUP" ColumnName="ITEMPOSTINGGROUP" />
+                <ScalarProperty Name="TOTALROUNDEDAMOUNT" ColumnName="TOTALROUNDEDAMOUNT" />
+                <ScalarProperty Name="COUNTER" ColumnName="COUNTER" />
+                <ScalarProperty Name="REPLICATIONCOUNTER" ColumnName="REPLICATIONCOUNTER" />
+                <ScalarProperty Name="VARIANTID" ColumnName="VARIANTID" />
+                <ScalarProperty Name="LINEDSCAMOUNT" ColumnName="LINEDSCAMOUNT" />
+                <ScalarProperty Name="REPLICATED" ColumnName="REPLICATED" />
+                <ScalarProperty Name="CUSTDISCAMOUNT" ColumnName="CUSTDISCAMOUNT" />
+                <ScalarProperty Name="INFOCODEDISCAMOUNT" ColumnName="INFOCODEDISCAMOUNT" />
+                <ScalarProperty Name="CUSTINVOICEDISCAMOUNT" ColumnName="CUSTINVOICEDISCAMOUNT" />
+                <ScalarProperty Name="UNIT" ColumnName="UNIT" />
+                <ScalarProperty Name="UNITQTY" ColumnName="UNITQTY" />
+                <ScalarProperty Name="UNITPRICE" ColumnName="UNITPRICE" />
+                <ScalarProperty Name="TAXAMOUNT" ColumnName="TAXAMOUNT" />
+                <ScalarProperty Name="TOTALDISCAMOUNT" ColumnName="TOTALDISCAMOUNT" />
+                <ScalarProperty Name="TOTALDISCPCT" ColumnName="TOTALDISCPCT" />
+                <ScalarProperty Name="TOTALDISCINFOCODELINENUM" ColumnName="TOTALDISCINFOCODELINENUM" />
+                <ScalarProperty Name="PERIODICDISCTYPE" ColumnName="PERIODICDISCTYPE" />
+                <ScalarProperty Name="PERIODICDISCAMOUNT" ColumnName="PERIODICDISCAMOUNT" />
+                <ScalarProperty Name="DISCOUNTAMOUNTFORPRINTING" ColumnName="DISCOUNTAMOUNTFORPRINTING" />
+                <ScalarProperty Name="STAFFID" ColumnName="STAFFID" />
+                <ScalarProperty Name="PERIODICDISCGROUP" ColumnName="PERIODICDISCGROUP" />
+                <ScalarProperty Name="INVENTTRANSID" ColumnName="INVENTTRANSID" />
+                <ScalarProperty Name="INVENTDIMID" ColumnName="INVENTDIMID" />
+                <ScalarProperty Name="PURCHID" ColumnName="PURCHID" />
+                <ScalarProperty Name="FILELOGID" ColumnName="FILELOGID" />
+                <ScalarProperty Name="MODIFIEDDATE" ColumnName="MODIFIEDDATE" />
+                <ScalarProperty Name="MODIFIEDTIME" ColumnName="MODIFIEDTIME" />
+                <ScalarProperty Name="MODIFIEDBY" ColumnName="MODIFIEDBY" />
+                <ScalarProperty Name="MODIFIEDTRANSACTIONID" ColumnName="MODIFIEDTRANSACTIONID" />
+                <ScalarProperty Name="CREATEDDATE" ColumnName="CREATEDDATE" />
+                <ScalarProperty Name="CREATEDTIME" ColumnName="CREATEDTIME" />
+                <ScalarProperty Name="CREATEDBY" ColumnName="CREATEDBY" />
+                <ScalarProperty Name="CREATEDTRANSACTIONID" ColumnName="CREATEDTRANSACTIONID" />
+                <ScalarProperty Name="DATAAREAID" ColumnName="DATAAREAID" />
+                <ScalarProperty Name="PUMPID" ColumnName="PUMPID" />
+                <ScalarProperty Name="PRESCRIPTIONID" ColumnName="PRESCRIPTIONID" />
+                <ScalarProperty Name="COMMENT" ColumnName="COMMENT" />
+                <ScalarProperty Name="LINEDISCPCT" ColumnName="LINEDISCPCT" />
+                <ScalarProperty Name="WHOLEDISCAMOUNTWITHTAX" ColumnName="WHOLEDISCAMOUNTWITHTAX" />
+                <ScalarProperty Name="TOTALDISCAMOUNTWITHTAX" ColumnName="TOTALDISCAMOUNTWITHTAX" />
+                <ScalarProperty Name="LINEDISCAMOUNTWITHTAX" ColumnName="LINEDISCAMOUNTWITHTAX" />
+                <ScalarProperty Name="PERIODICDISCAMOUNTWITHTAX" ColumnName="PERIODICDISCAMOUNTWITHTAX" />
+                <ScalarProperty Name="INVENTBATCHID" ColumnName="INVENTBATCHID" />
+                <ScalarProperty Name="GIFTCARD" ColumnName="GIFTCARD" />
+                <ScalarProperty Name="INVENTSERIALID" ColumnName="INVENTSERIALID" />
+                <ScalarProperty Name="RFIDTAGID" ColumnName="RFIDTAGID" />
+                <ScalarProperty Name="RETURNTRANSACTIONID" ColumnName="RETURNTRANSACTIONID" />
+                <ScalarProperty Name="RETURNQTY" ColumnName="RETURNQTY" />
+                <ScalarProperty Name="ITEMTYPE" ColumnName="ITEMTYPE" />
+                <ScalarProperty Name="SOURCELINENUM" ColumnName="SOURCELINENUM" />
+                <ScalarProperty Name="CREDITMEMONUMBER" ColumnName="CREDITMEMONUMBER" />
+                <ScalarProperty Name="TAXINCLINPRICE" ColumnName="TAXINCLINPRICE" />
+                <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
+                <ScalarProperty Name="OILTAX" ColumnName="OILTAX" />
+                <ScalarProperty Name="RETURNLINEID" ColumnName="RETURNLINEID" />
+                <ScalarProperty Name="ISINFOCODEITEM" ColumnName="ISINFOCODEITEM" />
+                <ScalarProperty Name="INVENTBATCHEXPDATE" ColumnName="INVENTBATCHEXPDATE" />
+                <ScalarProperty Name="TENDERRESTRICTIONID" ColumnName="TENDERRESTRICTIONID" />
+                <ScalarProperty Name="PRICEUNIT" ColumnName="PRICEUNIT" />
+                <ScalarProperty Name="NETAMOUNTINCLTAX" ColumnName="NETAMOUNTINCLTAX" />
+                <ScalarProperty Name="DOSAGETYPE" ColumnName="DOSAGETYPE" />
+                <ScalarProperty Name="DOSAGESTRENGTHUNIT" ColumnName="DOSAGESTRENGTHUNIT" />
+                <ScalarProperty Name="DOSAGESTRENGTH" ColumnName="DOSAGESTRENGTH" />
+                <ScalarProperty Name="DOSAGEUNITQUANTITY" ColumnName="DOSAGEUNITQUANTITY" />
+                <ScalarProperty Name="TAXITEMGROUP" ColumnName="TAXITEMGROUP" />
+                <ScalarProperty Name="STORETAXGROUP" ColumnName="STORETAXGROUP" />
+                <ScalarProperty Name="ORIGINALTAXGROUP" ColumnName="ORIGINALTAXGROUP" />
+                <ScalarProperty Name="ORIGINALTAXITEMGROUP" ColumnName="ORIGINALTAXITEMGROUP" />
+                <ScalarProperty Name="CURRENCY" ColumnName="CURRENCY" />
+                <ScalarProperty Name="TAXEXEMPT" ColumnName="TAXEXEMPT" />
+                <ScalarProperty Name="HOSPITALITYSALESTYPE" ColumnName="HOSPITALITYSALESTYPE" />
+                <ScalarProperty Name="ORIGINALPRICE" ColumnName="ORIGINALPRICE" />
+                <ScalarProperty Name="ORIGINALPRICEWITHTAX" ColumnName="ORIGINALPRICEWITHTAX" />
+                <ScalarProperty Name="RETURNRECEIPTID" ColumnName="RETURNRECEIPTID" />
+                <ScalarProperty Name="RETURNSTOREID" ColumnName="RETURNSTOREID" />
+                <ScalarProperty Name="RETURNTERMINALID" ColumnName="RETURNTERMINALID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RBOTRANSACTIONTABLEs">
+            <EntityTypeMapping TypeName="DelevaryNoteModel.RBOTRANSACTIONTABLE">
+              <MappingFragment StoreEntitySet="RBOTRANSACTIONTABLE">
+                <ScalarProperty Name="TRANSACTIONID" ColumnName="TRANSACTIONID" />
+                <ScalarProperty Name="TYPE" ColumnName="TYPE" />
+                <ScalarProperty Name="RECEIPTID" ColumnName="RECEIPTID" />
+                <ScalarProperty Name="STORE" ColumnName="STORE" />
+                <ScalarProperty Name="TERMINAL" ColumnName="TERMINAL" />
+                <ScalarProperty Name="STAFF" ColumnName="STAFF" />
+                <ScalarProperty Name="TRANSDATE" ColumnName="TRANSDATE" />
+                <ScalarProperty Name="TRANSTIME" ColumnName="TRANSTIME" />
+                <ScalarProperty Name="SHIFT" ColumnName="SHIFT" />
+                <ScalarProperty Name="SHIFTDATE" ColumnName="SHIFTDATE" />
+                <ScalarProperty Name="WRONGSHIFT" ColumnName="WRONGSHIFT" />
+                <ScalarProperty Name="INFOCODEDISCGROUP" ColumnName="INFOCODEDISCGROUP" />
+                <ScalarProperty Name="CUSTACCOUNT" ColumnName="CUSTACCOUNT" />
+                <ScalarProperty Name="TRANSCODE" ColumnName="TRANSCODE" />
+                <ScalarProperty Name="SALESPAYMENTDIFFERENCE" ColumnName="SALESPAYMENTDIFFERENCE" />
+                <ScalarProperty Name="NETAMOUNT" ColumnName="NETAMOUNT" />
+                <ScalarProperty Name="COSTAMOUNT" ColumnName="COSTAMOUNT" />
+                <ScalarProperty Name="GROSSAMOUNT" ColumnName="GROSSAMOUNT" />
+                <ScalarProperty Name="PAYMENTAMOUNT" ColumnName="PAYMENTAMOUNT" />
+                <ScalarProperty Name="DISCAMOUNT" ColumnName="DISCAMOUNT" />
+                <ScalarProperty Name="CUSTDISCAMOUNT" ColumnName="CUSTDISCAMOUNT" />
+                <ScalarProperty Name="TOTALDISCAMOUNT" ColumnName="TOTALDISCAMOUNT" />
+                <ScalarProperty Name="NUMBEROFITEMS" ColumnName="NUMBEROFITEMS" />
+                <ScalarProperty Name="AMOUNTTOACCOUNT" ColumnName="AMOUNTTOACCOUNT" />
+                <ScalarProperty Name="ROUNDEDAMOUNT" ColumnName="ROUNDEDAMOUNT" />
+                <ScalarProperty Name="ENTRYSTATUS" ColumnName="ENTRYSTATUS" />
+                <ScalarProperty Name="NUMBEROFINVOICES" ColumnName="NUMBEROFINVOICES" />
+                <ScalarProperty Name="NUMBEROFITEMLINES" ColumnName="NUMBEROFITEMLINES" />
+                <ScalarProperty Name="STATEMENTCODE" ColumnName="STATEMENTCODE" />
+                <ScalarProperty Name="STATEMENTID" ColumnName="STATEMENTID" />
+                <ScalarProperty Name="REFUNDRECEIPTID" ColumnName="REFUNDRECEIPTID" />
+                <ScalarProperty Name="INCOMEEXPENSEAMOUNT" ColumnName="INCOMEEXPENSEAMOUNT" />
+                <ScalarProperty Name="TOACCOUNT" ColumnName="TOACCOUNT" />
+                <ScalarProperty Name="NUMBEROFPAYMENTLINES" ColumnName="NUMBEROFPAYMENTLINES" />
+                <ScalarProperty Name="SALEISRETURNSALE" ColumnName="SALEISRETURNSALE" />
+                <ScalarProperty Name="COUNTER" ColumnName="COUNTER" />
+                <ScalarProperty Name="TIMEWHENTOTALPRESSED" ColumnName="TIMEWHENTOTALPRESSED" />
+                <ScalarProperty Name="TIMEWHENTRANSCLOSED" ColumnName="TIMEWHENTRANSCLOSED" />
+                <ScalarProperty Name="CURRENCY" ColumnName="CURRENCY" />
+                <ScalarProperty Name="TRANSTABLEID" ColumnName="TRANSTABLEID" />
+                <ScalarProperty Name="OPENDRAWER" ColumnName="OPENDRAWER" />
+                <ScalarProperty Name="REPLICATED" ColumnName="REPLICATED" />
+                <ScalarProperty Name="REPLICATIONCOUNTER" ColumnName="REPLICATIONCOUNTER" />
+                <ScalarProperty Name="REPLICATIONCOUNTERFROMORIGIN" ColumnName="REPLICATIONCOUNTERFROMORIGIN" />
+                <ScalarProperty Name="INCLUDEDINSTATISTICS" ColumnName="INCLUDEDINSTATISTICS" />
+                <ScalarProperty Name="RETRIEVEDFROMRECEIPTID" ColumnName="RETRIEVEDFROMRECEIPTID" />
+                <ScalarProperty Name="ZREPORTID" ColumnName="ZREPORTID" />
+                <ScalarProperty Name="CREATEDONPOSTERMINAL" ColumnName="CREATEDONPOSTERMINAL" />
+                <ScalarProperty Name="POSTASSHIPMENT" ColumnName="POSTASSHIPMENT" />
+                <ScalarProperty Name="ITEMSPOSTED" ColumnName="ITEMSPOSTED" />
+                <ScalarProperty Name="MODIFIEDDATE" ColumnName="MODIFIEDDATE" />
+                <ScalarProperty Name="MODIFIEDTIME" ColumnName="MODIFIEDTIME" />
+                <ScalarProperty Name="MODIFIEDBY" ColumnName="MODIFIEDBY" />
+                <ScalarProperty Name="CREATEDDATE" ColumnName="CREATEDDATE" />
+                <ScalarProperty Name="CREATEDTIME" ColumnName="CREATEDTIME" />
+                <ScalarProperty Name="CREATEDBY" ColumnName="CREATEDBY" />
+                <ScalarProperty Name="DATAAREAID" ColumnName="DATAAREAID" />
+                <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
+                <ScalarProperty Name="CUSTPURCHASEORDER" ColumnName="CUSTPURCHASEORDER" />
+                <ScalarProperty Name="COMMENT" ColumnName="COMMENT" />
+                <ScalarProperty Name="INVOICECOMMENT" ColumnName="INVOICECOMMENT" />
+                <ScalarProperty Name="SALESORDERAMOUNT" ColumnName="SALESORDERAMOUNT" />
+                <ScalarProperty Name="SALESINVOICEAMOUNT" ColumnName="SALESINVOICEAMOUNT" />
+                <ScalarProperty Name="RECEIPTEMAIL" ColumnName="RECEIPTEMAIL" />
+                <ScalarProperty Name="EXCHRATE" ColumnName="EXCHRATE" />
+                <ScalarProperty Name="MARKUPAMOUNT" ColumnName="MARKUPAMOUNT" />
+                <ScalarProperty Name="MARKUPDESCRIPTION" ColumnName="MARKUPDESCRIPTION" />
+                <ScalarProperty Name="ORGTRANSSTORE" ColumnName="ORGTRANSSTORE" />
+                <ScalarProperty Name="ORGTRANSTERMINAL" ColumnName="ORGTRANSTERMINAL" />
+                <ScalarProperty Name="ORGTRANSACTIONID" ColumnName="ORGTRANSACTIONID" />
+                <ScalarProperty Name="ORGRECEIPTID" ColumnName="ORGRECEIPTID" />
+                <ScalarProperty Name="OILTAX" ColumnName="OILTAX" />
+                <ScalarProperty Name="TAXINCLINPRICE" ColumnName="TAXINCLINPRICE" />
+                <ScalarProperty Name="TAXEXEMPT" ColumnName="TAXEXEMPT" />
+                <ScalarProperty Name="UNCONCLUDEDTRANS" ColumnName="UNCONCLUDEDTRANS" />
+                <ScalarProperty Name="INVENTORYUPDATED" ColumnName="INVENTORYUPDATED" />
+                <ScalarProperty Name="SALESSEQUENCEID" ColumnName="SALESSEQUENCEID" />
+                <ScalarProperty Name="BUSINESSDAY" ColumnName="BUSINESSDAY" />
+                <ScalarProperty Name="TRNGENERATED" ColumnName="TRNGENERATED" />
+                <ScalarProperty Name="BUSINESSSYSTEMDAY" ColumnName="BUSINESSSYSTEMDAY" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RBOTRANSACTIONTAXTRANS">
+            <EntityTypeMapping TypeName="DelevaryNoteModel.RBOTRANSACTIONTAXTRAN">
+              <MappingFragment StoreEntitySet="RBOTRANSACTIONTAXTRANS">
+                <ScalarProperty Name="TRANSACTIONID" ColumnName="TRANSACTIONID" />
+                <ScalarProperty Name="LINENUM" ColumnName="LINENUM" />
+                <ScalarProperty Name="TAXLINENUM" ColumnName="TAXLINENUM" />
+                <ScalarProperty Name="DATAAREAID" ColumnName="DATAAREAID" />
+                <ScalarProperty Name="TAXGROUP" ColumnName="TAXGROUP" />
+                <ScalarProperty Name="TAXCODE" ColumnName="TAXCODE" />
+                <ScalarProperty Name="TAXPCT" ColumnName="TAXPCT" />
+                <ScalarProperty Name="TAXAMOUNT" ColumnName="TAXAMOUNT" />
+                <ScalarProperty Name="TAXROUNDOFF" ColumnName="TAXROUNDOFF" />
+                <ScalarProperty Name="TAXROUNDOFFTYPE" ColumnName="TAXROUNDOFFTYPE" />
+                <ScalarProperty Name="PRICEWITHTAX" ColumnName="PRICEWITHTAX" />
+                <ScalarProperty Name="TRANSHEADER" ColumnName="TRANSHEADER" />
+                <ScalarProperty Name="STORE" ColumnName="STORE" />
+                <ScalarProperty Name="TERMINAL" ColumnName="TERMINAL" />
+                <ScalarProperty Name="REPLICATIONCOUNTER" ColumnName="REPLICATIONCOUNTER" />
+                <ScalarProperty Name="REPLICATED" ColumnName="REPLICATED" />
+                <ScalarProperty Name="TAXCODERECEIPTDISPLAY" ColumnName="TAXCODERECEIPTDISPLAY" />
+                <ScalarProperty Name="TAXGROUPRECEIPTDISPLAY" ColumnName="TAXGROUPRECEIPTDISPLAY" />
+                <ScalarProperty Name="TAXEXEMPT" ColumnName="TAXEXEMPT" />
+                <ScalarProperty Name="TAXEXEMPTIONCODE" ColumnName="TAXEXEMPTIONCODE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RBOSTAFFTABLE">
+            <EntityTypeMapping TypeName="DelevaryNoteModel.RBOSTAFFTABLE">
+              <MappingFragment StoreEntitySet="RBOSTAFFTABLE">
+                <ScalarProperty Name="LAYOUTNAME" ColumnName="LAYOUTNAME" />
+                <ScalarProperty Name="KEYBOARDCODE" ColumnName="KEYBOARDCODE" />
+                <ScalarProperty Name="MAXTOTALRETURNAMOUNT" ColumnName="MAXTOTALRETURNAMOUNT" />
+                <ScalarProperty Name="MAXLINERETURNAMOUNT" ColumnName="MAXLINERETURNAMOUNT" />
+                <ScalarProperty Name="MAXTOTALDISCOUNTAMOUNT" ColumnName="MAXTOTALDISCOUNTAMOUNT" />
+                <ScalarProperty Name="MAXLINEDISCOUNTAMOUNT" ColumnName="MAXLINEDISCOUNTAMOUNT" />
+                <ScalarProperty Name="OPERATORCULTURE" ColumnName="OPERATORCULTURE" />
+                <ScalarProperty Name="VISUALPROFILE" ColumnName="VISUALPROFILE" />
+                <ScalarProperty Name="DATAAREAID" ColumnName="DATAAREAID" />
+                <ScalarProperty Name="MODIFIEDBY" ColumnName="MODIFIEDBY" />
+                <ScalarProperty Name="MODIFIEDTIME" ColumnName="MODIFIEDTIME" />
+                <ScalarProperty Name="MODIFIEDDATE" ColumnName="MODIFIEDDATE" />
+                <ScalarProperty Name="LAYOUTID" ColumnName="LAYOUTID" />
+                <ScalarProperty Name="MAXTOTALDISCOUNTPCT" ColumnName="MAXTOTALDISCOUNTPCT" />
+                <ScalarProperty Name="PHONEHOME" ColumnName="PHONEHOME" />
+                <ScalarProperty Name="CONTINUEONTSERRORS" ColumnName="CONTINUEONTSERRORS" />
+                <ScalarProperty Name="PAYROLLNUMBER" ColumnName="PAYROLLNUMBER" />
+                <ScalarProperty Name="NAMEONRECEIPT" ColumnName="NAMEONRECEIPT" />
+                <ScalarProperty Name="ZREPORTID" ColumnName="ZREPORTID" />
+                <ScalarProperty Name="PERMISSIONGROUPID" ColumnName="PERMISSIONGROUPID" />
+                <ScalarProperty Name="LEFTHANDED" ColumnName="LEFTHANDED" />
+                <ScalarProperty Name="BLOCKINGDATE" ColumnName="BLOCKINGDATE" />
+                <ScalarProperty Name="BLOCKED" ColumnName="BLOCKED" />
+                <ScalarProperty Name="PHONEWORK" ColumnName="PHONEWORK" />
+                <ScalarProperty Name="DEL_PHONELOCAL" ColumnName="DEL_PHONELOCAL" />
+                <ScalarProperty Name="COUNTRY" ColumnName="COUNTRY" />
+                <ScalarProperty Name="STATE" ColumnName="STATE" />
+                <ScalarProperty Name="COUNTY" ColumnName="COUNTY" />
+                <ScalarProperty Name="CITY" ColumnName="CITY" />
+                <ScalarProperty Name="ZIPCODE" ColumnName="ZIPCODE" />
+                <ScalarProperty Name="STREET" ColumnName="STREET" />
+                <ScalarProperty Name="ADDRESS" ColumnName="ADDRESS" />
+                <ScalarProperty Name="EMPLOYMENTTYPE" ColumnName="EMPLOYMENTTYPE" />
+                <ScalarProperty Name="LASTNAME" ColumnName="LASTNAME" />
+                <ScalarProperty Name="FIRSTNAME" ColumnName="FIRSTNAME" />
+                <ScalarProperty Name="ALLOWOPENDRAWERONLY" ColumnName="ALLOWOPENDRAWERONLY" />
+                <ScalarProperty Name="ALLOWTRANSACTIONSUSPENSION" ColumnName="ALLOWTRANSACTIONSUSPENSION" />
+                <ScalarProperty Name="ALLOWCHANGENOVOID" ColumnName="ALLOWCHANGENOVOID" />
+                <ScalarProperty Name="MAXDISCOUNTPCT" ColumnName="MAXDISCOUNTPCT" />
+                <ScalarProperty Name="PRICEOVERRIDE" ColumnName="PRICEOVERRIDE" />
+                <ScalarProperty Name="ALLOWFLOATINGDECLARATION" ColumnName="ALLOWFLOATINGDECLARATION" />
+                <ScalarProperty Name="ALLOWTENDERDECLARATION" ColumnName="ALLOWTENDERDECLARATION" />
+                <ScalarProperty Name="ALLOWXREPORTPRINTING" ColumnName="ALLOWXREPORTPRINTING" />
+                <ScalarProperty Name="MANAGERPRIVILEGES" ColumnName="MANAGERPRIVILEGES" />
+                <ScalarProperty Name="ALLOWTRANSACTIONVOIDING" ColumnName="ALLOWTRANSACTIONVOIDING" />
+                <ScalarProperty Name="CHANGEPASSWORD" ColumnName="CHANGEPASSWORD" />
+                <ScalarProperty Name="PASSWORD" ColumnName="PASSWORD" />
+                <ScalarProperty Name="STOREID" ColumnName="STOREID" />
+                <ScalarProperty Name="NAME" ColumnName="NAME" />
+                <ScalarProperty Name="STAFFID" ColumnName="STAFFID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RBOSTORETABLE">
+            <EntityTypeMapping TypeName="DelevaryNoteModel.RBOSTORETABLE">
+              <MappingFragment StoreEntitySet="RBOSTORETABLE">
+                <ScalarProperty Name="TENDERRECEIPTSAREREPRINTED" ColumnName="TENDERRECEIPTSAREREPRINTED" />
+                <ScalarProperty Name="RETURNSPRINTEDTWICE" ColumnName="RETURNSPRINTEDTWICE" />
+                <ScalarProperty Name="STARTAMOUNT" ColumnName="STARTAMOUNT" />
+                <ScalarProperty Name="OPERATIONAUDITSETTING" ColumnName="OPERATIONAUDITSETTING" />
+                <ScalarProperty Name="BARCODESYMBOLOGY" ColumnName="BARCODESYMBOLOGY" />
+                <ScalarProperty Name="FORMINFOFIELD4" ColumnName="FORMINFOFIELD4" />
+                <ScalarProperty Name="FORMINFOFIELD3" ColumnName="FORMINFOFIELD3" />
+                <ScalarProperty Name="FORMINFOFIELD2" ColumnName="FORMINFOFIELD2" />
+                <ScalarProperty Name="FORMINFOFIELD1" ColumnName="FORMINFOFIELD1" />
+                <ScalarProperty Name="RECEIPTLOGOWIDTH" ColumnName="RECEIPTLOGOWIDTH" />
+                <ScalarProperty Name="RECEIPTLOGO" ColumnName="RECEIPTLOGO" />
+                <ScalarProperty Name="RECEIPTPROFILEID" ColumnName="RECEIPTPROFILEID" />
+                <ScalarProperty Name="DISPLAYBALANCEWITHTAX" ColumnName="DISPLAYBALANCEWITHTAX" />
+                <ScalarProperty Name="USETAXROUNDING" ColumnName="USETAXROUNDING" />
+                <ScalarProperty Name="KITCHENMANAGERPROFILEID" ColumnName="KITCHENMANAGERPROFILEID" />
+                <ScalarProperty Name="LAYOUTNAME" ColumnName="LAYOUTNAME" />
+                <ScalarProperty Name="KEYBOARDCODE" ColumnName="KEYBOARDCODE" />
+                <ScalarProperty Name="STYLEPROFILE" ColumnName="STYLEPROFILE" />
+                <ScalarProperty Name="TRANSACTIONSERVICEPROFILE" ColumnName="TRANSACTIONSERVICEPROFILE" />
+                <ScalarProperty Name="StorePriceSetting" ColumnName="StorePriceSetting" />
+                <ScalarProperty Name="SUSPENDALLOWEOD" ColumnName="SUSPENDALLOWEOD" />
+                <ScalarProperty Name="USETAXGROUPFROM" ColumnName="USETAXGROUPFROM" />
+                <ScalarProperty Name="DISPLAYDISCOUNTINCLTAX" ColumnName="DISPLAYDISCOUNTINCLTAX" />
+                <ScalarProperty Name="CALCDISCFROM" ColumnName="CALCDISCFROM" />
+                <ScalarProperty Name="KEYEDINPRICECONTAINSTAX" ColumnName="KEYEDINPRICECONTAINSTAX" />
+                <ScalarProperty Name="TAXIDENTIFICATIONNUMBER" ColumnName="TAXIDENTIFICATIONNUMBER" />
+                <ScalarProperty Name="USECUSTOMERBASEDTAX" ColumnName="USECUSTOMERBASEDTAX" />
+                <ScalarProperty Name="USEDESTINATIONBASEDTAX" ColumnName="USEDESTINATIONBASEDTAX" />
+                <ScalarProperty Name="TAXOVERRIDEGROUP" ColumnName="TAXOVERRIDEGROUP" />
+                <ScalarProperty Name="ADDRESSFORMAT" ColumnName="ADDRESSFORMAT" />
+                <ScalarProperty Name="HIDETRAININGMODE" ColumnName="HIDETRAININGMODE" />
+                <ScalarProperty Name="WINDOWSAUTHENTICATION" ColumnName="WINDOWSAUTHENTICATION" />
+                <ScalarProperty Name="USEDEFAULTCUSTACCOUNT" ColumnName="USEDEFAULTCUSTACCOUNT" />
+                <ScalarProperty Name="DEFAULTCUSTACCOUNT" ColumnName="DEFAULTCUSTACCOUNT" />
+                <ScalarProperty Name="PASSWORD" ColumnName="PASSWORD" />
+                <ScalarProperty Name="USERNAME" ColumnName="USERNAME" />
+                <ScalarProperty Name="DATABASENAME" ColumnName="DATABASENAME" />
+                <ScalarProperty Name="SQLSERVERNAME" ColumnName="SQLSERVERNAME" />
+                <ScalarProperty Name="DATAAREAID" ColumnName="DATAAREAID" />
+                <ScalarProperty Name="MODIFIEDBY" ColumnName="MODIFIEDBY" />
+                <ScalarProperty Name="MODIFIEDTIME" ColumnName="MODIFIEDTIME" />
+                <ScalarProperty Name="MODIFIEDDATE" ColumnName="MODIFIEDDATE" />
+                <ScalarProperty Name="LAYOUTID" ColumnName="LAYOUTID" />
+                <ScalarProperty Name="CULTURENAME" ColumnName="CULTURENAME" />
+                <ScalarProperty Name="MAXROUNDINGTAXAMOUNT" ColumnName="MAXROUNDINGTAXAMOUNT" />
+                <ScalarProperty Name="ROUNDINGTAXACCOUNT" ColumnName="ROUNDINGTAXACCOUNT" />
+                <ScalarProperty Name="REPLICATIONCOUNTER" ColumnName="REPLICATIONCOUNTER" />
+                <ScalarProperty Name="TAXGROUP" ColumnName="TAXGROUP" />
+                <ScalarProperty Name="STATEMENTVOUCHERNUMSEQ" ColumnName="STATEMENTVOUCHERNUMSEQ" />
+                <ScalarProperty Name="SERVICECHARGEPROMPT" ColumnName="SERVICECHARGEPROMPT" />
+                <ScalarProperty Name="INCOMEEXEPENSEACCOUNT" ColumnName="INCOMEEXEPENSEACCOUNT" />
+                <ScalarProperty Name="SERVICECHARGEPCT" ColumnName="SERVICECHARGEPCT" />
+                <ScalarProperty Name="ITEMIDONRECEIPT" ColumnName="ITEMIDONRECEIPT" />
+                <ScalarProperty Name="NUMBEROFTOPORBOTTOMLINES" ColumnName="NUMBEROFTOPORBOTTOMLINES" />
+                <ScalarProperty Name="MAXIMUMTEXTLENGTHONRECEIPT" ColumnName="MAXIMUMTEXTLENGTHONRECEIPT" />
+                <ScalarProperty Name="TENDERDECLARATIONCALCULATION" ColumnName="TENDERDECLARATIONCALCULATION" />
+                <ScalarProperty Name="REMOVEADDTENDER" ColumnName="REMOVEADDTENDER" />
+                <ScalarProperty Name="INVENTORYLOOKUP" ColumnName="INVENTORYLOOKUP" />
+                <ScalarProperty Name="MULTIBUYDISCOUNTNUMSEQ" ColumnName="MULTIBUYDISCOUNTNUMSEQ" />
+                <ScalarProperty Name="MIXANDMATCHNUMSEQ" ColumnName="MIXANDMATCHNUMSEQ" />
+                <ScalarProperty Name="DISCOUNTOFFERNUMSEQ" ColumnName="DISCOUNTOFFERNUMSEQ" />
+                <ScalarProperty Name="ITEMNUMSEQ" ColumnName="ITEMNUMSEQ" />
+                <ScalarProperty Name="STAFFNUMSEQ" ColumnName="STAFFNUMSEQ" />
+                <ScalarProperty Name="TERMINALNUMSEQ" ColumnName="TERMINALNUMSEQ" />
+                <ScalarProperty Name="CREATELABELSFORZEROPRICE" ColumnName="CREATELABELSFORZEROPRICE" />
+                <ScalarProperty Name="FUNCTIONALITYPROFILE" ColumnName="FUNCTIONALITYPROFILE" />
+                <ScalarProperty Name="STATEMENTNUMSEQ" ColumnName="STATEMENTNUMSEQ" />
+                <ScalarProperty Name="MAXTRANSACTIONDIFFERENCEAMOUNT" ColumnName="MAXTRANSACTIONDIFFERENCEAMOUNT" />
+                <ScalarProperty Name="MAXSHIFTDIFFERENCEAMOUNT" ColumnName="MAXSHIFTDIFFERENCEAMOUNT" />
+                <ScalarProperty Name="MAXROUNDINGAMOUNT" ColumnName="MAXROUNDINGAMOUNT" />
+                <ScalarProperty Name="MAXIMUMPOSTINGDIFFERENCE" ColumnName="MAXIMUMPOSTINGDIFFERENCE" />
+                <ScalarProperty Name="ROUNDINGACCOUNT" ColumnName="ROUNDINGACCOUNT" />
+                <ScalarProperty Name="CLOSINGMETHOD" ColumnName="CLOSINGMETHOD" />
+                <ScalarProperty Name="CURRENCY" ColumnName="CURRENCY" />
+                <ScalarProperty Name="ONESTATEMENTPERDAY" ColumnName="ONESTATEMENTPERDAY" />
+                <ScalarProperty Name="STATEMENTMETHOD" ColumnName="STATEMENTMETHOD" />
+                <ScalarProperty Name="INVENTLOCATION" ColumnName="INVENTLOCATION" />
+                <ScalarProperty Name="DIMENSION3_" ColumnName="DIMENSION3_" />
+                <ScalarProperty Name="DIMENSION2_" ColumnName="DIMENSION2_" />
+                <ScalarProperty Name="DIMENSION" ColumnName="DIMENSION" />
+                <ScalarProperty Name="OPENTO" ColumnName="OPENTO" />
+                <ScalarProperty Name="OPENFROM" ColumnName="OPENFROM" />
+                <ScalarProperty Name="MANAGERID" ColumnName="MANAGERID" />
+                <ScalarProperty Name="PHONE" ColumnName="PHONE" />
+                <ScalarProperty Name="COUNTRY" ColumnName="COUNTRY" />
+                <ScalarProperty Name="STATE" ColumnName="STATE" />
+                <ScalarProperty Name="COUNTY" ColumnName="COUNTY" />
+                <ScalarProperty Name="CITY" ColumnName="CITY" />
+                <ScalarProperty Name="ZIPCODE" ColumnName="ZIPCODE" />
+                <ScalarProperty Name="STREET" ColumnName="STREET" />
+                <ScalarProperty Name="ADDRESS" ColumnName="ADDRESS" />
+                <ScalarProperty Name="NAME" ColumnName="NAME" />
+                <ScalarProperty Name="STOREID" ColumnName="STOREID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

@@ -1,0 +1,188 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{88E07484-7E05-44E3-8892-76645A01F33A}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>LSDelevaryNote</RootNamespace>
+    <AssemblyName>LSDelevaryNote</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Resources\DeliveryNoteIcon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=4.4.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net40\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CUSTOMERADDRESS.cs">
+      <DependentUpon>DelevaryNote.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CUSTTABLE.cs">
+      <DependentUpon>DelevaryNote.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DelevaryNote.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DelevaryNote.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DelevaryNote.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DelevaryNote.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DelevaryNote.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DelevaryNote.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="DeliveryDbContext.cs" />
+    <Compile Include="FormDeliveryNote.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDeliveryNote.Designer.cs">
+      <DependentUpon>FormDeliveryNote.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RBOCUSTTABLE.cs">
+      <DependentUpon>DelevaryNote.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RBOINFOCODETABLE.cs">
+      <DependentUpon>DelevaryNote.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RBOINFOCODETABLESPECIFIC.cs">
+      <DependentUpon>DelevaryNote.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RBOINFORMATIONSUBCODETABLE.cs">
+      <DependentUpon>DelevaryNote.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RBOSTAFFTABLE.cs">
+      <DependentUpon>DelevaryNote.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RBOSTORETABLE.cs">
+      <DependentUpon>DelevaryNote.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RBOTRANSACTIONINFOCODETRAN.cs">
+      <DependentUpon>DelevaryNote.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RBOTRANSACTIONPAYMENTTRAN.cs">
+      <DependentUpon>DelevaryNote.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RBOTRANSACTIONSALESTRAN.cs">
+      <DependentUpon>DelevaryNote.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RBOTRANSACTIONTABLE.cs">
+      <DependentUpon>DelevaryNote.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RBOTRANSACTIONTAXTRAN.cs">
+      <DependentUpon>DelevaryNote.tt</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="FormDeliveryNote.resx">
+      <DependentUpon>FormDeliveryNote.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EntityDeploy Include="DelevaryNote.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>DelevaryNote.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="App.Config" />
+    <None Include="DelevaryNote.edmx.diagram">
+      <DependentUpon>DelevaryNote.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DeliveryNoteIcon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="DeliveryNoteIcon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\MyExtentionsWinForms\MyExtentions\MyExtentions.csproj">
+      <Project>{D2686E19-E7EC-44FF-9931-68B6018F9CAC}</Project>
+      <Name>MyExtentions</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="DelevaryNote.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>DelevaryNote.edmx</DependentUpon>
+      <LastGenOutput>DelevaryNote.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="DelevaryNote.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>DelevaryNote.edmx</DependentUpon>
+      <LastGenOutput>DelevaryNote.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

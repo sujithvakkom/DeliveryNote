@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="e940d219c4484d81876978743f7ab389" Name="Diagram1">
+        <EntityTypeShape EntityType="DelevaryNoteModel.CUSTOMERADDRESS" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DelevaryNoteModel.CUSTTABLE" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DelevaryNoteModel.RBOCUSTTABLE" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DelevaryNoteModel.RBOINFOCODETABLE" Width="1.5" PointX="4.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DelevaryNoteModel.RBOINFOCODETABLESPECIFIC" Width="1.5" PointX="6.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DelevaryNoteModel.RBOINFORMATIONSUBCODETABLE" Width="1.5" PointX="6.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DelevaryNoteModel.RBOTRANSACTIONINFOCODETRAN" Width="1.5" PointX="8.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DelevaryNoteModel.RBOTRANSACTIONPAYMENTTRAN" Width="1.5" PointX="8.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DelevaryNoteModel.RBOTRANSACTIONSALESTRAN" Width="1.5" PointX="10.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DelevaryNoteModel.RBOTRANSACTIONTABLE" Width="1.5" PointX="12.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DelevaryNoteModel.RBOTRANSACTIONTAXTRAN" Width="1.5" PointX="4.75" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DelevaryNoteModel.RBOSTAFFTABLE" Width="1.5" PointX="15.375" PointY="0.75" />
+        <EntityTypeShape EntityType="DelevaryNoteModel.RBOSTORETABLE" Width="1.5" PointX="15.375" PointY="12.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
