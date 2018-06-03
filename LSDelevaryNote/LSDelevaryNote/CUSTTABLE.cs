@@ -14,6 +14,7 @@ namespace LSDelevaryNote
     
     public partial class CUSTTABLE
     {
+        [System.ComponentModel.DataAnnotations.Key]
         public string ACCOUNTNUM { get; set; }
         public string NAME { get; set; }
         public string ADDRESS { get; set; }

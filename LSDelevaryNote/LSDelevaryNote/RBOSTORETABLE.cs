@@ -14,6 +14,7 @@ namespace LSDelevaryNote
     
     public partial class RBOSTORETABLE
     {
+        [System.ComponentModel.DataAnnotations.Key]
         public string STOREID { get; set; }
         public string NAME { get; set; }
         public string ADDRESS { get; set; }

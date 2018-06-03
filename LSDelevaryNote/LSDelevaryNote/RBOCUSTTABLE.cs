@@ -14,6 +14,7 @@ namespace LSDelevaryNote
     
     public partial class RBOCUSTTABLE
     {
+        [System.ComponentModel.DataAnnotations.Key]
         public string ACCOUNTNUM { get; set; }
         public Nullable<byte> OTHERTENDERINFINALIZING { get; set; }
         public Nullable<byte> POSTASSHIPMENT { get; set; }

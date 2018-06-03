@@ -14,6 +14,7 @@ namespace LSDelevaryNote
     
     public partial class RBOTRANSACTIONPAYMENTTRAN
     {
+        [System.ComponentModel.DataAnnotations.Key]
         public string TRANSACTIONID { get; set; }
         public decimal LINENUM { get; set; }
         public string RECEIPTID { get; set; }

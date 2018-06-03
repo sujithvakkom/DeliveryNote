@@ -39,12 +39,17 @@
       <HintPath>..\packages\EntityFramework.5.0.0\lib\net40\EntityFramework.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\ReportViewer 10.0.0.0\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.Entity" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -118,6 +123,18 @@
     <Compile Include="RBOTRANSACTIONTAXTRAN.cs">
       <DependentUpon>DelevaryNote.tt</DependentUpon>
     </Compile>
+    <Compile Include="Report.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Report.Designer.cs">
+      <DependentUpon>Report.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReportPriner.cs" />
+    <Compile Include="Transaction.cs" />
+    <Compile Include="TransactionCustomer.cs" />
+    <Compile Include="TransactionLine.cs" />
+    <Compile Include="TransactionLines.cs" />
+    <EmbeddedResource Include="DelivaryReport.rdlc" />
     <EmbeddedResource Include="FormDeliveryNote.resx">
       <DependentUpon>FormDeliveryNote.cs</DependentUpon>
     </EmbeddedResource>
@@ -131,6 +148,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Report.resx">
+      <DependentUpon>Report.cs</DependentUpon>
+    </EmbeddedResource>
     <EntityDeploy Include="DelevaryNote.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>DelevaryNote.Designer.cs</LastGenOutput>
@@ -140,6 +160,9 @@
       <DependentUpon>DelevaryNote.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\Transaction.datasource" />
+    <None Include="Properties\DataSources\TransactionCustomer.datasource" />
+    <None Include="Properties\DataSources\TransactionLines.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -173,6 +196,10 @@
       <DependentUpon>DelevaryNote.edmx</DependentUpon>
       <LastGenOutput>DelevaryNote.cs</LastGenOutput>
     </Content>
+    <None Include="if_print_44993.png" />
+    <None Include="if_cross_48_10298.png" />
+    <None Include="Resources\if_cross_48_10298.png" />
+    <None Include="Resources\if_print_44993.png" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

@@ -14,6 +14,7 @@ namespace LSDelevaryNote
     
     public partial class RBOINFOCODETABLESPECIFIC
     {
+        [System.ComponentModel.DataAnnotations.Key]
         public string REFRELATION { get; set; }
         public Nullable<int> SEQUENCE { get; set; }
         public string INFOCODEID { get; set; }

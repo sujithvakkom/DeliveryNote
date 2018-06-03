@@ -12,8 +12,9 @@ namespace LSDelevaryNote
     using System;
     using System.Collections.Generic;
     
-    public partial class RBOTRANSACTIONSALESTRAN
+    public partial class RBOTRANSACTIONSALESTRANS
     {
+        [System.ComponentModel.DataAnnotations.Key]
         public string TRANSACTIONID { get; set; }
         public decimal LINENUM { get; set; }
         public string RECEIPTID { get; set; }

@@ -14,6 +14,7 @@ namespace LSDelevaryNote
     
     public partial class CUSTOMERADDRESS
     {
+        [System.ComponentModel.DataAnnotations.Key]
         public string ACCOUNTNUM { get; set; }
         public string DATAAREAID { get; set; }
         public int ADDRESSTYPE { get; set; }

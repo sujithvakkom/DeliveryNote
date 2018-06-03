@@ -14,6 +14,7 @@ namespace LSDelevaryNote
     
     public partial class RBOTRANSACTIONTABLE
     {
+        [System.ComponentModel.DataAnnotations.Key]
         public string TRANSACTIONID { get; set; }
         public Nullable<int> TYPE { get; set; }
         public string RECEIPTID { get; set; }

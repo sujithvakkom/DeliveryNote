@@ -14,6 +14,7 @@ namespace LSDelevaryNote
     
     public partial class RBOSTAFFTABLE
     {
+        [System.ComponentModel.DataAnnotations.Key]
         public string STAFFID { get; set; }
         public string NAME { get; set; }
         public string STOREID { get; set; }

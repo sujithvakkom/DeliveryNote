@@ -14,6 +14,7 @@ namespace LSDelevaryNote
     
     public partial class RBOINFORMATIONSUBCODETABLE
     {
+        [System.ComponentModel.DataAnnotations.Key]
         public string INFOCODEID { get; set; }
         public string SUBCODEID { get; set; }
         public string DESCRIPTION { get; set; }
