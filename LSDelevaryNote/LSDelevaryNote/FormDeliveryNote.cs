@@ -62,13 +62,13 @@ namespace LSDelevaryNote
                                           TransDate = tra_h.TRANSDATE ?? DateTime.MinValue,
                                           NetAmount = tra_h.NETAMOUNT ?? 0
                                       };
-
+                    //  LINENUM   changed to LINENUM = (decimal)tra_i.LINEID  in line 71 colu 156 by rafeeq
                     var transactionLine = from tra_h in db.RBOTRANSACTIONTABLE
                                           join tra_l in db.RBOTRANSACTIONSALESTRANS
                                           on tra_h.TRANSACTIONID equals tra_l.TRANSACTIONID
                                           join tra_i in db.RBOTRANSACTIONINFOCODETRANS
                                           on
-                                          new { tra_l.TRANSACTIONID, tra_l.LINENUM, INFOCODEID = Program.isDelevary } equals new { tra_i.TRANSACTIONID, tra_i.LINENUM, tra_i.INFOCODEID } into info_d
+                                          new { tra_l.TRANSACTIONID, tra_l.LINENUM, INFOCODEID = Program.isDelevary } equals new { tra_i.TRANSACTIONID, LINENUM = (decimal)tra_i.LINEID, tra_i.INFOCODEID } into info_d
                                           from info in info_d.DefaultIfEmpty()
                                           join info_sub in db.RBOINFORMATIONSUBCODETABLE on
                                           info.INFORMATION equals info_sub.SUBCODEID into info_sub_d
@@ -186,13 +186,13 @@ namespace LSDelevaryNote
                                       TransDate = tra_h.TRANSDATE ?? DateTime.MinValue,
                                       NetAmount = tra_h.NETAMOUNT ?? 0
                                   };
-
+                //  LINENUM   changed to LINENUM = (decimal)tra_i.LINEID  in line 195 colu 156 by rafeeq
                 var transactionLine = from tra_h in db.RBOTRANSACTIONTABLE
                                       join tra_l in db.RBOTRANSACTIONSALESTRANS
                                       on tra_h.TRANSACTIONID equals tra_l.TRANSACTIONID
                                       join tra_i in db.RBOTRANSACTIONINFOCODETRANS
                                       on
-                                      new { tra_l.TRANSACTIONID, tra_l.LINENUM, INFOCODEID = Program.isDelevary } equals new { tra_i.TRANSACTIONID, tra_i.LINENUM, tra_i.INFOCODEID } into info_d
+                                      new { tra_l.TRANSACTIONID, tra_l.LINENUM, INFOCODEID = Program.isDelevary } equals new { tra_i.TRANSACTIONID, LINENUM = (decimal)tra_i.LINEID, tra_i.INFOCODEID } into info_d
                                       from info in info_d.DefaultIfEmpty()
                                       join info_sub in db.RBOINFORMATIONSUBCODETABLE on
                                       info.INFORMATION equals info_sub.SUBCODEID into info_sub_d
@@ -325,13 +325,13 @@ namespace LSDelevaryNote
                                       TransDate = tra_h.TRANSDATE ?? DateTime.MinValue,
                                       NetAmount = tra_h.NETAMOUNT ?? 0
                                   };
-
+                //  LINENUM   changed to LINENUM = (decimal)tra_i.LINEID  in line 334 colu 156 by rafeeq
                 var transactionLine = from tra_h in db.RBOTRANSACTIONTABLE
                                       join tra_l in db.RBOTRANSACTIONSALESTRANS
                                       on tra_h.TRANSACTIONID equals tra_l.TRANSACTIONID
                                       join tra_i in db.RBOTRANSACTIONINFOCODETRANS
                                       on
-                                      new { tra_l.TRANSACTIONID, tra_l.LINENUM, INFOCODEID = isDelevary } equals new { tra_i.TRANSACTIONID, tra_i.LINENUM, tra_i.INFOCODEID } into info_d
+                                      new { tra_l.TRANSACTIONID, tra_l.LINENUM, INFOCODEID = isDelevary } equals new { tra_i.TRANSACTIONID, LINENUM = (decimal)tra_i.LINEID, tra_i.INFOCODEID } into info_d
                                       from info in info_d.DefaultIfEmpty()
                                       join info_sub in db.RBOINFORMATIONSUBCODETABLE on
                                       info.INFORMATION equals info_sub.SUBCODEID into info_sub_d
