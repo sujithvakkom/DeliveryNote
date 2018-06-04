@@ -65,7 +65,7 @@
             this.buttonPrint.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonPrint.Image = global::LSDelevaryNote.Properties.Resources.print_icon;
             this.buttonPrint.Location = new System.Drawing.Point(670, 188);
-            this.buttonPrint.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonPrint.Margin = new System.Windows.Forms.Padding(2);
             this.buttonPrint.Name = "buttonPrint";
             this.tableLayoutPanel1.SetRowSpan(this.buttonPrint, 2);
             this.buttonPrint.Size = new System.Drawing.Size(285, 182);
@@ -82,7 +82,7 @@
             this.buttonCancel.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonCancel.Image = global::LSDelevaryNote.Properties.Resources.close_icon;
             this.buttonCancel.Location = new System.Drawing.Point(670, 374);
-            this.buttonCancel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonCancel.Margin = new System.Windows.Forms.Padding(2);
             this.buttonCancel.Name = "buttonCancel";
             this.tableLayoutPanel1.SetRowSpan(this.buttonCancel, 2);
             this.buttonCancel.Size = new System.Drawing.Size(285, 188);
@@ -95,7 +95,7 @@
             this.textBoxReceipt.Dock = System.Windows.Forms.DockStyle.Fill;
             this.textBoxReceipt.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxReceipt.Location = new System.Drawing.Point(672, 97);
-            this.textBoxReceipt.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxReceipt.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxReceipt.Name = "textBoxReceipt";
             this.textBoxReceipt.Size = new System.Drawing.Size(281, 28);
             this.textBoxReceipt.TabIndex = 0;
@@ -107,7 +107,7 @@
             this.tableLayoutPanel1.SetColumnSpan(this.dataGridViewReceipt, 2);
             this.dataGridViewReceipt.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridViewReceipt.Location = new System.Drawing.Point(2, 2);
-            this.dataGridViewReceipt.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataGridViewReceipt.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridViewReceipt.Name = "dataGridViewReceipt";
             this.tableLayoutPanel1.SetRowSpan(this.dataGridViewReceipt, 2);
             this.dataGridViewReceipt.RowTemplate.Height = 24;
@@ -120,7 +120,7 @@
             this.tableLayoutPanel1.SetColumnSpan(this.dataGridViewTransaction, 4);
             this.dataGridViewTransaction.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridViewTransaction.Location = new System.Drawing.Point(2, 188);
-            this.dataGridViewTransaction.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataGridViewTransaction.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridViewTransaction.Name = "dataGridViewTransaction";
             this.tableLayoutPanel1.SetRowSpan(this.dataGridViewTransaction, 4);
             this.dataGridViewTransaction.RowTemplate.Height = 24;
@@ -133,7 +133,7 @@
             this.tableLayoutPanel1.SetColumnSpan(this.dataGridViewCustomer, 2);
             this.dataGridViewCustomer.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridViewCustomer.Location = new System.Drawing.Point(2, 2);
-            this.dataGridViewCustomer.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataGridViewCustomer.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridViewCustomer.Name = "dataGridViewCustomer";
             this.tableLayoutPanel1.SetRowSpan(this.dataGridViewCustomer, 2);
             this.dataGridViewCustomer.RowTemplate.Height = 24;
@@ -155,7 +155,7 @@
             this.reportViewerDelivary.LocalReport.DataSources.Add(reportDataSource3);
             this.reportViewerDelivary.LocalReport.ReportEmbeddedResource = "LSDelevaryNote.DelivaryReport.rdlc";
             this.reportViewerDelivary.Location = new System.Drawing.Point(2, 2);
-            this.reportViewerDelivary.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.reportViewerDelivary.Margin = new System.Windows.Forms.Padding(2);
             this.reportViewerDelivary.Name = "reportViewerDelivary";
             this.tableLayoutPanel1.SetRowSpan(this.reportViewerDelivary, 6);
             this.reportViewerDelivary.Size = new System.Drawing.Size(664, 560);
@@ -182,7 +182,7 @@
             this.tableLayoutPanel1.Controls.Add(this.flowLayoutPanel1, 6, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 6;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
@@ -202,7 +202,7 @@
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(670, 2);
-            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(2);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(285, 89);
             this.flowLayoutPanel1.TabIndex = 6;
@@ -213,7 +213,7 @@
             this.linkLabelReport.Location = new System.Drawing.Point(228, 0);
             this.linkLabelReport.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.linkLabelReport.Name = "linkLabelReport";
-            this.linkLabelReport.Padding = new System.Windows.Forms.Padding(8, 8, 8, 8);
+            this.linkLabelReport.Padding = new System.Windows.Forms.Padding(8);
             this.linkLabelReport.Size = new System.Drawing.Size(55, 29);
             this.linkLabelReport.TabIndex = 0;
             this.linkLabelReport.TabStop = true;
@@ -227,7 +227,7 @@
             this.linkLabelSettings.Location = new System.Drawing.Point(163, 0);
             this.linkLabelSettings.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.linkLabelSettings.Name = "linkLabelSettings";
-            this.linkLabelSettings.Padding = new System.Windows.Forms.Padding(8, 8, 8, 8);
+            this.linkLabelSettings.Padding = new System.Windows.Forms.Padding(8);
             this.linkLabelSettings.Size = new System.Drawing.Size(61, 29);
             this.linkLabelSettings.TabIndex = 1;
             this.linkLabelSettings.TabStop = true;
@@ -243,7 +243,7 @@
             this.Controls.Add(this.tableLayoutPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FormDeliveryNote";

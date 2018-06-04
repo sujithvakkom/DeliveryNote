@@ -95,13 +95,13 @@ namespace LSDelevaryNote
             int transactionStatus = 0;
             int defaultAddressType = 0;
             using (var db = new DeliveryDbContext(builder.ConnectionString))
-            {
+            {   //LINENUM changed to LINEID IN in line 103 col 155 by rafeeq
                 var transactionLine = from tra_h in db.RBOTRANSACTIONTABLE
                                       join tra_l in db.RBOTRANSACTIONSALESTRANS
                                       on tra_h.TRANSACTIONID equals tra_l.TRANSACTIONID
                                       join tra_i in db.RBOTRANSACTIONINFOCODETRANS
                                       on
-                                      new { tra_l.TRANSACTIONID, tra_l.LINENUM, INFOCODEID = Program.isDelevary } equals new { tra_i.TRANSACTIONID, tra_i.LINENUM, tra_i.INFOCODEID } into info_d
+                                      new { tra_l.TRANSACTIONID, tra_l.LINENUM, INFOCODEID = Program.isDelevary } equals new { tra_i.TRANSACTIONID, LINENUM = (decimal)tra_i.LINEID, tra_i.INFOCODEID } into info_d
                                       from info in info_d.DefaultIfEmpty()
                                       join info_sub in db.RBOINFORMATIONSUBCODETABLE on
                                       info.INFORMATION equals info_sub.SUBCODEID into info_sub_d
