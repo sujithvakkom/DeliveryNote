@@ -174,5 +174,10 @@ namespace LSDelevaryNote
                cm.Show(dataGridViewReport, new Point(e.X, e.Y));
             }
         }
+
+        private void buttonSMS_Click(object sender, EventArgs e)
+        {
+            FormSMS formSMS = new FormSMS();
+        }
     }
 }

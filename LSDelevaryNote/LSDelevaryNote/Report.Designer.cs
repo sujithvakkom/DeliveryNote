@@ -29,6 +29,13 @@
         private void InitializeComponent()
         {
             this.dataGridViewReport = new System.Windows.Forms.DataGridView();
+            this.ReceiptID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ItemId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Description = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ExtraInfo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Qty = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TaxInckInPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Comment = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.labelFromDate = new System.Windows.Forms.Label();
@@ -38,13 +45,7 @@
             this.labelItemCode = new System.Windows.Forms.Label();
             this.textBoxItem = new System.Windows.Forms.TextBox();
             this.buttonFilter = new System.Windows.Forms.Button();
-            this.ReceiptID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ItemId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Description = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ExtraInfo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Qty = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TaxInckInPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Comment = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.buttonSMS = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewReport)).BeginInit();
             this.tableLayoutPanel.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
@@ -76,6 +77,55 @@
             this.dataGridViewReport.TabIndex = 0;
             this.dataGridViewReport.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dataGridViewReport_MouseClick);
             // 
+            // ReceiptID
+            // 
+            this.ReceiptID.DataPropertyName = "ReceiptID";
+            this.ReceiptID.FillWeight = 25F;
+            this.ReceiptID.HeaderText = "Receipt";
+            this.ReceiptID.Name = "ReceiptID";
+            // 
+            // ItemId
+            // 
+            this.ItemId.DataPropertyName = "ItemId";
+            this.ItemId.FillWeight = 25F;
+            this.ItemId.HeaderText = "Item Code";
+            this.ItemId.Name = "ItemId";
+            // 
+            // Description
+            // 
+            this.Description.DataPropertyName = "Description";
+            this.Description.FillWeight = 40F;
+            this.Description.HeaderText = "Description";
+            this.Description.Name = "Description";
+            // 
+            // ExtraInfo
+            // 
+            this.ExtraInfo.DataPropertyName = "ExtraInfo";
+            this.ExtraInfo.FillWeight = 30F;
+            this.ExtraInfo.HeaderText = "Delivery Status";
+            this.ExtraInfo.Name = "ExtraInfo";
+            // 
+            // Qty
+            // 
+            this.Qty.DataPropertyName = "Qty";
+            this.Qty.HeaderText = "Qty";
+            this.Qty.Name = "Qty";
+            this.Qty.Visible = false;
+            // 
+            // TaxInckInPrice
+            // 
+            this.TaxInckInPrice.DataPropertyName = "TaxInckInPrice";
+            this.TaxInckInPrice.HeaderText = "TaxInckInPrice";
+            this.TaxInckInPrice.Name = "TaxInckInPrice";
+            this.TaxInckInPrice.Visible = false;
+            // 
+            // Comment
+            // 
+            this.Comment.DataPropertyName = "Comment";
+            this.Comment.HeaderText = "Comment";
+            this.Comment.Name = "Comment";
+            this.Comment.Visible = false;
+            // 
             // tableLayoutPanel
             // 
             this.tableLayoutPanel.ColumnCount = 1;
@@ -101,6 +151,7 @@
             this.flowLayoutPanel1.Controls.Add(this.labelItemCode);
             this.flowLayoutPanel1.Controls.Add(this.textBoxItem);
             this.flowLayoutPanel1.Controls.Add(this.buttonFilter);
+            this.flowLayoutPanel1.Controls.Add(this.buttonSMS);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 3);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
@@ -174,54 +225,15 @@
             this.buttonFilter.UseVisualStyleBackColor = true;
             this.buttonFilter.Click += new System.EventHandler(this.buttonFilter_Click);
             // 
-            // ReceiptID
+            // buttonSMS
             // 
-            this.ReceiptID.DataPropertyName = "ReceiptID";
-            this.ReceiptID.FillWeight = 25F;
-            this.ReceiptID.HeaderText = "Receipt";
-            this.ReceiptID.Name = "ReceiptID";
-            // 
-            // ItemId
-            // 
-            this.ItemId.DataPropertyName = "ItemId";
-            this.ItemId.FillWeight = 25F;
-            this.ItemId.HeaderText = "Item Code";
-            this.ItemId.Name = "ItemId";
-            // 
-            // Description
-            // 
-            this.Description.DataPropertyName = "Description";
-            this.Description.FillWeight = 40F;
-            this.Description.HeaderText = "Description";
-            this.Description.Name = "Description";
-            // 
-            // ExtraInfo
-            // 
-            this.ExtraInfo.DataPropertyName = "ExtraInfo";
-            this.ExtraInfo.FillWeight = 30F;
-            this.ExtraInfo.HeaderText = "Delivery Status";
-            this.ExtraInfo.Name = "ExtraInfo";
-            // 
-            // Qty
-            // 
-            this.Qty.DataPropertyName = "Qty";
-            this.Qty.HeaderText = "Qty";
-            this.Qty.Name = "Qty";
-            this.Qty.Visible = false;
-            // 
-            // TaxInckInPrice
-            // 
-            this.TaxInckInPrice.DataPropertyName = "TaxInckInPrice";
-            this.TaxInckInPrice.HeaderText = "TaxInckInPrice";
-            this.TaxInckInPrice.Name = "TaxInckInPrice";
-            this.TaxInckInPrice.Visible = false;
-            // 
-            // Comment
-            // 
-            this.Comment.DataPropertyName = "Comment";
-            this.Comment.HeaderText = "Comment";
-            this.Comment.Name = "Comment";
-            this.Comment.Visible = false;
+            this.buttonSMS.Location = new System.Drawing.Point(838, 3);
+            this.buttonSMS.Name = "buttonSMS";
+            this.buttonSMS.Size = new System.Drawing.Size(75, 41);
+            this.buttonSMS.TabIndex = 6;
+            this.buttonSMS.Text = "SMS";
+            this.buttonSMS.UseVisualStyleBackColor = true;
+            this.buttonSMS.Click += new System.EventHandler(this.buttonSMS_Click);
             // 
             // Report
             // 
@@ -263,5 +275,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Qty;
         private System.Windows.Forms.DataGridViewTextBoxColumn TaxInckInPrice;
         private System.Windows.Forms.DataGridViewTextBoxColumn Comment;
+        private System.Windows.Forms.Button buttonSMS;
     }
 }
