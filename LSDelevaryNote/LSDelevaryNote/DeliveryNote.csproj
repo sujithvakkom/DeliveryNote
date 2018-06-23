@@ -141,6 +141,7 @@
     <Compile Include="TransactionCustomer.cs" />
     <Compile Include="TransactionLine.cs" />
     <Compile Include="TransactionLines.cs" />
+    <Compile Include="TransCust.cs" />
     <EmbeddedResource Include="DelivaryReport.rdlc" />
     <EmbeddedResource Include="FormDeliveryNote.resx">
       <DependentUpon>FormDeliveryNote.cs</DependentUpon>

@@ -178,6 +178,7 @@ namespace LSDelevaryNote
         private void buttonSMS_Click(object sender, EventArgs e)
         {
             FormSMS formSMS = new FormSMS();
+            formSMS.ShowDialog(this.Parent);
         }
     }
 }
