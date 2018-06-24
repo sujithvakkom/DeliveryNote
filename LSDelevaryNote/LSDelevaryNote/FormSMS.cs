@@ -57,11 +57,30 @@ namespace LSDelevaryNote
                                Customer = string.IsNullOrEmpty(tra_h_i.INFORMATION) ? tra_h.CUSTACCOUNT : tra_h_i.INFORMATION,
                                CustomerName = cust.NAME,
                                CustomerAddredd = cust.ADDRESS,
-                               CustomerPhone = cust_ad.STREET
+                               CustomerPhone = string.IsNullOrEmpty(cust_ad.STREET)?cust.PHONE:cust_ad.STREET
                            };
-                ((ListBox)this.checkedListBox1).DataSource = data.ToList();
+                ((ListBox)this.checkedListBoxCustomer).DataSource = data.ToList();
             }
         }
+        private void buttonSelectAll_Click(object sender, EventArgs e)
+        {
+            for (int i = 0; i < this.checkedListBoxCustomer.Items.Count; i++)
+                this.checkedListBoxCustomer.SetItemChecked(i,
+                    this.checkedListBoxCustomer.GetItemCheckState(i) == CheckState.Checked ? false:true
+                    );
+        }
+        private void buttonDeselectAll_Click(object sender, EventArgs e)
+        {
+            for (int i = 0; i < this.checkedListBoxCustomer.Items.Count; i++)
+                this.checkedListBoxCustomer.SetItemChecked(i,false);
+        }
 
+        private void buttonSend_Click(object sender, EventArgs e)
+        {
+            foreach(var item in this.checkedListBoxCustomer.CheckedItems)
+            {
+                ((TransCust)item).SendMessage(this.textBoxMessage.Text.Trim());
+            }
+        }
     }
 }
