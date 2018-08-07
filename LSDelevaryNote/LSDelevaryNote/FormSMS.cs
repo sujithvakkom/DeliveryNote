@@ -77,10 +77,13 @@ namespace LSDelevaryNote
 
         private void buttonSend_Click(object sender, EventArgs e)
         {
+            string result = "" ;
             foreach(var item in this.checkedListBoxCustomer.CheckedItems)
             {
+                result +=
                 ((TransCust)item).SendMessage(this.textBoxMessage.Text.Trim());
             }
+            MessageBox.Show(this, result, "Result");
         }
     }
 }

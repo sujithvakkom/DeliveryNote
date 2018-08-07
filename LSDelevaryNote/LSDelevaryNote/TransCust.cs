@@ -34,11 +34,11 @@ namespace LSDelevaryNote
             }
         }
 
-        internal void SendMessage(string message)
+        internal string SendMessage(string message)
         {
             using (SMSProvider provider = new SMSProvider("20076790", "4xizrx", "Grand Stores"))
             {
-                provider.SMSSend(this.SendablePhone, message);
+                return CustomerName+'\t'+provider.SMSSend(this.SendablePhone, message).Trim()+'\r'+'\n';
             }
         }
     }

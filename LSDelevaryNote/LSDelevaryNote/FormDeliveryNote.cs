@@ -416,7 +416,7 @@ namespace LSDelevaryNote
 
         private void linkLabelReport_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-                var form = new Report();
+                var form = new ReportViewer();
                 form.ShowDialog(this); 
         }
     }

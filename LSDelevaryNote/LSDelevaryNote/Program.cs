@@ -21,6 +21,7 @@ namespace LSDelevaryNote
             Program.KeepOpen = !(args.Length == 0);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+            //Application.Run(new Tester());
             Application.Run(new FormDeliveryNote());
         }
     }

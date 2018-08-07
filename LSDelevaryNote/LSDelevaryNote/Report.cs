@@ -1,4 +1,6 @@
-﻿using MyExtentions.DIalogs;
+﻿using LSDelevaryNote.Provider;
+using LSDelevaryNote.Provider.Entities;
+using MyExtentions.DIalogs;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,7 +16,7 @@ namespace LSDelevaryNote
 {
     public partial class Report : Form
     {
-        private TransactionLines TransactionLines;
+        private ReprotTransactionLines TransactionLines;
         private ContextMenu cm;
 
         public Report()
@@ -28,7 +30,7 @@ namespace LSDelevaryNote
             this.dataGridViewReport.DataSource = this.TransactionLines;
 
         }
-        public Report(TransactionLines transactionLines)
+        public Report(ReprotTransactionLines transactionLines)
         {
             this.TransactionLines = transactionLines;
             InitializeComponent();
@@ -94,8 +96,51 @@ namespace LSDelevaryNote
             int entryStatus = 0;
             int transactionStatus = 0;
             int defaultAddressType = 0;
-            using (var db = new DeliveryDbContext(builder.ConnectionString))
+            using(DelivaryDataProvider db = new DelivaryDataProvider(builder.ConnectionString))
+            {
+                List<DelivaryTransactionView> result = db.getDelivaryTransactionView();
+
+                var transactionLine = from x in result
+                                         select
+                                          new ReportTransactionLine()
+                                          {
+                                              ReceiptID = x.RECEIPTID,
+                                              ItemId = x.ITEMID,
+                                              Description = x.DESCRIPTION,
+                                              Qty =  x.QUANTITY==null?0:(decimal) x.QUANTITY,
+                                              TaxInckInPrice = x.SEIINGPRICE == null ? 0 : (decimal)x.SEIINGPRICE,
+                                              Comment = x.COMMENT.Replace("\r\n"," "),
+                                              ExtraInfo = x.DELIVARYTYPE
+                                              ,CustomerName = x.NAME
+                                          };
+                this.TransactionLines = transactionLine.Count() > 0 ? new ReprotTransactionLines(transactionLine.ToList()) : null;
+            }
+            /*
+                using (var db = new DeliveryDbContext(builder.ConnectionString))
             {   //LINENUM changed to LINEID IN in line 103 col 155 by rafeeq
+                
+                var transactionCustomer = from tra_h in db.RBOTRANSACTIONTABLE
+                                          join tra_i in db.RBOTRANSACTIONINFOCODETRANS
+                                          on
+                                          new { tra_h.TRANSACTIONID, INFOCODEID =  } equals new { tra_i.TRANSACTIONID, tra_i.INFOCODEID } into info_d
+                                          from info in info_d.DefaultIfEmpty()
+                                          join cust in db.CUSTTABLE on new { CUSTACCOUNT = string.IsNullOrEmpty(info.INFORMATION) ? tra_h.CUSTACCOUNT : info.INFORMATION } equals
+                                          new { CUSTACCOUNT = cust.ACCOUNTNUM }
+                                          join address in db.CUSTOMERADDRESS on
+                                          new { cust.ACCOUNTNUM, ADDRESSTYPE = defaultAddressType } equals new { address.ACCOUNTNUM, address.ADDRESSTYPE }
+                                          where 
+                                            tra_h.TYPE == type &&
+                                            tra_h.ENTRYSTATUS == entryStatus
+                                          select new TransactionCustomer()
+                                          {
+                                              ReceiptID = tra_h.RECEIPTID,
+                                              CustAccount = string.IsNullOrEmpty(info.INFORMATION) ? tra_h.CUSTACCOUNT : info.INFORMATION,
+                                              Name = cust.NAME,
+                                              Address = cust.ADDRESS,
+                                              Phone = cust.PHONE,
+                                              Address1 = address.ADDRESS,
+                                              Street = address.STREET
+                                          };
                 var transactionLine = from tra_h in db.RBOTRANSACTIONTABLE
                                       join tra_l in db.RBOTRANSACTIONSALESTRANS
                                       on tra_h.TRANSACTIONID equals tra_l.TRANSACTIONID
@@ -120,37 +165,14 @@ namespace LSDelevaryNote
                                           ItemId = tra_l.ITEMID,
                                           Description = tra_l.DESCRIPTION,
                                           Qty = (tra_l.QTY ?? 0) * -1,
-                                          TaxInckInPrice = -1*(tra_l.NETAMOUNTINCLTAX ?? 0),
+                                          TaxInckInPrice = -1 * (tra_l.NETAMOUNTINCLTAX ?? 0),
                                           Comment = tra_l.COMMENT,
                                           ExtraInfo = string.IsNullOrEmpty(info_s.DESCRIPTION) ? "NON DELIVERABLE" : info_s.DESCRIPTION
                                       };
-                /*
-                var transactionCustomer = from tra_h in db.RBOTRANSACTIONTABLE
-                                          join tra_i in db.RBOTRANSACTIONINFOCODETRANS
-                                          on
-                                          new { tra_h.TRANSACTIONID, INFOCODEID = customerInfoCode } equals new { tra_i.TRANSACTIONID, tra_i.INFOCODEID } into info_d
-                                          from info in info_d.DefaultIfEmpty()
-                                          join cust in db.CUSTTABLE on new { CUSTACCOUNT = string.IsNullOrEmpty(info.INFORMATION) ? tra_h.CUSTACCOUNT : info.INFORMATION } equals
-                                          new { CUSTACCOUNT = cust.ACCOUNTNUM }
-                                          join address in db.CUSTOMERADDRESS on
-                                          new { cust.ACCOUNTNUM, ADDRESSTYPE = defaultAddressType } equals new { address.ACCOUNTNUM, address.ADDRESSTYPE }
-                                          where 
-                                            tra_h.TYPE == type &&
-                                            tra_h.ENTRYSTATUS == entryStatus
-                                          select new TransactionCustomer()
-                                          {
-                                              ReceiptID = tra_h.RECEIPTID,
-                                              CustAccount = string.IsNullOrEmpty(info.INFORMATION) ? tra_h.CUSTACCOUNT : info.INFORMATION,
-                                              Name = cust.NAME,
-                                              Address = cust.ADDRESS,
-                                              Phone = cust.PHONE,
-                                              Address1 = address.ADDRESS,
-                                              Street = address.STREET
-                                          };
-                                          */
 
                 this.TransactionLines = transactionLine.Count() > 0 ? new TransactionLines(transactionLine.ToList()) : null;
             }
+                 */                         
         }
 
 

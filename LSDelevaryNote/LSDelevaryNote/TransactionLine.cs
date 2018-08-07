@@ -8,7 +8,6 @@ namespace LSDelevaryNote
 {
     public class TransactionLine
     {
-        //tra_l.ITEMID, tra_l.DESCRIPTION, tra_l.QTY, tra_l.TAXINCLINPRICE ,tra_l.COMMENT, EXTRAINFO=info_s.DESCRIPTION
         public string ReceiptID { get; set; }
         public string ItemId { get; set; }
         public string Description { get; set; }
@@ -18,4 +17,7 @@ namespace LSDelevaryNote
         public string ExtraInfo { get; set; }
     }
 
+    public class ReportTransactionLine : TransactionLine {
+        public string CustomerName { get; set; }
+    }
 }

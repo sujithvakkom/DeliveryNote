@@ -34,6 +34,9 @@
   <PropertyGroup>
     <ApplicationIcon>Resources\DeliveryNoteIcon.ico</ApplicationIcon>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="EntityFramework, Version=4.4.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.5.0.0\lib\net40\EntityFramework.dll</HintPath>
@@ -49,6 +52,7 @@
     <Reference Include="System.Data.Entity" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -96,6 +100,13 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Provider\DelivaryDataProvider.DelivaryReplanishmentView.cs" />
+    <Compile Include="Provider\DelivaryDataProvider.DelivaryTransactionView.cs" />
+    <Compile Include="Provider\DelivaryDataProvider.cs" />
+    <Compile Include="Provider\Entities\DelevaryRelanishment.cs" />
+    <Compile Include="Provider\Entities\DelivaryTransactionView.cs" />
+    <Compile Include="Provider\Entities\ReplishmentView.cs" />
+    <Compile Include="Provider\ReportProvider\ReportViewProvider.cs" />
     <Compile Include="RBOCUSTTABLE.cs">
       <DependentUpon>DelevaryNote.tt</DependentUpon>
     </Compile>
@@ -136,7 +147,27 @@
       <DependentUpon>Report.cs</DependentUpon>
     </Compile>
     <Compile Include="ReportPriner.cs" />
+    <Compile Include="ReportViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportViewer.Designer.cs">
+      <DependentUpon>ReportViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReportViewer.ReportInit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Service References\ERPServiceReference\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="SMSProvider.cs" />
+    <Compile Include="Tester.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tester.Designer.cs">
+      <DependentUpon>Tester.cs</DependentUpon>
+    </Compile>
     <Compile Include="Transaction.cs" />
     <Compile Include="TransactionCustomer.cs" />
     <Compile Include="TransactionLine.cs" />
@@ -159,8 +190,16 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="ReplenishmentReport.rdlc" />
     <EmbeddedResource Include="Report.resx">
       <DependentUpon>Report.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportViewer.resx">
+      <DependentUpon>ReportViewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SummaryReport.rdlc" />
+    <EmbeddedResource Include="Tester.resx">
+      <DependentUpon>Tester.cs</DependentUpon>
     </EmbeddedResource>
     <EntityDeploy Include="DelevaryNote.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
@@ -170,7 +209,11 @@
     <None Include="DelevaryNote.edmx.diagram">
       <DependentUpon>DelevaryNote.edmx</DependentUpon>
     </None>
+    <Fakes Include="Fakes\Microsoft.ReportViewer.WinForms.fakes" />
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\LSDelevaryNote.Provider.DelivaryDataProvider.datasource" />
+    <None Include="Properties\DataSources\LSDelevaryNote.Provider.Entities.DelevaryRelanishment.datasource" />
+    <None Include="Properties\DataSources\LSDelevaryNote.Provider.Entities.DelivaryTransactionView.datasource" />
     <None Include="Properties\DataSources\Transaction.datasource" />
     <None Include="Properties\DataSources\TransactionCustomer.datasource" />
     <None Include="Properties\DataSources\TransactionLines.datasource" />
@@ -183,6 +226,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="Service References\ERPServiceReference\GetOnhandQuantity.wsdl" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\DeliveryNoteIcon.ico" />
@@ -207,6 +251,16 @@
       <DependentUpon>DelevaryNote.edmx</DependentUpon>
       <LastGenOutput>DelevaryNote.cs</LastGenOutput>
     </Content>
+    <None Include="Service References\ERPServiceReference\LSDelevaryNote.ERPServiceReference.Item.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ERPServiceReference\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\ERPServiceReference\configuration.svcinfo" />
+    <None Include="Service References\ERPServiceReference\configuration91.svcinfo" />
+    <None Include="Service References\ERPServiceReference\GetOnhandQuantity.disco" />
     <None Include="if_print_44993.png" />
     <None Include="if_cross_48_10298.png" />
     <None Include="Resources\if_cross_48_10298.png" />
@@ -214,6 +268,12 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\ERPServiceReference\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

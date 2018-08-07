@@ -8,18 +8,22 @@ namespace LSDelevaryNote
     {
         /*
          http://www.mshastra.com/sendurlcomma.aspx?user=profileid&pwd=xxxx&senderid=ABC&mobileno=9911111111&msgtext=Hello
+         http://www.mshastra.com/sendurlcomma.aspx?user={0}&pwd={1}&senderid={2}&mobileno={3}&msgtext={4}
+         http://mshastra.com/sendurl.aspx?user=*******&pwd=******&senderid=SMS%20Alert&mobileno=+971*****&msgtext=Hello&CountryCode=ALL 
+         http://mshastra.com/sendurl.aspx?user={0}&pwd={1}&senderid={2}&mobileno={3}&msgtext={4}&CountryCode=ALL 
              */
-        readonly string baseurl = "http://www.mshastra.com/sendurlcomma.aspx?user={0}&pwd={1}&senderid={2}&mobileno={3}&msgtext={4}";
+        readonly string baseurl = "http://mshastra.com/sendurl.aspx?user={0}&pwd={1}&senderid={2}&mobileno={3}&msgtext={4}&CountryCode=ALL";
         public string Profile { get; private set; }
         public string Password { get; private set; }
         public string Sender { get; private set; }
+        private StreamReader reader;
 
         public SMSProvider(string profileid, string pwd,string sender) {
 
             this.Profile = profileid;this.Password = pwd;
             this.Sender = sender;
         }
-        public void SMSSend(string phone,  string message)
+        public string SMSSend(string phone,  string message)
         {
             WebClient client = new WebClient();
             string url = string.Format(baseurl, this.Profile, this.Password, this.Sender, phone, message.Trim());
@@ -27,15 +31,15 @@ namespace LSDelevaryNote
 
 
             Stream data = client.OpenRead(uriBuilder.Uri);
-            StreamReader reader = new StreamReader(data);
-            string s = reader.ReadToEnd();
+            reader = new StreamReader(data);
+            string result = reader.ReadToEnd();
             data.Close();
-            reader.Close();
+            return result;
         }
 
         public void Dispose()
         {
-
+            reader.Close();
         }
     }
 }

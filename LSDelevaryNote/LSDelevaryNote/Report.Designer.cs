@@ -73,7 +73,7 @@
             this.dataGridViewReport.RowHeadersVisible = false;
             this.dataGridViewReport.RowTemplate.Height = 24;
             this.dataGridViewReport.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewReport.Size = new System.Drawing.Size(929, 546);
+            this.dataGridViewReport.Size = new System.Drawing.Size(1301, 632);
             this.dataGridViewReport.TabIndex = 0;
             this.dataGridViewReport.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dataGridViewReport_MouseClick);
             // 
@@ -139,7 +139,7 @@
             this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
             this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel.Size = new System.Drawing.Size(935, 602);
+            this.tableLayoutPanel.Size = new System.Drawing.Size(1307, 688);
             this.tableLayoutPanel.TabIndex = 1;
             // 
             // flowLayoutPanel1
@@ -155,7 +155,7 @@
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 3);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(929, 44);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(1301, 44);
             this.flowLayoutPanel1.TabIndex = 1;
             // 
             // labelFromDate
@@ -233,13 +233,14 @@
             this.buttonSMS.TabIndex = 6;
             this.buttonSMS.Text = "SMS";
             this.buttonSMS.UseVisualStyleBackColor = true;
+            this.buttonSMS.Visible = false;
             this.buttonSMS.Click += new System.EventHandler(this.buttonSMS_Click);
             // 
             // Report
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(935, 602);
+            this.ClientSize = new System.Drawing.Size(1307, 688);
             this.Controls.Add(this.tableLayoutPanel);
             this.MinimumSize = new System.Drawing.Size(872, 649);
             this.Name = "Report";

@@ -17,4 +17,17 @@ namespace LSDelevaryNote
         }
         public int Test { get; set; }
     }
+
+    public class ReprotTransactionLines : List<ReportTransactionLine>
+    {
+        public ReprotTransactionLines(List<ReportTransactionLine> trans)
+        {
+            if (trans != null)
+                foreach (var x in trans)
+                {
+                    this.Add(x);
+                }
+        }
+        public int Test { get; set; }
+    }
 }
