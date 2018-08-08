@@ -34,7 +34,7 @@ namespace LSDelevaryNote.ERPServiceReference {
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string item_nameField;
         
-        private int? quantityField;
+        private int quantityField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -99,7 +99,7 @@ namespace LSDelevaryNote.ERPServiceReference {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public int? quantity {
+        public int quantity {
             get {
                 return this.quantityField;
             }
@@ -125,7 +125,7 @@ namespace LSDelevaryNote.ERPServiceReference {
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ERPServiceReference.GetOnhandQuantitySoap")]
     public interface GetOnhandQuantitySoap {
         
-        // CODEGEN: Generating message contract since element name GetQuantityResult from namespace http://tempuri.org/ is not marked nillable
+        // CODEGEN: Generating message contract since element name OrganizationCode from namespace http://tempuri.org/ is not marked nillable
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetQuantity", ReplyAction="*")]
         LSDelevaryNote.ERPServiceReference.GetQuantityResponse GetQuantity(LSDelevaryNote.ERPServiceReference.GetQuantityRequest request);
     }
@@ -150,10 +150,17 @@ namespace LSDelevaryNote.ERPServiceReference {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute()]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
     public partial class GetQuantityRequestBody {
         
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string OrganizationCode;
+        
         public GetQuantityRequestBody() {
+        }
+        
+        public GetQuantityRequestBody(string OrganizationCode) {
+            this.OrganizationCode = OrganizationCode;
         }
     }
     
@@ -223,9 +230,10 @@ namespace LSDelevaryNote.ERPServiceReference {
             return base.Channel.GetQuantity(request);
         }
         
-        public LSDelevaryNote.ERPServiceReference.Item[] GetQuantity() {
+        public LSDelevaryNote.ERPServiceReference.Item[] GetQuantity(string OrganizationCode) {
             LSDelevaryNote.ERPServiceReference.GetQuantityRequest inValue = new LSDelevaryNote.ERPServiceReference.GetQuantityRequest();
             inValue.Body = new LSDelevaryNote.ERPServiceReference.GetQuantityRequestBody();
+            inValue.Body.OrganizationCode = OrganizationCode;
             LSDelevaryNote.ERPServiceReference.GetQuantityResponse retVal = ((LSDelevaryNote.ERPServiceReference.GetOnhandQuantitySoap)(this)).GetQuantity(inValue);
             return retVal.Body.GetQuantityResult;
         }

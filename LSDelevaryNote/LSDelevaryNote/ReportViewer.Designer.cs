@@ -39,6 +39,8 @@
             this.dateTimePickerTo = new System.Windows.Forms.DateTimePicker();
             this.labelItemCode = new System.Windows.Forms.Label();
             this.textBoxItem = new System.Windows.Forms.TextBox();
+            this.labelDeleveryType = new System.Windows.Forms.Label();
+            this.comboBoxDeleveryType = new System.Windows.Forms.ComboBox();
             this.buttonFilter = new System.Windows.Forms.Button();
             this.buttonSMS = new System.Windows.Forms.Button();
             this.radioButtonSummary = new System.Windows.Forms.RadioButton();
@@ -48,10 +50,6 @@
             this.tableLayoutPanel1.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // DelivaryTransactionViewBindingSource
-            // 
-            this.DelivaryTransactionViewBindingSource.DataSource = typeof(LSDelevaryNote.Provider.Entities.DelivaryTransactionView);
             // 
             // tableLayoutPanel1
             // 
@@ -65,7 +63,7 @@
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1204, 685);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1463, 685);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // flowLayoutPanel1
@@ -76,6 +74,8 @@
             this.flowLayoutPanel1.Controls.Add(this.dateTimePickerTo);
             this.flowLayoutPanel1.Controls.Add(this.labelItemCode);
             this.flowLayoutPanel1.Controls.Add(this.textBoxItem);
+            this.flowLayoutPanel1.Controls.Add(this.labelDeleveryType);
+            this.flowLayoutPanel1.Controls.Add(this.comboBoxDeleveryType);
             this.flowLayoutPanel1.Controls.Add(this.buttonFilter);
             this.flowLayoutPanel1.Controls.Add(this.buttonSMS);
             this.flowLayoutPanel1.Controls.Add(this.radioButtonSummary);
@@ -83,7 +83,7 @@
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 3);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(1198, 44);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(1457, 44);
             this.flowLayoutPanel1.TabIndex = 0;
             // 
             // labelFromDate
@@ -143,9 +143,32 @@
             this.textBoxItem.Size = new System.Drawing.Size(100, 22);
             this.textBoxItem.TabIndex = 12;
             // 
+            // labelDeleveryType
+            // 
+            this.labelDeleveryType.AutoSize = true;
+            this.labelDeleveryType.Location = new System.Drawing.Point(757, 0);
+            this.labelDeleveryType.Name = "labelDeleveryType";
+            this.labelDeleveryType.Padding = new System.Windows.Forms.Padding(10);
+            this.labelDeleveryType.Size = new System.Drawing.Size(120, 37);
+            this.labelDeleveryType.TabIndex = 16;
+            this.labelDeleveryType.Text = "Delevery Type";
+            // 
+            // comboBoxDeleveryType
+            // 
+            this.comboBoxDeleveryType.FormattingEnabled = true;
+            this.comboBoxDeleveryType.Items.AddRange(new object[] {
+            "",
+            "STORE PICKUP",
+            "HOME DELIVERY"});
+            this.comboBoxDeleveryType.Location = new System.Drawing.Point(888, 8);
+            this.comboBoxDeleveryType.Margin = new System.Windows.Forms.Padding(8);
+            this.comboBoxDeleveryType.Name = "comboBoxDeleveryType";
+            this.comboBoxDeleveryType.Size = new System.Drawing.Size(121, 24);
+            this.comboBoxDeleveryType.TabIndex = 13;
+            // 
             // buttonFilter
             // 
-            this.buttonFilter.Location = new System.Drawing.Point(757, 3);
+            this.buttonFilter.Location = new System.Drawing.Point(1020, 3);
             this.buttonFilter.Name = "buttonFilter";
             this.buttonFilter.Size = new System.Drawing.Size(75, 41);
             this.buttonFilter.TabIndex = 13;
@@ -155,7 +178,7 @@
             // 
             // buttonSMS
             // 
-            this.buttonSMS.Location = new System.Drawing.Point(838, 3);
+            this.buttonSMS.Location = new System.Drawing.Point(1101, 3);
             this.buttonSMS.Name = "buttonSMS";
             this.buttonSMS.Size = new System.Drawing.Size(75, 41);
             this.buttonSMS.TabIndex = 14;
@@ -166,7 +189,7 @@
             // radioButtonSummary
             // 
             this.radioButtonSummary.AutoSize = true;
-            this.radioButtonSummary.Location = new System.Drawing.Point(919, 3);
+            this.radioButtonSummary.Location = new System.Drawing.Point(1182, 3);
             this.radioButtonSummary.Name = "radioButtonSummary";
             this.radioButtonSummary.Padding = new System.Windows.Forms.Padding(10);
             this.radioButtonSummary.Size = new System.Drawing.Size(108, 41);
@@ -180,7 +203,7 @@
             // radioButtonReplinish
             // 
             this.radioButtonReplinish.AutoSize = true;
-            this.radioButtonReplinish.Location = new System.Drawing.Point(1033, 3);
+            this.radioButtonReplinish.Location = new System.Drawing.Point(1296, 3);
             this.radioButtonReplinish.Name = "radioButtonReplinish";
             this.radioButtonReplinish.Padding = new System.Windows.Forms.Padding(10);
             this.radioButtonReplinish.Size = new System.Drawing.Size(143, 41);
@@ -200,19 +223,20 @@
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "LSDelevaryNote.SummaryReport.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(3, 53);
             this.reportViewer1.Name = "reportViewer1";
-            this.reportViewer1.Size = new System.Drawing.Size(1198, 579);
+            this.reportViewer1.Size = new System.Drawing.Size(1457, 629);
             this.reportViewer1.TabIndex = 1;
             // 
             // ReportViewer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1204, 685);
+            this.ClientSize = new System.Drawing.Size(1463, 685);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "ReportViewer";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.Text = "Report Viewer";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.ReportViewer_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DelivaryTransactionViewBindingSource)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
@@ -238,5 +262,7 @@
         private System.Windows.Forms.RadioButton radioButtonReplinish;
         private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
         private System.Windows.Forms.BindingSource DelivaryTransactionViewBindingSource;
+        private System.Windows.Forms.Label labelDeleveryType;
+        private System.Windows.Forms.ComboBox comboBoxDeleveryType;
     }
 }

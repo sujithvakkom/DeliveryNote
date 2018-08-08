@@ -20,7 +20,33 @@ EXECUTE  [dbo].[DelivaryTransactionView]
   ,@status
 GO
              */
-        readonly string getDelivaryTransactionViewCMD = @"[dbo].[DelivaryTransactionView] @receipt, @description, @customer, @start_date, @end_date";
+        //readonly string getDelivaryTransactionViewCMD = @"[dbo].[DelivaryTransactionView] @receipt, @description, @customer, @start_date, @end_date";
+
+
+        readonly string getDelivaryTransactionViewCMD = @"SELECT RECEIPTID ,
+       TRANSACTIONID ,
+       TRANSDATE ,
+       LINENUM ,
+       ITEMID ,
+       DESCRIPTION ,
+       QUANTITY ,
+       SEIINGPRICE ,
+       COMMENT ,
+       DELIVARYTYPE ,
+       ACCOUNTNUM ,
+       NAME ,
+       STREET ,
+       ADDRESS ,
+       int_status ,
+       status
+FROM DELIVERY
+WHERE RECEIPTID LIKE '%'+ISNULL(@receipt,'')+'%'
+      AND
+      DESCRIPTION LIKE '%'+ISNULL(@description,'')+'%'
+      AND
+      --DELIVARYTYPE = isnull( @status,DELIVARYTYPE)
+      --AND
+      TRANSDATE BETWEEN @start_date AND @end_date";
         public List<DelivaryTransactionView> getDelivaryTransactionView(string Receipt = null,
             string Description = null,
             string Customer = null,
@@ -45,8 +71,8 @@ GO
                 new SqlParameter("@end_date", EndDate) :
                 new SqlParameter("@end_date", System.Data.SqlDbType.DateTime) { Value = DBNull.Value };
             var status = !String.IsNullOrEmpty(Status) ?
-                new SqlParameter("@status", Status) :
-                new SqlParameter("@status", System.Data.SqlDbType.NVarChar) { Value = "" };
+                new SqlParameter("@status", String.IsNullOrEmpty(Status)) :
+                new SqlParameter("@status", System.Data.SqlDbType.NVarChar) { Value = DBNull.Value };
             var delivery = !String.IsNullOrEmpty(null) ?
                 new SqlParameter("@delivery", Status) :
                 new SqlParameter("@delivery", System.Data.SqlDbType.NVarChar) { Value = "2" };

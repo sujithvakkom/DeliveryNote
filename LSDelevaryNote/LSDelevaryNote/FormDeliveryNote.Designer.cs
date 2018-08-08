@@ -47,6 +47,7 @@
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.linkLabelReport = new System.Windows.Forms.LinkLabel();
             this.linkLabelSettings = new System.Windows.Forms.LinkLabel();
+            this.buttonSendSMS = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.TransactionBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TransactionCustomerBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TransactionLinesBindingSource)).BeginInit();
@@ -64,11 +65,11 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonPrint.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonPrint.Image = global::LSDelevaryNote.Properties.Resources.print_icon;
-            this.buttonPrint.Location = new System.Drawing.Point(895, 232);
+            this.buttonPrint.Location = new System.Drawing.Point(895, 299);
             this.buttonPrint.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonPrint.Name = "buttonPrint";
             this.tableLayoutPanel1.SetRowSpan(this.buttonPrint, 2);
-            this.buttonPrint.Size = new System.Drawing.Size(378, 226);
+            this.buttonPrint.Size = new System.Drawing.Size(378, 194);
             this.buttonPrint.TabIndex = 0;
             this.buttonPrint.UseVisualStyleBackColor = true;
             this.buttonPrint.Click += new System.EventHandler(this.buttonPrint_Click);
@@ -81,11 +82,11 @@
             this.buttonCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.buttonCancel.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonCancel.Image = global::LSDelevaryNote.Properties.Resources.close_icon;
-            this.buttonCancel.Location = new System.Drawing.Point(895, 462);
+            this.buttonCancel.Location = new System.Drawing.Point(895, 497);
             this.buttonCancel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonCancel.Name = "buttonCancel";
             this.tableLayoutPanel1.SetRowSpan(this.buttonCancel, 2);
-            this.buttonCancel.Size = new System.Drawing.Size(378, 230);
+            this.buttonCancel.Size = new System.Drawing.Size(378, 195);
             this.buttonCancel.TabIndex = 0;
             this.buttonCancel.UseVisualStyleBackColor = true;
             this.buttonCancel.Click += new System.EventHandler(this.buttonCancel_Click);
@@ -94,7 +95,7 @@
             // 
             this.textBoxReceipt.Dock = System.Windows.Forms.DockStyle.Fill;
             this.textBoxReceipt.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxReceipt.Location = new System.Drawing.Point(897, 120);
+            this.textBoxReceipt.Location = new System.Drawing.Point(897, 104);
             this.textBoxReceipt.Margin = new System.Windows.Forms.Padding(5);
             this.textBoxReceipt.Name = "textBoxReceipt";
             this.textBoxReceipt.Size = new System.Drawing.Size(374, 34);
@@ -111,7 +112,7 @@
             this.dataGridViewReceipt.Name = "dataGridViewReceipt";
             this.tableLayoutPanel1.SetRowSpan(this.dataGridViewReceipt, 2);
             this.dataGridViewReceipt.RowTemplate.Height = 24;
-            this.dataGridViewReceipt.Size = new System.Drawing.Size(1, 226);
+            this.dataGridViewReceipt.Size = new System.Drawing.Size(1, 194);
             this.dataGridViewReceipt.TabIndex = 2;
             // 
             // dataGridViewTransaction
@@ -119,12 +120,12 @@
             this.dataGridViewTransaction.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.tableLayoutPanel1.SetColumnSpan(this.dataGridViewTransaction, 4);
             this.dataGridViewTransaction.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridViewTransaction.Location = new System.Drawing.Point(3, 232);
+            this.dataGridViewTransaction.Location = new System.Drawing.Point(3, 200);
             this.dataGridViewTransaction.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataGridViewTransaction.Name = "dataGridViewTransaction";
             this.tableLayoutPanel1.SetRowSpan(this.dataGridViewTransaction, 4);
             this.dataGridViewTransaction.RowTemplate.Height = 24;
-            this.dataGridViewTransaction.Size = new System.Drawing.Size(1, 460);
+            this.dataGridViewTransaction.Size = new System.Drawing.Size(1, 392);
             this.dataGridViewTransaction.TabIndex = 3;
             // 
             // dataGridViewCustomer
@@ -137,7 +138,7 @@
             this.dataGridViewCustomer.Name = "dataGridViewCustomer";
             this.tableLayoutPanel1.SetRowSpan(this.dataGridViewCustomer, 2);
             this.dataGridViewCustomer.RowTemplate.Height = 24;
-            this.dataGridViewCustomer.Size = new System.Drawing.Size(1, 226);
+            this.dataGridViewCustomer.Size = new System.Drawing.Size(1, 194);
             this.dataGridViewCustomer.TabIndex = 4;
             // 
             // reportViewerDelivary
@@ -157,7 +158,7 @@
             this.reportViewerDelivary.Location = new System.Drawing.Point(3, 2);
             this.reportViewerDelivary.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.reportViewerDelivary.Name = "reportViewerDelivary";
-            this.tableLayoutPanel1.SetRowSpan(this.reportViewerDelivary, 6);
+            this.tableLayoutPanel1.SetRowSpan(this.reportViewerDelivary, 7);
             this.reportViewerDelivary.Size = new System.Drawing.Size(886, 690);
             this.reportViewerDelivary.TabIndex = 5;
             // 
@@ -177,20 +178,22 @@
             this.tableLayoutPanel1.Controls.Add(this.dataGridViewTransaction, 0, 2);
             this.tableLayoutPanel1.Controls.Add(this.dataGridViewCustomer, 2, 0);
             this.tableLayoutPanel1.Controls.Add(this.reportViewerDelivary, 4, 0);
-            this.tableLayoutPanel1.Controls.Add(this.buttonPrint, 6, 2);
-            this.tableLayoutPanel1.Controls.Add(this.buttonCancel, 6, 4);
             this.tableLayoutPanel1.Controls.Add(this.flowLayoutPanel1, 6, 0);
+            this.tableLayoutPanel1.Controls.Add(this.buttonCancel, 6, 5);
+            this.tableLayoutPanel1.Controls.Add(this.buttonPrint, 6, 3);
+            this.tableLayoutPanel1.Controls.Add(this.buttonSendSMS, 6, 2);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 6;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28572F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28572F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28572F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28572F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28572F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1276, 694);
             this.tableLayoutPanel1.TabIndex = 6;
@@ -204,7 +207,7 @@
             this.flowLayoutPanel1.Location = new System.Drawing.Point(895, 2);
             this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(378, 111);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(378, 95);
             this.flowLayoutPanel1.TabIndex = 6;
             // 
             // linkLabelReport
@@ -231,6 +234,18 @@
             this.linkLabelSettings.TabStop = true;
             this.linkLabelSettings.Text = "Settings";
             this.linkLabelSettings.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelSettings_LinkClicked);
+            // 
+            // buttonSendSMS
+            // 
+            this.buttonSendSMS.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.buttonSendSMS.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.buttonSendSMS.Image = global::LSDelevaryNote.Properties.Resources.send_sms;
+            this.buttonSendSMS.Location = new System.Drawing.Point(895, 201);
+            this.buttonSendSMS.Name = "buttonSendSMS";
+            this.buttonSendSMS.Size = new System.Drawing.Size(378, 93);
+            this.buttonSendSMS.TabIndex = 7;
+            this.buttonSendSMS.UseVisualStyleBackColor = true;
+            this.buttonSendSMS.Click += new System.EventHandler(this.buttonSendSMS_Click);
             // 
             // FormDeliveryNote
             // 
@@ -279,6 +294,7 @@
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.LinkLabel linkLabelReport;
         private System.Windows.Forms.LinkLabel linkLabelSettings;
+        private System.Windows.Forms.Button buttonSendSMS;
     }
 }
 

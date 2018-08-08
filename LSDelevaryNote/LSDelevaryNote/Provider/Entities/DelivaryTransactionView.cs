@@ -39,7 +39,7 @@ namespace LSDelevaryNote.Provider.Entities
         [Column("ADDRESS")]
         public string ADDRESS { get; set; }
         [Column("int_status")]
-        public decimal? int_status { get; set; }
+        public object int_status { get; set; }
         [Column("status")]
         public string status { get; set; }
 

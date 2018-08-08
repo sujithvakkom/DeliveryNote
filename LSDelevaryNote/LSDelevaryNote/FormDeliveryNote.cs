@@ -154,22 +154,22 @@ namespace LSDelevaryNote
 
         private void buttonPrint_Click(object sender, EventArgs e)
         {
-                this.DialogResult = DialogResult.Cancel;
+            this.DialogResult = DialogResult.Cancel;
 
-                string receipt = textBoxReceipt.Text.Trim();
+            string receipt = textBoxReceipt.Text.Trim();
 
-                SqlConnectionStringBuilder builder = new SqlConnectionStringBuilder();
-                builder.DataSource = SettingsProvider.GetDataSource();
-                builder.InitialCatalog = SettingsProvider.GetDatabase();
-                builder.UserID = SettingsProvider.GetUserName();
-                builder.Password = SettingsProvider.GetPassword();
-                int type = 2;
-                int entryStatus = 0;
-                int transactionStatus = 0;
-                int defaultAddressType = 0;
-                Transaction TransactionHeader = new Transaction();
-                TransactionCustomer TransactionCustomer = new TransactionCustomer();
-                TransactionLines TransactionLines = new TransactionLines(null);
+            SqlConnectionStringBuilder builder = new SqlConnectionStringBuilder();
+            builder.DataSource = SettingsProvider.GetDataSource();
+            builder.InitialCatalog = SettingsProvider.GetDatabase();
+            builder.UserID = SettingsProvider.GetUserName();
+            builder.Password = SettingsProvider.GetPassword();
+            int type = 2;
+            int entryStatus = 0;
+            int transactionStatus = 0;
+            int defaultAddressType = 0;
+            Transaction TransactionHeader = new Transaction();
+            TransactionCustomer TransactionCustomer = new TransactionCustomer();
+            TransactionLines TransactionLines = new TransactionLines(null);
 
             using (var db = new DeliveryDbContext(builder.ConnectionString))
             {
@@ -274,6 +274,7 @@ namespace LSDelevaryNote
                         }
                     }
                 }
+                sendSMS(receipt,true);
             }
             if (!Program.KeepOpen)
                 this.Close();
@@ -408,7 +409,7 @@ namespace LSDelevaryNote
 
         private void textBoxReceipt_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if(e.KeyChar == (char)Keys.Enter)
+            if (e.KeyChar == (char)Keys.Enter)
             {
                 RefreshReport(textBoxReceipt.Text.Trim());
             }
@@ -416,8 +417,104 @@ namespace LSDelevaryNote
 
         private void linkLabelReport_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-                var form = new ReportViewer();
-                form.ShowDialog(this); 
+            var form = new ReportViewer();
+            form.ShowDialog(this);
+        }
+
+        private void buttonSendSMS_Click(object sender, EventArgs e)
+        {
+            sendSMS(this.textBoxReceipt.Text.Trim());
+        }
+
+        private void sendSMS(string v, bool confirm = false)
+        {
+            int type = 2;
+            int entryStatus = 0;
+            int transactionStatus = 0;
+            int defaultAddressType = 0;
+            string customerInfoCode = "INF00007";
+            string isDelevary = "INF00004";
+            var receipt = v;
+            if (!String.IsNullOrEmpty(receipt))
+            {
+                SqlConnectionStringBuilder builder = new SqlConnectionStringBuilder();
+                builder.DataSource = SettingsProvider.GetDataSource();
+                builder.InitialCatalog = SettingsProvider.GetDatabase();
+                builder.UserID = SettingsProvider.GetUserName();
+                builder.Password = SettingsProvider.GetPassword();
+                using (var db = new DeliveryDbContext(builder.ConnectionString))
+                {
+                    /* var transactionCustomer = (from tra_h in db.RBOTRANSACTIONTABLE
+                                                join tra_i in db.RBOTRANSACTIONINFOCODETRANS
+                                                on
+                                                new { tra_h.TRANSACTIONID, INFOCODEID = customerInfoCode } equals new { tra_i.TRANSACTIONID, tra_i.INFOCODEID } into info_d
+                                                from info in info_d.DefaultIfEmpty()
+                                                join cust in db.CUSTTABLE on new { CUSTACCOUNT = string.IsNullOrEmpty(info.INFORMATION) ? tra_h.CUSTACCOUNT : info.INFORMATION } equals
+                                                new { CUSTACCOUNT = cust.ACCOUNTNUM }
+                                                join address in db.CUSTOMERADDRESS on
+                                                new { cust.ACCOUNTNUM, ADDRESSTYPE = defaultAddressType } equals new { address.ACCOUNTNUM, address.ADDRESSTYPE }
+                                                where tra_h.RECEIPTID == receipt &&
+                                                  tra_h.TYPE == type &&
+                                                  tra_h.ENTRYSTATUS == entryStatus
+                                                select new TransactionCustomer()
+                                                {
+                                                    ReceiptID = tra_h.RECEIPTID,
+                                                    CustAccount = string.IsNullOrEmpty(info.INFORMATION) ? tra_h.CUSTACCOUNT : info.INFORMATION,
+                                                    Name = cust.NAME,
+                                                    Address = cust.ADDRESS,
+                                                    Phone = cust.PHONE,
+                                                    Address1 = address.ADDRESS,
+                                                    Street = address.STREET
+                                                }).ToList()[0];
+ */
+
+                    var data = from tra_h in db.RBOTRANSACTIONTABLE
+                               join tra_i in db.RBOTRANSACTIONINFOCODETRANS
+                               on tra_h.TRANSACTIONID equals tra_i.TRANSACTIONID into tra_h_is
+                               from tra_h_i in tra_h_is.DefaultIfEmpty()
+                               join cust in db.CUSTTABLE on
+                               string.IsNullOrEmpty(tra_h_i.INFORMATION) ? tra_h.CUSTACCOUNT : tra_h_i.INFORMATION
+                               equals cust.ACCOUNTNUM
+                               join cust_ad in db.CUSTOMERADDRESS on
+                               cust.ACCOUNTNUM equals cust_ad.ACCOUNTNUM
+                               where tra_h_i.INFOCODEID == Program.customerInfoCode &&
+                               tra_h.TYPE == type &&
+                               tra_h.ENTRYSTATUS == entryStatus &&
+                                tra_h.RECEIPTID == receipt &&
+                               (from ss in db.RBOTRANSACTIONINFOCODETRANS
+                                join ww in db.RBOINFORMATIONSUBCODETABLE
+                                on new { p1 = (string)ss.INFOCODEID, p2 = (string)ss.SUBINFOCODEID }
+                                equals new { p1 = (string)ww.INFOCODEID, p2 = (string)ww.SUBCODEID }
+                                where ss.TRANSACTIONID == tra_h.TRANSACTIONID
+                                && ww.INFOCODEID == Program.isDelevary
+                                && ww.DESCRIPTION == Program.isDelevaryValue
+                                select ss.TRANSACTIONID
+                               ).Any()
+                               select new TransCust()
+                               {
+                                   ReceiptID = tra_h.RECEIPTID,
+                                   Customer = string.IsNullOrEmpty(tra_h_i.INFORMATION) ? tra_h.CUSTACCOUNT : tra_h_i.INFORMATION,
+                                   CustomerName = cust.NAME,
+                                   CustomerAddredd = cust.ADDRESS,
+                                   CustomerPhone = string.IsNullOrEmpty(cust_ad.STREET) ? cust.PHONE : cust_ad.STREET
+                               };
+
+                    var sms = data.ToList()[0];
+                    if (confirm ||
+                        MessageBox.Show(this, "Do you want to resend SMS?" +
+                        Environment.NewLine +
+                        sms.CustomerName +
+                        Environment.NewLine + sms.getSendablePhone(),"Confirm resend.",MessageBoxButtons.YesNo
+                        ) == DialogResult.Yes )
+                    {
+                        //var result = sms.SendMessage(sms.CustomerName + "Your order confirmed with Grand Stores LLC. Our Representative will contact you soon.");
+                        var result = sms.SendMessage(sms.CustomerName + @"Dear Valued customer, " + Environment.NewLine +
+                            @"Thank you for choosing Grand Stores.Our Call Centre will call you to confirm the tentative delivery schedule soon." + Environment.NewLine +
+                            @"For any queries, please contact: +97148800999");
+                        MessageBox.Show(result, "Messege send result.");
+                    }
+                }
+            }
         }
     }
 }

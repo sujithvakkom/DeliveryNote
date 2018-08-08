@@ -26,12 +26,26 @@ namespace LSDelevaryNote
             {
                 try
                 {
-                    _SendablePhone = CustomerPhone.Split(spliters)[0].Replace("-", String.Empty).GetLast(9);
+                    _SendablePhone = getDigits(CustomerPhone.Split(spliters)[0]).
+                        //Replace("-", String.Empty).
+                        //Replace(" ",String.Empty).
+                        GetLast(9);
                     Int32.Parse(_SendablePhone);
                 }
                 catch (Exception) { return ""; }
                 return "+971" + _SendablePhone;
             }
+        }
+
+        private string getDigits(string a)
+        {
+            string b = string.Empty;
+            for (int i = 0; i < a.Length; i++)
+            {
+                if (Char.IsDigit(a[i]))
+                    b += a[i];
+            }
+            return b;
         }
 
         internal string SendMessage(string message)
@@ -40,6 +54,11 @@ namespace LSDelevaryNote
             {
                 return CustomerName+'\t'+provider.SMSSend(this.SendablePhone, message).Trim()+'\r'+'\n';
             }
+        }
+
+        internal string getSendablePhone()
+        {
+            return SendablePhone;
         }
     }
     public static class StringExtension

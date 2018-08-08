@@ -25,5 +25,10 @@ namespace LSDelevaryNote.Provider.Entities
         [Column("OnHandQuantity")]
         public decimal? OnHandQuantity { get; set; }
 
+        [Column("OnHandQuantity150")]
+        public decimal? OnHandQuantity150 { get; set; }
+
+        [Column("OnHandQuantity650")]
+        public decimal? OnHandQuantity650 { get; set; }
     }
 }
